@@ -27,7 +27,7 @@ const Header = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname === "/services") {
+    if (router.pathname === "/services" || router.pathname === "/stores" || router.pathname === "/franchise" || router.pathname === "/404") {
       setIsScrolled(true);
       return;
     }

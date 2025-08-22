@@ -29,6 +29,10 @@ p {
 .scroller_none::-webkit-scrollbar{
   display: none;
 }
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
 .fixy1{
   transform: translateY(1px);
 }
