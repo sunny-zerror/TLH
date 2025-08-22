@@ -1,0 +1,49 @@
+import React from 'react'
+
+const ServiceData = [{
+    title: "Safe for Your Body",
+    image: "/images/about page/img_1.jpg",
+    description: [
+        "At The Laundry House, we prioritise the health and safety of our customers by exclusively using high-quality, skin-friendly detergents from Europe, adhering to stringent regulatory standards.",
+        "Use of unregulated detergents containing endocrine disruptors, has been linked to skin irritations and serious health conditions like cancer, PCOS, fertility issues and hormonal imbalances.",
+        "By choosing our services, customers reduce these risks, ensuring their garments are cleaned with superior, safe detergents. This careful approach to garment care supports overall wellness and aligns with our commitment to promoting a healthier lifestyle through every wash."
+    ]
+}, {
+    title: "Where Technology, Skill & Service Merge",
+    image: "/images/about page/img_2.jpg",
+    description: [
+        "Our state-of-the-art technology, eco-friendly processes, and highly trained professionals ensure that each piece of clothing is treated with the utmost care and attention. ",
+        " From delicate silks to sturdy denims, we know how to handle them all. Stubborn stains, intricate embroideries, delicate fabrics - nothing is too challenging for us. And our master cleaners are trained to ensure that no speck of dirt misses their eye.",
+        "Our pioneering Live' Laundry studios offer complete transparency, allowing you to witness firsthand the careful and thorough treatment your garments receive throughout our meticulously monitored processes."
+    ]
+}]
+
+const AboutServices = () => {
+    return (
+        <div>
+            <div className="w-full px-24">
+                {
+                    ServiceData.map((service, index) => (
+                        <div key={index} className="w-full h-[50vh] py-10 gap-10 flex border-t  border-dashed  border-black/30">
+                            <div className="w-[25%] h-full ">
+                                <p className='text-2xl font-semibold'>{service.title}</p>
+                            </div>
+                            <div className="w-[35%] h-full ">
+                                <img className='w-full h-full object-cover' src={service.image} alt="" />
+                            </div>
+                            <div className="w-[40%] h-full flex items-center justify-between flex-col ">
+                                {
+                                    service.description.map((desc, i) => (
+                                        <p key={i}>{desc}</p>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    )
+}
+
+export default AboutServices

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Suisse_Intl_light";
+  src: url(../../public/fonts/SuisseIntl-Light.woff2);
+}
+@font-face {
+  font-family: "Suisse_Intl_regular";
+  src: url(../../public/fonts/SuisseIntl-Regular.woff2);
+}
+
+@import "tailwindcss";
+
+body{
+  overflow-x: hidden;
+  width: 100%;
+  color: #0e1111;
+  background-color: #FFFAF0;
+}
+p {
+  font-family: Suisse_Intl_regular;
+}
+.scroller_none::-webkit-scrollbar{
+  display: none;
+}
+.fixy1{
+  transform: translateY(1px);
+}
+.fixy1_5{
+  transform: translateY(1.5px);
+}
+.black {
+  background-color: #0e1111;
+}
+.font_light{
+  font-family: Suisse_Intl_light;
+}
+button{
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
