@@ -7,40 +7,40 @@ import { useEffect } from 'react';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const FranchiseHero = () => {
-    useEffect(() => {
+    // useEffect(() => {
 
-        const split1 = new SplitText(".fr_hr_anim_txt_a", { type: "words" });
-        const split2 = new SplitText(".fr_hr_anim_txt_b", { type: "words" });
+    //     const split1 = new SplitText(".fr_hr_anim_txt_a", { type: "words" });
+    //     const split2 = new SplitText(".fr_hr_anim_txt_b", { type: "words" });
 
-        gsap.fromTo(".fr_hr_anim_img",
-            { filter: "blur(10px) brightness(0.3)" },
-            {
-                filter: "blur(0px) brightness(0.3)",
-                duration: 0.5,
-            }, "parallel");
+    //     gsap.fromTo(".fr_hr_anim_img",
+    //         { filter: "blur(10px) brightness(0.3)" },
+    //         {
+    //             filter: "blur(0px) brightness(0.3)",
+    //             duration: 0.5,
+    //         }, "parallel");
 
-        gsap.fromTo(".fr_hr_anim_txt",
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                delay: 0.1,
-                duration: 0.5,
-                stagger: 0.005,
-            }, "parallel");
+    //     gsap.fromTo(".fr_hr_anim_txt",
+    //         { y: 20, opacity: 0 },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             delay: 0.1,
+    //             duration: 0.5,
+    //             stagger: 0.005,
+    //         }, "parallel");
 
-        gsap.fromTo(
-            [split1.words, split2.words],
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                delay: 0.1,
-                duration: 0.5,
-                stagger: 0.005,
-            }, "parallel");
+    //     gsap.fromTo(
+    //         [split1.words, split2.words],
+    //         { y: 20, opacity: 0 },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             delay: 0.1,
+    //             duration: 0.5,
+    //             stagger: 0.005,
+    //         }, "parallel");
 
-    }, [])
+    // }, [])
 
 
 

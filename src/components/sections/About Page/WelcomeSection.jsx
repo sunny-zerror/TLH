@@ -6,43 +6,43 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const WelcomeSection = () => {
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const split1 = new SplitText(".welc_animate_txt_a", { type: "words" });
-            const split2 = new SplitText(".welc_animate_txt_b", { type: "words" });
+    // useEffect(() => {
+    //     const ctx = gsap.context(() => {
+    //         const split1 = new SplitText(".welc_animate_txt_a", { type: "words" });
+    //         const split2 = new SplitText(".welc_animate_txt_b", { type: "words" });
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".welc_parent",
-                    start: "top 60%",
-                    // markers: true,
-                    toggleActions: "play none none reverse",
-                }
-            })
+    //         const tl = gsap.timeline({
+    //             scrollTrigger: {
+    //                 trigger: ".welc_parent",
+    //                 start: "top 60%",
+    //                 // markers: true,
+    //                 toggleActions: "play none none reverse",
+    //             }
+    //         })
 
-            tl.fromTo(
-                [split1.words, split2.words],
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.005,
-                }, "parallel");
-            tl.fromTo(".welc_animate_txt",
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
+    //         tl.fromTo(
+    //             [split1.words, split2.words],
+    //             { y: 20, opacity: 0 },
+    //             {
+    //                 y: 0,
+    //                 opacity: 1,
+    //                 duration: 0.5,
+    //                 stagger: 0.005,
+    //             }, "parallel");
+    //         tl.fromTo(".welc_animate_txt",
+    //             { y: 20, opacity: 0 },
+    //             {
+    //                 y: 0,
+    //                 opacity: 1,
+    //                 duration: 0.5,
+    //                 stagger: 0.05,
+    //             }, "parallel");
 
 
-        });
+    //     });
 
-        return () => ctx.revert();
-    }, []);
+    //     return () => ctx.revert();
+    // }, []);
 
     return (
         <div className='welc_parent'>

@@ -46,44 +46,44 @@ const FeedbackSection = () => {
                 }
             })
 
-            tl.fromTo(".animate_txt_a",
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
+            // tl.fromTo(".animate_txt_a",
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
 
-            tl.fromTo(split1.words,
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.008,
-                }, "parallel");
+            // tl.fromTo(split1.words,
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         duration: 0.5,
+            //         stagger: 0.008,
+            //     }, "parallel");
 
-            tl.fromTo(".animate_txt_b",
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    delay: 0.2,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
+            // tl.fromTo(".animate_txt_b",
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         delay: 0.2,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
 
-            tl.fromTo(
-                ".feed_pic",
-                { scale: 0, },
-                {
-                    scale: 1,
-                    ease: "circ.inOut",
-                    delay: 0.5,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
+            // tl.fromTo(
+            //     ".feed_pic",
+            //     { scale: 0, },
+            //     {
+            //         scale: 1,
+            //         ease: "circ.inOut",
+            //         delay: 0.5,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
                 
             tl.fromTo(
                 ".feed_star",
@@ -97,15 +97,15 @@ const FeedbackSection = () => {
                     stagger: 0.05,
                 }, "parallel");
 
-            tl.fromTo(
-                ".feed_line",
-                { height:0 },
-                {
-                    height: "70%",
-                    delay: 0.8,
-                    duration: 0.5,
-                    stagger: 0.01,
-                }, "parallel");
+            // tl.fromTo(
+            //     ".feed_line",
+            //     { height:0 },
+            //     {
+            //         height: "70%",
+            //         delay: 0.8,
+            //         duration: 0.5,
+            //         stagger: 0.01,
+            //     }, "parallel");
 
         });
 

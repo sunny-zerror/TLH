@@ -4,9 +4,10 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
 import { motion, AnimatePresence } from "framer-motion";
+import CustomEase from 'gsap/dist/CustomEase';
 
 const cardVariants = {
     hidden: {
@@ -150,7 +151,10 @@ const index = () => {
     };
 
     useEffect(() => {
-        gsap.fromTo(".serv_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
+
+              CustomEase.create("custom","0.785, 0.135, 0.15, 0.86")
+        
+        // gsap.fromTo(".serv_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
 
         gsap.fromTo(
             ".serv_clip",
@@ -160,15 +164,15 @@ const index = () => {
             },
             {
                 delay: 0.1,
-                stagger: 0.2,
-                ease: "power2.inOut",
+                stagger: 0.15,
+                ease: "custom",
                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                 filter: "blur(0px)",
-                duration: 0.6,
+                duration: 0.8,
             }, "parallel");
 
-        gsap.fromTo(".serv_txt_b", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1.5, duration: 0.5, stagger: 0.05 });
-        gsap.fromTo(".serv_line", { opacity: 0 }, { opacity: 1, delay: 0.5, duration: 0.5, });
+        // gsap.fromTo(".serv_txt_b", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1.5, duration: 0.5, stagger: 0.05 });
+        // gsap.fromTo(".serv_line", { opacity: 0 }, { opacity: 1, delay: 0.5, duration: 0.5, });
     }, [])
 
 

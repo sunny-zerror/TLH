@@ -81,32 +81,32 @@ const Responsibility = () => {
                     toggleActions: "play none none reverse",
                 }
             })
-            tl.fromTo(".resp_anim_txt",
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
+            // tl.fromTo(".resp_anim_txt",
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
 
-            tl.fromTo(".resp_card_txt",
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    delay: 1,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
-            tl.from(".resp_card_line",
+            // tl.fromTo(".resp_card_txt",
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         delay: 1,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
+            // tl.from(".resp_card_line",
 
-                {
-                    width: 0,
-                    delay: 1.2,
-                    duration: 0.5,
-                    stagger: 0.05,
-                }, "parallel");
+            //     {
+            //         width: 0,
+            //         delay: 1.2,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
 
             tl.fromTo(
                 ".resp_card",

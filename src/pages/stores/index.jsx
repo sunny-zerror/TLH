@@ -38,35 +38,35 @@ const Index = () => {
 
     // ✅ Intro animation (kept same as your original)
     useEffect(() => {
-        gsap.fromTo(".below_chng_clk", { width: 0 }, { width: "100%", delay: 1, stagger: 0.1, duration: 0.5 });
-        gsap.fromTo(".store_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
-        gsap.fromTo(".store_txt_b", { y: 20, opacity: 0 }, { y: "4px", opacity: 1, delay: 1, duration: 0.5, stagger: 0.05 });
-        gsap.fromTo(".store_txt_c", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1, duration: 0.5, stagger: 0.05 });
-        gsap.fromTo(".store_txt_d", { y: 25, opacity: 0 }, { y: "1.5px", opacity: 1, delay: 0.2, duration: 0.2, stagger: 0.1 });
-        gsap.fromTo(".table_ver_line", { height: 0 }, { height: "100%", delay: 1, duration: 0.5, stagger: 0.2 });
-        gsap.from(".table_border", { opacity: 0, delay: 0.8, duration: 0.5, stagger: 0.2 });
-        gsap.from(".chnge_cat_tble", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5, stagger: 0.2 });
-        gsap.from(".chnge_cat_tble_b", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5, stagger: 0.2 });
+        gsap.fromTo(".below_chng_clk", { width: 0 }, { width: "100%", delay: 1,  duration: 0.5 });
+        gsap.fromTo(".store_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5,  });
+        gsap.fromTo(".store_txt_b", { y: 20, opacity: 0 }, { y: "4px", opacity: 1, delay: 1, duration: 0.5,  });
+        gsap.fromTo(".store_txt_c", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1, duration: 0.5,  });
+        gsap.fromTo(".store_txt_d", { y: 25, opacity: 0 }, { y: "1.5px", opacity: 1, delay: 0.2, duration: 0.2,  });
+        gsap.fromTo(".table_ver_line", { height: 0 }, { height: "100%", delay: 1, duration: 0.5,  });
+        gsap.from(".table_border", { opacity: 0, delay: 0.8, duration: 0.5,  });
+        gsap.from(".chnge_cat_tble", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5,  });
+        gsap.from(".chnge_cat_tble_b", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5,  });
     }, []);
 
     return (
         <div>
             {/* Header Section */}
             <div className="w-full center flex-col pt-32">
-                <p className='text-6xl store_txt_a'>Our Stores</p>
-                <p className='text-xl store_txt_a'>Find a store near you to experience our services firsthand.</p>
+                <p className='text-6xl '>Our Stores</p>
+                <p className='text-xl '>Find a store near you to experience our services firsthand.</p>
             </div>
 
             {/* City Tabs */}
-            <div className="chnge_cat_tble_b tags w-full mt-16 px-24 h-10 border-b scroller_none border-black/20 flex items-center gap-10">
+            <div className=" tags w-full mt-16 px-24 h-10 border-b scroller_none border-black/20 flex items-center gap-10">
                 {uniqueCity.map(city => (
                     <div
                         key={city}
                         onClick={() => setactiveCity(city)}
                         className={`relative shrink-0 whitespace-nowrap h-full flex items-center justify-center cursor-pointer transition duration-300 ${activeCity === city ? "" : "text-black/40"}`}
                     >
-                        <AnimatedText uniqueKey={city} className="store_txt_a">{city}</AnimatedText>
-                        <div className={`below_chng_clk absolute -bottom-[1.5px] z-[9] w-full black rounded-full h-[2px] transition duration-300 ${activeCity === city ? "opacity-100" : "opacity-0"}`}></div>
+                        <AnimatedText uniqueKey={city} className="">{city}</AnimatedText>
+                        <div className={` absolute -bottom-[1.5px] z-[9] w-full black rounded-full h-[2px] transition duration-300 ${activeCity === city ? "opacity-100" : "opacity-0"}`}></div>
                     </div>
                 ))}
             </div>

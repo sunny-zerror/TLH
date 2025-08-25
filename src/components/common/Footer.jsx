@@ -8,35 +8,35 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Footer = () => {
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".fot_parent",
-          start: "top 60%",
-          // markers: true,
-          toggleActions: "play none none reverse",
-        }
-      })
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: ".fot_parent",
+  //         start: "top 60%",
+  //         // markers: true,
+  //         toggleActions: "play none none reverse",
+  //       }
+  //     })
 
-      tl.fromTo(".fot_anim_txt",
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          delay: 0.2,
-          duration: 0.5,
-          stagger: 0.02,
-        }, "parallel");
-
-
+  //     tl.fromTo(".fot_anim_txt",
+  //       { y: 20, opacity: 0 },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         delay: 0.2,
+  //         duration: 0.5,
+  //         stagger: 0.02,
+  //       }, "parallel");
 
 
-    });
 
-    return () => ctx.revert();
-  }, []);
+
+  //   });
+
+  //   return () => ctx.revert();
+  // }, []);
   return (
     <div className='fot_parent'>
       <div className="w-full  black  text-white px-24 pt-24">

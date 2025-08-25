@@ -7,45 +7,45 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const AboutSection = () => {
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const split1 = new SplitText(".hero_animate_txt_a", { type: "words" });
-      const split2 = new SplitText(".hero_animate_txt_b", { type: "words" });
-      const split3 = new SplitText(".hero_animate_txt_c", { type: "words" });
-      const split4 = new SplitText(".hero_animate_txt_d", { type: "words" });
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     const split1 = new SplitText(".hero_animate_txt_a", { type: "words" });
+  //     const split2 = new SplitText(".hero_animate_txt_b", { type: "words" });
+  //     const split3 = new SplitText(".hero_animate_txt_c", { type: "words" });
+  //     const split4 = new SplitText(".hero_animate_txt_d", { type: "words" });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about_parent",
-          start: "top 60%",
-          // markers: true,
-          toggleActions: "play none none reverse",
-        }
-      })
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: ".about_parent",
+  //         start: "top 60%",
+  //         // markers: true,
+  //         toggleActions: "play none none reverse",
+  //       }
+  //     })
 
-      tl.fromTo(
-        [split1.words, split2.words],
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          stagger: 0.05,
-        }, "parallel");
+  //     tl.fromTo(
+  //       [split1.words, split2.words],
+  //       { y: 20, opacity: 0 },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         duration: 0.5,
+  //         stagger: 0.05,
+  //       }, "parallel");
 
-      tl.fromTo(
-        [split3.words, split4.words, ".learn_btn"],
-        { y: 10, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          stagger: 0.005,
-        }, "parallel");
-    });
+  //     tl.fromTo(
+  //       [split3.words, split4.words, ".learn_btn"],
+  //       { y: 10, opacity: 0 },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         duration: 0.5,
+  //         stagger: 0.005,
+  //       }, "parallel");
+  //   });
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
 
 

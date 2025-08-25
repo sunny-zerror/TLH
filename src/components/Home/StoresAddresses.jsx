@@ -39,9 +39,9 @@ const StoresAddresses = () => {
                 }
             })
 
-            tl.fromTo(".add_anim_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05 });
+            // tl.fromTo(".add_anim_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05 });
             tl.fromTo(".add_anim_line", { width: 0 }, { width: "100%", duration: 0.5, stagger: 0.05 });
-            tl.fromTo(".add_anim_txt_btn", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.2, stagger: 0.05 });
+            // tl.fromTo(".add_anim_txt_btn", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.2, stagger: 0.05 });
         });
 
         return () => ctx.revert();
@@ -68,7 +68,7 @@ const StoresAddresses = () => {
                         <div className="">
                             <p className=' add_anim_txt_a text-sm opacity-60 uppercase'>location</p>
                         </div>
-                        <div className=" add_anim_line absolute w-full h-[1px] rounded-full black opacity-80 bottom-0"></div>
+                        <div className="  absolute w-full h-[1px] rounded-full black opacity-80 bottom-0"></div>
                     </div>
 
                     {

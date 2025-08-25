@@ -38,30 +38,30 @@ const AboutServices = () => {
                 }
             })
 
-            tl.fromTo(split1.words,
-                { y: 20, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.005,
-                }, "parallel");
+            // tl.fromTo(split1.words,
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         duration: 0.5,
+            //         stagger: 0.005,
+            //     }, "parallel");
                 
-                tl.from(".ab_border_anim",{
-                    borderColor:"transparent",
-                    delay:0.5,
-                    duration:1,
-                },"parallel")
+                // tl.from(".ab_border_anim",{
+                //     borderColor:"transparent",
+                //     delay:0.5,
+                //     duration:1,
+                // },"parallel")
 
 
-            tl.fromTo(".ab_anim_txt",
-                { y: 10, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.005,
-                }, "parallel");
+            // tl.fromTo(".ab_anim_txt",
+            //     { y: 10, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         duration: 0.5,
+            //         stagger: 0.005,
+            //     }, "parallel");
 
                    tl.fromTo(
                 ".ab_clip_img",

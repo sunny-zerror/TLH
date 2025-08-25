@@ -122,7 +122,7 @@ const ServicesSection = () => {
                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             }, {
                 clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-                filter: "blur(8px)",
+                // filter: "blur(8px)",
             }, "pa")
             tl2.fromTo(".slide_inn_3", {
                 y: 0,
@@ -139,7 +139,7 @@ const ServicesSection = () => {
                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             }, {
                 clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-                filter: "blur(8px)",
+                // filter: "blur(8px)",
             }, "pa2")
             tl2.fromTo(".slide_inn_2", {
                 y: 0,
@@ -156,7 +156,7 @@ const ServicesSection = () => {
                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             }, {
                 clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-                filter: "blur(8px)",
+                // filter: "blur(8px)",
             }, "pa3")
             tl2.fromTo(".slide_inn_1", {
                 y: 0,

@@ -18,7 +18,7 @@ const excellenceData = [{
     para: "Guaranteed satisfaction with insured garment protection"
 }]
 
-const ExcelleceSection = () => {
+const AboutExcelleceSection = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -104,7 +104,7 @@ const ExcelleceSection = () => {
 
     return (
         <div className='excellence_parent'>
-            <div className="w-full pb-24 px-24 center">
+            <div className="w-full p-24 center">
                 <div className="w-full  flex flex-col items-center justify-center gap-20">
                     <div className="w-full text-center">
                         <div className='text-6xl uppercase font-semibold'>
@@ -131,4 +131,4 @@ const ExcelleceSection = () => {
     )
 }
 
-export default ExcelleceSection
+export default AboutExcelleceSection

@@ -19,8 +19,8 @@ const FranchiseSection = () => {
                     toggleActions: "play none none reverse",
                 }
             })
-            tl.fromTo(".fr_bg_img", { filter: "blur(10px) brightness(0.3)", }, { filter: "blur(0px) brightness(0.4)", duration: 0.5 })
-            tl.fromTo(".fr_anim_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05 });
+            tl.fromTo(".fr_bg_img", { filter: " brightness(0.3)", }, { filter: " brightness(0.4)", duration: 0.5 })
+            // tl.fromTo(".fr_anim_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05 });
             const tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".fran_parent",
@@ -33,7 +33,7 @@ const FranchiseSection = () => {
             })
             tl2.to(".fr_txt_box", {
                 top: "-50%",
-                duration: 150,
+                duration: 180,
                 delay: 1
             }, "par")
 
@@ -42,9 +42,7 @@ const FranchiseSection = () => {
                 { opacity: 0.2 },
                 {
                     opacity: 1,
-                    duration: 0.3,   
                     stagger: { each: 0.3 }, 
-                    ease: "power1.inOut"
                 },
                 "par"
             );

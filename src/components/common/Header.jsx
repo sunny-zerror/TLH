@@ -75,7 +75,7 @@ const Header = () => {
       >
         <div className="w-[20%]">
           <a href="/">
-            <img className='w-[15vw]' src="/logos/Logo_White.svg" alt="" />
+            <img className='w-[12vw]' src="/logos/Logo_White.svg" alt="" />
           </a>
         </div>
         <div className="flex items-center gap-8">
@@ -95,7 +95,7 @@ const Header = () => {
               ></div>
 
               {router.pathname === link.url && (
-                <div className="absolute size-1 rounded-full bg-white bottom-0"></div>
+                <div className="absolute w-full h-[1.5px] left-0 rounded-full bg-white bottom-0"></div>
               )}
             </a>
           ))}

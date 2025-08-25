@@ -42,7 +42,7 @@ const FranchiseForm = () => {
 
             tl.from((".input_line"),
                 {
-                    width: 0,
+                    opacity: 0,
                     duration: 0.5,
                     delay: 0.2,
                     stagger: 0.05,
