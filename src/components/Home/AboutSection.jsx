@@ -62,9 +62,9 @@ const AboutSection = () => {
             the life and beauty of your most cherished items. We combine state-of-the-art technology with eco-friendly practices to deliver a service that is as kind to your clothes as it is to the planet.</p> <br />
           <p className='hero_animate_txt_d'>Our pioneering "Live Laundry Studios" offer complete transparency, allowing
             you to witness the meticulous care your garments receive</p> <br />
-          <button className=' learn_btn relative overflow-hidden group rounded-full border-2 border-[#0e1111] px-4 py-1 lg:px-6 center font-bold lg:py-2'>
+          <button className=' learn_btn relative overflow-hidden group  text-white lg:text-black font-thin bg-black lg:bg-transparent  rounded-full border-2 border-[#0e1111] px-4 py-1 lg:px-6 center lg:font-bold lg:py-2'>
             <p className='fixy1 font_light opacity-0'>About Our Process</p>
-            <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Learn More </p>
+            <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Learn More </p>
             <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
             <p className='fixy1 font-light translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute'> About Our Process</p>
           </button>

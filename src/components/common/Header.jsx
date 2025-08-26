@@ -118,10 +118,10 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`nav w-full fixed h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
+      className={`nav w-full fixed h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
         transition-colors duration-500 ease-in-out 
         ${isScrolled ? "bg-black text-white" : "bg-transparent text-white"}`}
-      >
+    >
         <div className=" w-[40%] md:w-[20%]">
           <Link href="/" className='w-full'>
             <img className='w-[100%] lg:w-[12vw]' src="/logos/Logo_White.svg" alt="" />
@@ -133,15 +133,15 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.url}
-              className="relative  overflow-hidden flex flex-col items-center"
+              className="relative  group overflow-hidden flex flex-col items-center"
               onMouseEnter={() => handleMouseEnter(link, i)}
               onMouseLeave={() => handleMouseLeave(link, i)}
             >
               <p className="text-base">{link.title}</p>
 
               <div
-                ref={(el) => (lineRefs.current[i] = el)}
-                className="absolute bottom-0 h-[2px] w-full bg-white rounded-full -left-[101%]"
+                // ref={(el) => (lineRefs.current[i] = el)}
+                className="absolute bottom-0 h-[2px] group-hover:left-0 transition-all duration-300 w-full bg-white rounded-full -left-[101%]"
               ></div>
 
               {router.pathname === link.url && (

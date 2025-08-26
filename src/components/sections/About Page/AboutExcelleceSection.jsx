@@ -111,7 +111,7 @@ const AboutExcelleceSection = () => {
                             <p className='ex_animate_txt_a'>Excellence</p>
                             <p className='ex_animate_txt_b'>in Every Detail</p>
                         </div>
-                        <p className=' text-base leading-none mt-2 lg:mt-0  lg:text-xl ex_animate_txt_c'>State-of-the-art equipment and eco-friendly processes for superior results</p>
+                        <p className=' text-base leading-none mt-2   lg:text-xl ex_animate_txt_c'>State-of-the-art equipment and eco-friendly processes for superior results</p>
                     </div>
                     <div className="w-full    flex flex-col md:flex-row items-center justify-center gap-10">
                         {excellenceData.map((item, index) => (

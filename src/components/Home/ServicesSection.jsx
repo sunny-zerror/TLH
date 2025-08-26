@@ -135,9 +135,11 @@ const ServicesSection = () => {
                 // filter: "blur(8px)",
             }, "pa")
             tl2.fromTo(".slide_inn_3", {
-                y: 0,
-            }, {
-                y: -400,
+                // y: 0,
+                scale:1 
+                       }, {
+                // y: -400,
+                scale:0.9
             }, "pa")
             tl2.fromTo(".slide_inn_2", {
                 y: 400,
@@ -152,9 +154,11 @@ const ServicesSection = () => {
                 // filter: "blur(8px)",
             }, "pa2")
             tl2.fromTo(".slide_inn_2", {
-                y: 0,
+                // y: 0,
+                scale:1
             }, {
-                y: -400,
+                // y: -400,
+                scale:0.9
             }, "pa2")
             tl2.fromTo(".slide_inn_1", {
                 y: 400,
@@ -169,9 +173,11 @@ const ServicesSection = () => {
                 // filter: "blur(8px)",
             }, "pa3")
             tl2.fromTo(".slide_inn_1", {
-                y: 0,
+                // y: 0,
+                scale:1
             }, {
-                y: -400,
+                // y: -400,
+                scale:0.9
             }, "pa3")
             tl2.fromTo(".slide_inn_0", {
                 y: 400,

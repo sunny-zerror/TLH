@@ -52,38 +52,38 @@ const FranchiseNumbers = () => {
     }, []);
 
 
-    // useEffect(() => {
-    //     const ctx = gsap.context(() => {
+    useEffect(() => {
+        const ctx = gsap.context(() => {
 
-    //         const tl = gsap.timeline({
-    //             scrollTrigger: {
-    //                 trigger: ".numb_parent",
-    //                 start: "top 60%",
-    //                 // markers: true,
-    //                 toggleActions: "play none none reverse",
-    //             }
-    //         })
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".numb_parent",
+                    start: "top 60%",
+                    // markers: true,
+                    // toggleActions: "play none none reverse",
+                }
+            })
 
-    //         tl.fromTo(".numb_animate_txt_a",
-    //             { y: 20, opacity: 0 },
-    //             {
-    //                 y: 0,
-    //                 opacity: 1,
-    //                 duration: 0.5,
-    //                 stagger: 0.05,
-    //             }, "parallel");
+            // tl.fromTo(".numb_animate_txt_a",
+            //     { y: 20, opacity: 0 },
+            //     {
+            //         y: 0,
+            //         opacity: 1,
+            //         duration: 0.5,
+            //         stagger: 0.05,
+            //     }, "parallel");
 
-    //         tl.from(".numb_line",
-    //             {
-    //                 width: 0,
-    //                 duration: 0.5,
-    //                 stagger: 0.07,
-    //             }, "parallel");
+            tl.from(".numb_line",
+                {
+                    width: 0,
+                    duration: 0.5,
+                    stagger: 0.07,
+                }, "parallel");
 
-    //     });
+        });
 
-    //     return () => ctx.revert();
-    // }, []);
+        return () => ctx.revert();
+    }, []);
 
     return (
         <div className="numb_parent" ref={sectionRef}>
@@ -93,7 +93,7 @@ const FranchiseNumbers = () => {
                         <p className="numb_animate_txt_a text-[3vw] leading-none md:text-xs lg:text-sm uppercase">
                             {item.title}
                         </p>
-                        <div className="numb_line w-full h-[1.5px] black rounded-full mt-2 mb-5 md:mb-8"></div>
+                        <div className="numb_line w-full h-[2px] black rounded-full mt-2 mb-5 md:mb-8"></div>
                         <div className="flex items-end gap-2">
                             {/* Animate this number */}
                             <p

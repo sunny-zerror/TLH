@@ -128,12 +128,12 @@ const index = () => {
         gsap.to(slideRef.current, {
             right: 0,
             duration: 1,
-            ease:"custom"
+            ease: "custom"
         });
         gsap.to(overlayRef.current, {
             opacity: 1,
             duration: 1,
-            ease:"custom"
+            ease: "custom"
         });
     };
     const closeService = () => {
@@ -142,12 +142,12 @@ const index = () => {
         gsap.to(slideRef.current, {
             right: "-100%",
             duration: 1,
-            ease:"custom"
+            ease: "custom"
         });
         gsap.to(overlayRef.current, {
             opacity: 0,
             duration: 1,
-            ease:"custom"
+            ease: "custom"
 
         });
     };
@@ -207,27 +207,27 @@ const index = () => {
                     <div className="w-full h-[1.5px] black opacity-60"></div>
                 </div>
                 <div className="w-full ">
-                     <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:font-semibold border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
-                                                                        <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
-                                                                        <p className=' fixy1_5 '>Book Now</p>
-                                                                        <RiArrowRightUpLine size={24} className='z-[99]' />
-                                                                    </button>
+                    <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:font-semibold border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
+                        <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
+                        <p className=' fixy1_5 '>Book Now</p>
+                        <RiArrowRightUpLine size={24} className='z-[99]' />
+                    </button>
                 </div>
             </div>
 
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
                 <div className="block overflow-hidden">
-                <p className=' serv_txt_a  text-3xl lg:text-6xl'>Our Services</p>
+                    <p className=' serv_txt_a  text-3xl lg:text-6xl'>Our Services</p>
                 </div>
                 <div className="block overflow-hidden">
-                <p className='serv_txt_a lg:text-xl'>Explore the range of services we offer to care for your garments.</p>
+                    <p className='serv_txt_a lg:text-xl'>Explore the range of services we offer to care for your garments.</p>
                 </div>
             </div>
             <div className="tags w-full mt-5 lg:mt-16 px-5 lg:px-24 h-10 border-b scroller_none overflow-x-scroll gap-5 border-black/20  flex items-center justify-between">
                 {uniqueTags.map(tag => (
                     <div onClick={() => changeTag(tag)} key={tag} className={`relative shrink-0 whitespace-nowrap h-full flex items-center cursor-pointer transition duration-300 ${activeTag === tag ? " " : "text-black/40"}`}>
                         <div className="block overflow-hidden">
-                        <p className=' text-sm lg:text-base'>{tag}</p>
+                            <p className=' text-sm lg:text-base'>{tag}</p>
                         </div>
                         <div className={` serv_line opacity-100 absolute -bottom-[1.5px] z-[9]  bg-black rounded-full h-[2px] transition-all origin-center duration-300 ${activeTag === tag ? "w-full" : "w-0"}`}></div>
                     </div>
@@ -259,7 +259,7 @@ const index = () => {
                                     <div>
                                         <button
                                             onClick={() => openService(service)}
-                                            className=' add_anim_txt_btn relative overflow-hidden group rounded-full border-2 border-[#0e1111] px-6 center font-bold py-1'>
+                                            className=' add_anim_txt_btn relative overflow-hidden group rounded-full text-white lg:text-black font-thin bg-black lg:bg-transparent border-2 border-[#0e1111] px-6 center lg:font-bold py-1'>
                                             <p className='fixy1 font_light opacity-0'>Book Now</p>
                                             <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Book Now </p>
                                             <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>

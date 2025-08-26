@@ -49,15 +49,12 @@ const StoresAddresses = () => {
 
 
     return (
-        <div className='add_anim_parent mt-16 '>
-            <div className="w-full py-16 lg:pt-0  p-5 lg:p-24">
+        <div className='add_anim_parent '>
+            <div className="w-full py-16    p-5 lg:p-24">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="">
                         <p className=' text-3xl leading-none  lg:text-6xl add_anim_txt_a '>Serving You Across India</p>
-                        <p className=' mt-2 lg:mt-0 lg:text-xl add_anim_txt_a leading-none'>Find The Laundry House in 9 major cities and growing.</p>
-                    </div>
-                    <div className=" text-xs lg:text-base add_anim_txt_a  flex items-end justify-end">
-                        <p>(20 Stores)</p>
+                        <p className=' mt-2  lg:text-xl add_anim_txt_a leading-none'>Find The Laundry House in 9 major cities and growing.</p>
                     </div>
                 </div>
                 <div className="w-full mt-10">
@@ -65,29 +62,32 @@ const StoresAddresses = () => {
                         <div className=" w-[35%] lg:w-[25%] shrink-0">
                             <p className=' add_anim_txt_a text-xs md:text-sm opacity-60 uppercase'>CITY</p>
                         </div>
-                        <div className="">
+                        <div className=" flex justify-between w-full">
                             <p className=' add_anim_txt_a text-xs md:text-sm opacity-60 uppercase'>location</p>
+                            <div className=" text-xs lg:text-base add_anim_txt_a  flex items-end justify-end">
+                        <p>(20 Stores)</p>
+                    </div>
                         </div>
                         <div className="  absolute w-full h-[1px] rounded-full black opacity-80 bottom-0"></div>
                     </div>
 
                     {
                         Addresses.map((item, index) => (
-                            <div key={index} className="w-full py-3 lg:py-0 lg:h-14 relative  flex items-center">
+                            <div key={index} className="w-full cursor-pointer group py-3 lg:py-0 lg:h-14 relative  flex items-center">
                                 <div className=" w-[35%] lg:w-[25%] shrink-0">
                                     <p className=' add_anim_txt_a text-xs md:text-sm font-semibold  uppercase'>{item.city}</p>
                                 </div>
                                 <div className="">
                                     <p className=' add_anim_txt_a text-xs md:text-sm  uppercase'>{item.location}</p>
                                 </div>
-                                <div className="absolute add_anim_line w-full h-[1px] rounded-full black opacity-20  bottom-0"></div>
+                                <div className="group-hover:opacity-100 group-hover:h-[2px] transition-all duration-150  absolute add_anim_line w-full h-[1px] rounded-full black opacity-20  bottom-0"></div>
                             </div>
                         ))
                     }
                     <div className="w-full center mt-10">
-                        <button className=' text-xs lg:text-base add_anim_txt_btn relative overflow-hidden group rounded-full border-2 border-[#0e1111] px-6 center font-bold py-1.5'>
+                        <button className=' text-xs lg:text-base add_anim_txt_btn relative  text-white lg:text-black font-thin bg-black lg:bg-transparent  overflow-hidden group rounded-full border-2 border-[#0e1111] px-6 center lg:font-bold py-1.5'>
                             <p className='fixy1 font_light opacity-0'>Load More</p>
-                            <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Load More </p>
+                            <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Load More </p>
                             <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
                             <p className='fixy1 font-light translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute'> Load More</p>
                         </button>
