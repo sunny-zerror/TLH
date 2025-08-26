@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react'
 import { CustomEase } from 'gsap/dist/CustomEase';
+import Link from 'next/link';
 gsap.registerPlugin(CustomEase);
 
 const links = [{
@@ -33,12 +34,19 @@ const Header = () => {
   const lineRefs = useRef([]);
 
   useEffect(() => {
-    if (router.pathname === "/services" || router.pathname === "/stores" || router.pathname === "/franchise" || router.pathname === "/404") {
+    // Pages where nav should always be black
+    if (
+      router.pathname === "/services" ||
+      router.pathname === "/stores" ||
+      router.pathname === "/franchise" ||
+      router.pathname === "/404"
+    ) {
       setIsScrolled(true);
       return;
     }
 
-    const handleScroll = () => {
+    // For other pages → reset on route change
+    const checkScroll = () => {
       if (window.scrollY > window.innerHeight) {
         setIsScrolled(true);
       } else {
@@ -46,8 +54,11 @@ const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Run immediately on route load
+    checkScroll();
+
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
   }, [router.pathname]);
 
   const handleMouseEnter = (link, index) => {
@@ -107,19 +118,19 @@ const Header = () => {
   return (
     <div>
       <div
-        className={` nav w-full fixed h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
-          transition-colors duration-500 ease-in-out 
-          ${isScrolled ? "black text-white" : "bg-transparent text-white"}`}
+        className={`nav w-full fixed h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
+        transition-colors duration-500 ease-in-out 
+        ${isScrolled ? "bg-black text-white" : "bg-transparent text-white"}`}
       >
         <div className=" w-[40%] md:w-[20%]">
-          <a href="/" className='w-full'>
+          <Link href="/" className='w-full'>
             <img className='w-[100%] lg:w-[12vw]' src="/logos/Logo_White.svg" alt="" />
-          </a>
+          </Link>
         </div>
         <RiMenu3Line className='lg:hidden' onClick={openMenu} />
         <div className=" hidden  lg:flex items-center gap-8">
           {links.map((link, i) => (
-            <a
+            <Link
               key={link.title}
               href={link.url}
               className="relative  overflow-hidden flex flex-col items-center"
@@ -136,7 +147,7 @@ const Header = () => {
               {router.pathname === link.url && (
                 <div className="absolute w-full h-[1.5px] left-0 rounded-full bg-white bottom-0"></div>
               )}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="hidden  lg:flex items-center  justify-end  w-[20%]">
@@ -156,22 +167,14 @@ const Header = () => {
         </div>
         <div className="w-full h-full center flex-col gap-5">
           {links.map((link, i) => (
-            <a
+            <Link
+              onClick={closeMenu}
               key={link.title}
               href={link.url}
               className="relative text-black  overflow-hidden flex flex-col items-center"
             >
               <p className=" anii text-3xl uppercase">{link.title}</p>
-
-              <div
-                ref={(el) => (lineRefs.current[i] = el)}
-                className="absolute bottom-0 h-[2px] w-full bg-white rounded-full -left-[101%]"
-              ></div>
-
-              {router.pathname === link.url && (
-                <div className="absolute w-full h-[1.5px] left-0 rounded-full bg-white bottom-0"></div>
-              )}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

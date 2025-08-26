@@ -64,3 +64,21 @@ button{
   align-items: center;
   justify-content: center;
 }
+
+/* default Swiper pagination styling override */
+.swiper_elem_2 .swiper-pagination {
+  bottom: 0px !important;   /* push a bit up from bottom */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  text-align: center !important;
+}
+
+.swiper_elem_2 .swiper-pagination-bullet {
+  background: #000 !important; /* black bullets */
+  opacity: 0.2;
+}
+
+.swiper_elem_2 .swiper-pagination-bullet-active {
+  background: #000 !important; /* active bullet */
+  opacity: 1;
+}

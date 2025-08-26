@@ -16,19 +16,19 @@ gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
 const swiperData = [
   {
-    img: "/images/Hero swiper/pic_1.jpg",
+    img: "/images/Hero swiper/pic_1.webp",
     title: "Professional dry cleaning",
   },
   {
-    img: "/images/Hero swiper/pic_2.jpg",
+    img: "/images/Hero swiper/pic_2.webp",
     title: "Revive Your Shoes & Bags",
   },
   {
-    img: "/images/Hero swiper/pic_3.jpg",
+    img: "/images/Hero swiper/pic_3.webp",
     title: "Expert Cleaning and Care!",
   },
   {
-    img: "/images/Hero swiper/pic_4.jpg",
+    img: "/images/Hero swiper/pic_4.webp",
     title: "Bridal Elegance, Restored with Care",
   },
 ];
@@ -51,18 +51,19 @@ const HeroSwiper = () => {
       opacity: 0,
     }, {
       opacity: 1,
-      delay: .2,
       stagger: 0.2,
       ease: "custom"
     })
     gsap.to(".anim_ttxt", {
       opacity: 1,
       delay: 0,
+      duration: 0.5,
       ease: "custom"
     })
     gsap.to(".fixed_paren", {
       opacity: 0,
-      delay: 1,
+      delay: 0.7,
+      duration: 0.5,
       ease: "custom",
       onComplete: () => {
         gsap.set(".fixed_paren", { display: "none" });
@@ -71,8 +72,16 @@ const HeroSwiper = () => {
     gsap.to(swiperParentRef.current, {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       delay: 1,
-      duration: 1.5,
-      ease: "custom"
+      duration: 2,
+      ease: "expo.out"
+    })
+    gsap.fromTo(".chng_sl", {
+      y: -300
+    }, {
+      y: 0,
+      delay: 1,
+      duration: 2,
+      ease: "expo.out"
     })
 
     gsap.to(
@@ -97,8 +106,6 @@ const HeroSwiper = () => {
   const isAnimating = useRef(false);
   const autoplayRef = useRef(null);
 
-  // Go to slide
-  // Go to slide
   const goToSlide = (targetIndex) => {
     if (isAnimating.current || targetIndex === currentSlide) return;
     isAnimating.current = true;
@@ -247,30 +254,32 @@ const HeroSwiper = () => {
           </button>
         </div>
 
+        <div className="chng_sl w-full h-full relative">
 
-
-        {swiperData?.map((image, index) => (
-          <div
-            key={index}
-            ref={(el) => (slidesRef.current[index] = el)}
-            className={`change_slide_${index} scale-[1.105] absolute top-0 left-0 w-full h-full`}
-          >
-            <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2   flex   flex-col right-[10%] bottom-[13.6%] z-[9]">
-              <p className="text-sm leading-none capitalize text-white">{image.title}</p>
-              <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">
-                <div
-                  ref={(el) => (lineRefs.current[index] = el)}
-                  className="anim_line w-[0%] h-[1.5px] rounded-full opacity-80 bg-white"
-                ></div>
+          {swiperData?.map((image, index) => (
+            <div
+              key={index}
+              ref={(el) => (slidesRef.current[index] = el)}
+              className={`change_slide_${index}  scale-[1.105] absolute top-0 left-0 w-full h-full`}
+            >
+              <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2 flex flex-col right-[20%] md:right-[10%] bottom-[13.6%] z-[9]">
+                <p className="text-sm leading-none capitalize text-white">{image.title}</p>
+                <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">
+                  <div
+                    ref={(el) => (lineRefs.current[index] = el)}
+                    className="anim_line w-[0%] h-[1.5px] rounded-full opacity-80 bg-white"
+                  ></div>
+                </div>
               </div>
+              <img
+                className="w-full h-full object-cover brightness-[.8]"
+                src={image.img}
+                alt={image.title}
+              />
             </div>
-            <img
-              className="w-full h-full object-cover brightness-[.8]"
-              src={image.img}
-              alt={image.title}
-            />
-          </div>
-        ))}
+          ))}
+
+        </div>
 
         <div ref={parallexContainerRef} className=" z-[9] w-full absolute bottom-[-15vh] h-[15vh] bg-[#FFFAF0]"></div>
       </div>

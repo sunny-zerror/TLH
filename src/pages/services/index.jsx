@@ -14,13 +14,11 @@ const cardVariants = {
         opacity: 0,
         y: 20,
         clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-        filter: "blur(5px)"
     },
     visible: {
         opacity: 1,
         y: 0,
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        filter: "blur(0px)",
         transition: {
             duration: 0.6,
             ease: "easeInOut"
@@ -30,7 +28,6 @@ const cardVariants = {
         opacity: 0,
         y: -20,
         clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-        filter: "blur(5px)",
         transition: {
             duration: 0.4,
             ease: "easeInOut"
@@ -44,63 +41,63 @@ const Services = [
         title: "Garment Care",
         desc: "Professional dry cleaning and wet cleaning for all your precious garments.",
         Tags: ["Dry Cleaning", "Wet Cleaning"],
-        img: "/images/services/1_Garment Care.jpg"
+        img: "/images/services/1_Garment Care.webp"
     },
     {
         id: 2,
         title: "Shoe & Bags",
         desc: "Premium cleaning and restoration services for shoes and bags.",
         Tags: ["Shoe Cleaning", "Bag Cleaning"],
-        img: "/images/services/2_Shoe & Bags.jpg"
+        img: "/images/services/2_Shoe & Bags.webp"
     },
     {
         id: 3,
         title: "Home & Auto Fabrics",
         desc: "Deep cleaning for sofas, curtains, and carpets including auto upholstery.",
         Tags: ["Sofa Cleaning", "Curtain Cleaning", "Carpet Cleaning"],
-        img: "/images/services/3_Home & Auto Fabrics.jpg"
+        img: "/images/services/3_Home & Auto Fabrics.webp"
     },
     {
         id: 4,
         title: "Wedding Couture",
         desc: "Specialized cleaning and finishing of wedding gowns and couture dresses.",
         Tags: ["Dry Cleaning", "Steam Ironing"],
-        img: "/images/services/4_Wedding Couturer.jpg"
+        img: "/images/services/4_Wedding Couturer.webp"
     },
     {
         id: 5,
         title: "Laundry Essentials",
         desc: "Everyday laundry service with wet cleaning and steam ironing.",
         Tags: ["Wet Cleaning", "Steam Ironing"],
-        img: "/images/services/1_Garment Care.jpg"
+        img: "/images/services/1_Garment Care.webp"
     },
     {
         id: 6,
         title: "Curtains & Drapes",
         desc: "On-site and off-site curtain cleaning to remove dust and pollutants.",
         Tags: ["Curtain Cleaning"],
-        img: "/images/services/2_Shoe & Bags.jpg"
+        img: "/images/services/2_Shoe & Bags.webp"
     },
     {
         id: 7,
         title: "Carpet & Rugs",
         desc: "Professional carpet and rug cleaning with stain removal and deodorizing.",
         Tags: ["Carpet Cleaning"],
-        img: "/images/services/3_Home & Auto Fabrics.jpg"
+        img: "/images/services/3_Home & Auto Fabrics.webp"
     },
     {
         id: 8,
         title: "Luxury Leather Bags",
         desc: "Restoration, polishing, and deep cleaning for luxury leather bags.",
         Tags: ["Bag Cleaning"],
-        img: "/images/services/1_Garment Care.jpg"
+        img: "/images/services/1_Garment Care.webp"
     },
     {
         id: 9,
         title: "Silk & Satin Wear",
         desc: "Gentle hand-finishing and dry cleaning for silk and satin fabrics.",
         Tags: ["Dry Cleaning", "Steam Ironing"],
-        img: "/images/services/1_Garment Care.jpg"
+        img: "/images/services/1_Garment Care.webp"
     }
 ];
 
@@ -156,25 +153,24 @@ const index = () => {
     };
 
     useEffect(() => {
+        gsap.fromTo(".serv_txt_a", { y: 80, opacity: 1 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
+
 
         CustomEase.create("custom", "0.785, 0.135, 0.15, 0.86")
 
-        // gsap.fromTo(".serv_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
 
-        gsap.fromTo(
-            ".serv_clip",
-            {
-                clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-                filter: "blur(5px)"
-            },
-            {
-                delay: 0.1,
-                stagger: 0.15,
-                ease: "custom",
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                filter: "blur(0px)",
-                duration: 0.8,
-            }, "parallel");
+        // gsap.fromTo(
+        //     ".serv_clip",
+        //     {
+        //         clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+        //     },
+        //     {
+        //         delay: 0.1,
+        //         stagger: 0.15,
+        //         ease: "custom",
+        //         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        //         duration: 0.8,
+        //     }, "parallel");
 
         // gsap.fromTo(".serv_txt_b", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1.5, duration: 0.5, stagger: 0.05 });
         // gsap.fromTo(".serv_line", { opacity: 0 }, { opacity: 1, delay: 0.5, duration: 0.5, });
@@ -211,21 +207,28 @@ const index = () => {
                     <div className="w-full h-[1.5px] black opacity-60"></div>
                 </div>
                 <div className="w-full ">
-                    <button className=' text-xs lg:text-base service_btn  w-full text-white py-2 lg:py-4 px-4 lg:px-8 uppercase black rounded-full flex items-center justify-between'>
-                        <p className=' fixy1_5 '>Book Now</p>
-                        <RiArrowRightUpLine size={24} />
-                    </button>
+                     <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:font-semibold border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
+                                                                        <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
+                                                                        <p className=' fixy1_5 '>Book Now</p>
+                                                                        <RiArrowRightUpLine size={24} className='z-[99]' />
+                                                                    </button>
                 </div>
             </div>
 
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
+                <div className="block overflow-hidden">
                 <p className=' serv_txt_a  text-3xl lg:text-6xl'>Our Services</p>
+                </div>
+                <div className="block overflow-hidden">
                 <p className='serv_txt_a lg:text-xl'>Explore the range of services we offer to care for your garments.</p>
+                </div>
             </div>
             <div className="tags w-full mt-5 lg:mt-16 px-5 lg:px-24 h-10 border-b scroller_none overflow-x-scroll gap-5 border-black/20  flex items-center justify-between">
                 {uniqueTags.map(tag => (
                     <div onClick={() => changeTag(tag)} key={tag} className={`relative shrink-0 whitespace-nowrap h-full flex items-center cursor-pointer transition duration-300 ${activeTag === tag ? " " : "text-black/40"}`}>
-                        <p className='serv_txt_a text-sm lg:text-base'>{tag}</p>
+                        <div className="block overflow-hidden">
+                        <p className=' text-sm lg:text-base'>{tag}</p>
+                        </div>
                         <div className={` serv_line opacity-100 absolute -bottom-[1.5px] z-[9]  bg-black rounded-full h-[2px] transition-all origin-center duration-300 ${activeTag === tag ? "w-full" : "w-0"}`}></div>
                     </div>
                 ))}

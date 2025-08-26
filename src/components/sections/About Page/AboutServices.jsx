@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const ServiceData = [{
     title: "Safe for Your Body",
-    image: "/images/about page/img_1.jpg",
+    image: "/images/about page/img_1.webp",
     description: [
         "At The Laundry House, we prioritise the health and safety of our customers by exclusively using high-quality, skin-friendly detergents from Europe, adhering to stringent regulatory standards.",
         "Use of unregulated detergents containing endocrine disruptors, has been linked to skin irritations and serious health conditions like cancer, PCOS, fertility issues and hormonal imbalances.",
@@ -15,7 +15,7 @@ const ServiceData = [{
     ]
 }, {
     title: "Where Technology, Skill & Service Merge",
-    image: "/images/about page/img_2.jpg",
+    image: "/images/about page/img_2.webp",
     description: [
         "Our state-of-the-art technology, eco-friendly processes, and highly trained professionals ensure that each piece of clothing is treated with the utmost care and attention. ",
         " From delicate silks to sturdy denims, we know how to handle them all. Stubborn stains, intricate embroideries, delicate fabrics - nothing is too challenging for us. And our master cleaners are trained to ensure that no speck of dirt misses their eye.",
@@ -26,6 +26,7 @@ const ServiceData = [{
 const AboutServices = () => {
 
     useEffect(() => {
+        if(window.innerWidth < 1024) return
         const ctx = gsap.context(() => {
             const split1 = new SplitText(".ab_anim_txt_a", { type: "words" });
 

@@ -38,23 +38,28 @@ const Index = () => {
 
     // ✅ Intro animation (kept same as your original)
     useEffect(() => {
-        gsap.fromTo(".below_chng_clk", { width: 0 }, { width: "100%", delay: 1,  duration: 0.5 });
-        gsap.fromTo(".store_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5,  });
-        gsap.fromTo(".store_txt_b", { y: 20, opacity: 0 }, { y: "4px", opacity: 1, delay: 1, duration: 0.5,  });
-        gsap.fromTo(".store_txt_c", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1, duration: 0.5,  });
-        gsap.fromTo(".store_txt_d", { y: 25, opacity: 0 }, { y: "1.5px", opacity: 1, delay: 0.2, duration: 0.2,  });
-        gsap.fromTo(".table_ver_line", { height: 0 }, { height: "100%", delay: 1, duration: 0.5,  });
-        gsap.from(".table_border", { opacity: 0, delay: 0.8, duration: 0.5,  });
-        gsap.from(".chnge_cat_tble", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5,  });
-        gsap.from(".chnge_cat_tble_b", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5,  });
+        gsap.fromTo(".store_txt_head", { y: 80, opacity: 1 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
+        // gsap.fromTo(".below_chng_clk", { width: 0 }, { width: "100%", delay: 1, duration: 0.5 });
+        // gsap.fromTo(".store_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, });
+        // gsap.fromTo(".store_txt_b", { y: 20, opacity: 0 }, { y: "4px", opacity: 1, delay: 1, duration: 0.5, });
+        // gsap.fromTo(".store_txt_c", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 1, duration: 0.5, });
+        // gsap.fromTo(".store_txt_d", { y: 25, opacity: 0 }, { y: "1.5px", opacity: 1, delay: 0.2, duration: 0.2, });
+        // gsap.fromTo(".table_ver_line", { height: 0 }, { height: "100%", delay: 1, duration: 0.5, });
+        // gsap.from(".table_border", { opacity: 0, delay: 0.8, duration: 0.5, });
+        // gsap.from(".chnge_cat_tble", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5, });
+        // gsap.from(".chnge_cat_tble_b", { background: "transparent", borderColor: "transparent", delay: 0.8, duration: 0.5, });
     }, []);
 
     return (
         <div>
             {/* Header Section */}
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
-                <p className='text-3xl lg:text-6xl '>Our Stores</p>
-                <p className='lg:text-xl '>Find a store near you to experience our services firsthand.</p>
+                <div className="block overflow-hidden">
+                    <p className=' store_txt_head text-3xl lg:text-6xl '>Our Stores</p>
+                </div>
+                <div className="block overflow-hidden">
+                    <p className=' store_txt_head lg:text-xl '>Find a store near you to experience our services firsthand.</p>
+                </div>
             </div>
 
             {/* City Tabs */}
@@ -73,7 +78,7 @@ const Index = () => {
 
             <div className="w-full flex flex-col lg:flex-row justify-between p-5 lg:p-10 mb-20">
                 {/* Left Side (Shops List) */}
-                <div  data className=" w-full lg:w-[40%] h-[60vh] lg:h-[35vw] overflow-y-scroll custom_scrollbar">
+                <div data className=" w-full lg:w-[40%] h-[60vh] lg:h-[35vw] overflow-y-scroll custom_scrollbar">
                     {allStoresData.find(store => store.cityName === activeCity)?.shopNames?.map((shop, index) => (
                         <div
                             key={index}
@@ -143,7 +148,7 @@ const Index = () => {
                                     <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Steam Iron Service</p></th>
                                 </tr>
                             </thead>
-                            <tbody  className="w-full">
+                            <tbody className="w-full">
                                 {allStoresData
                                     .find(store => store.cityName === activeCity)
                                     ?.categories.find(cat => cat.name === categoryType)

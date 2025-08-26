@@ -10,6 +10,7 @@ import React, { useEffect } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';
+import MobileServiceSection from '@/components/Home/MobileServiceSection'
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const index = () => {
@@ -40,6 +41,7 @@ const index = () => {
     <HeroSwiper/>
     <AboutSection/>
     <ServicesSection/>
+    <MobileServiceSection/>
     <ExcelleceSection/>
     <div className="  w-full  px-10">
       <div className=" diff_line w-full bg-black h-[1px]"></div>

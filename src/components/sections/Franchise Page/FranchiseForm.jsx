@@ -22,7 +22,7 @@ const FranchiseForm = () => {
                     trigger: ".form_parent",
                     start: "top 60%",
                     // markers: true,
-                    toggleActions: "play none none reverse",
+                    // toggleActions: "play none none reverse",
                 }
             })
 

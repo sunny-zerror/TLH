@@ -1,5 +1,5 @@
 import { RiStarFill } from '@remixicon/react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y, Autoplay, Pagination } from "swiper/modules";
@@ -31,6 +31,8 @@ const Reviews = [{
 }]
 
 const FeedbackSection = () => {
+    const [expanded, setExpanded] = useState(false);
+
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -129,6 +131,8 @@ const FeedbackSection = () => {
                         speed={600}
                         loop
                         className=" swiper_elem_2 w-full h-full"
+                        pagination={{ clickable: true }}
+
                         autoplay={{ delay: 3000, disableOnInteraction: false }}
                         breakpoints={{
                             0: {
@@ -144,7 +148,7 @@ const FeedbackSection = () => {
                     >
                         {Reviews?.map((review, index) => (
                             <SwiperSlide key={index}>
-                                <div key={index} className="w-[90%]  p-5 flex flex-col relative gap-4 min-h-[15vw] ">
+                                <div key={index} className="w-[100%] mb-5 lg:mb-0   p-5 flex flex-col relative gap-4 min-h-[15vw] ">
                                     <div className=" feed_line absolute h-[70%] top-[50%] translate-y-[-50%] left-0 w-[1.5px] opacity-20 black"></div>
                                     <div className="flex gap-2 items-center">
                                         <div className="size-12  overflow-hidden rounded-full">
@@ -161,7 +165,9 @@ const FeedbackSection = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className='animate_txt_c'>{review.comment}</p>
+
+                                    <p
+                                    onClick={() => setExpanded(!expanded)} className={` animate_txt_c relative transition-all duration-300 ${expanded ? "" : "line-clamp-3"}`}>{review.comment}</p>
                                 </div>
                             </SwiperSlide>
                         ))}

@@ -78,7 +78,7 @@ const Responsibility = () => {
                     trigger: ".resp_parent",
                     start: "top 60%",
                     // markers: true,
-                    toggleActions: "play none none reverse",
+                    // toggleActions: "play none none reverse",
                 }
             })
             // tl.fromTo(".resp_anim_txt",
@@ -112,13 +112,11 @@ const Responsibility = () => {
                 ".resp_card",
                 {
                     clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-                    filter: "blur(5px)"
                 },
                 {
                     delay: 0.2,
                     ease: "power2.inOut",
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                    filter: "blur(0px)",
                     duration: 1,
                 }, "parallel");
 
