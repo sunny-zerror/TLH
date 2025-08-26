@@ -87,7 +87,7 @@ const FranchiseNumbers = () => {
 
     return (
         <div className="numb_parent" ref={sectionRef}>
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 py-16 p-5 lg:p-24 gap-y-16">
+            <div className="w-full grid grid-cols-2 md:grid-cols-3 pt-16 p-5 lg:pt-24 lg:px-24 gap-y-16">
                 {Data.map((item, index) => (
                     <div className="w-[90%] md:w-[75%]" key={index}>
                         <p className="numb_animate_txt_a text-[3vw] leading-none md:text-xs lg:text-sm uppercase">
