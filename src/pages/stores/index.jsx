@@ -52,36 +52,36 @@ const Index = () => {
     return (
         <div>
             {/* Header Section */}
-            <div className="w-full center flex-col pt-32">
-                <p className='text-6xl '>Our Stores</p>
-                <p className='text-xl '>Find a store near you to experience our services firsthand.</p>
+            <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
+                <p className='text-3xl lg:text-6xl '>Our Stores</p>
+                <p className='lg:text-xl '>Find a store near you to experience our services firsthand.</p>
             </div>
 
             {/* City Tabs */}
-            <div className=" tags w-full mt-16 px-24 h-10 border-b scroller_none border-black/20 flex items-center gap-10">
+            <div className=" tags w-full  lg:mt-16 px-5 lg:px-24 h-10 border-b scroller_none border-black/20 flex items-center gap-5 lg:gap-10">
                 {uniqueCity.map(city => (
                     <div
                         key={city}
                         onClick={() => setactiveCity(city)}
                         className={`relative shrink-0 whitespace-nowrap h-full flex items-center justify-center cursor-pointer transition duration-300 ${activeCity === city ? "" : "text-black/40"}`}
                     >
-                        <AnimatedText uniqueKey={city} className="">{city}</AnimatedText>
+                        <AnimatedText uniqueKey={city} className="text-sm lg:text-base">{city}</AnimatedText>
                         <div className={` absolute -bottom-[1.5px] z-[9] w-full black rounded-full h-[2px] transition duration-300 ${activeCity === city ? "opacity-100" : "opacity-0"}`}></div>
                     </div>
                 ))}
             </div>
 
-            <div className="w-full flex justify-between p-10 mb-20">
+            <div className="w-full flex flex-col lg:flex-row justify-between p-5 lg:p-10 mb-20">
                 {/* Left Side (Shops List) */}
-                <div data-lenis-prevent data className="w-[40%] h-[35vw] overflow-y-scroll scroller_none">
+                <div  data className=" w-full lg:w-[40%] h-[60vh] lg:h-[35vw] overflow-y-scroll custom_scrollbar">
                     {allStoresData.find(store => store.cityName === activeCity)?.shopNames?.map((shop, index) => (
                         <div
                             key={index}
-                            className={`w-full ${index === 0 ? "py-0 pb-4" : "py-4 pb-4"} chnge_cat_tble_b flex flex-col gap-2 border-b border-black/20`}
+                            className={`w-full ${index === 0 ? "py-0 pb-4" : "py-4 pb-4"} chnge_cat_tble_b flex flex-col gap-1 md:gap-2 border-b border-black/20`}
                         >
-                            <AnimatedText uniqueKey={shop.name} className="store_txt_a text-2xl font-semibold">{shop.name}</AnimatedText>
-                            <AnimatedText uniqueKey={shop.address} className="store_txt_a text-sm opacity-70">{shop.address}</AnimatedText>
-                            <div className="flex text-sm items-center gap-14">
+                            <AnimatedText uniqueKey={shop.name} className="store_txt_a text-xl md:text-2xl lg:font-semibold">{shop.name}</AnimatedText>
+                            <AnimatedText uniqueKey={shop.address} className="store_txt_a text-xs md:text-sm opacity-70">{shop.address}</AnimatedText>
+                            <div className="flex text-xs md:text-sm items-center justify-between md:justify-start md:gap-14">
                                 <div className="store_txt_a flex items-center gap-1">
                                     <RiTimeFill size={16} />
                                     <AnimatedText uniqueKey={shop.openTime} className="fixy1">{shop.openTime}</AnimatedText>
@@ -109,9 +109,9 @@ const Index = () => {
                 </div>
 
                 {/* Right Side (Categories + Table) */}
-                <div className="w-1/2 h-full flex flex-col gap-8">
+                <div className=" mt-10 lg:mt-0 w-full lg:w-1/2 h-full flex flex-col gap-8">
                     {/* Category Tabs */}
-                    <div className="chnge_cat_tble w-full h-12 flex items-center px-20 justify-between rounded-full border border-black/20 bg-black/5">
+                    <div className="chnge_cat_tble w-full h-10 px-5 md:h-12 flex items-center md:px-20 justify-between rounded-full border border-black/20 bg-black/5">
                         {allStoresData.find(store => store.cityName === activeCity)?.categories?.map((category, index) => (
                             <div
                                 key={index}
@@ -121,7 +121,7 @@ const Index = () => {
                                 <div className="block overflow-hidden">
                                     <AnimatedText
                                         uniqueKey={category.name}
-                                        className={`fixy1_5 store_txt_d transition duration-300 ${categoryType === category.name ? "opacity-100" : "opacity-50"}`}
+                                        className={`fixy1_5 text-[3vw] md:text-base store_txt_d transition duration-300 ${categoryType === category.name ? "opacity-100" : "opacity-50"}`}
                                     >
                                         {category.name}
                                     </AnimatedText>
@@ -135,22 +135,22 @@ const Index = () => {
                     <div className="chnge_cat_tble w-full relative overflow-hidden rounded-xl border border-black/20">
                         <div className="table_ver_line w-[1.5px] h-full opacity-50 black absolute left-[33%]"></div>
                         <div className="table_ver_line w-[1.5px] h-full opacity-50 black absolute right-[33%]"></div>
-                        <table className="w-full h-full">
+                        <table className=" text-sm md:text-base text-center w-full h-full">
                             <thead className="w-full">
                                 <tr className="chnge_cat_tble table_border w-full flex h-12 bg-black/5 border-[#0e11117e] border-b-2 justify-between">
-                                    <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Garments/Accessories</p></th>
+                                    <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Garments/ Accessories</p></th>
                                     <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Premium Fabric Care Service</p></th>
                                     <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Steam Iron Service</p></th>
                                 </tr>
                             </thead>
-                            <tbody data-lenis-prevent className="w-full">
+                            <tbody  className="w-full">
                                 {allStoresData
                                     .find(store => store.cityName === activeCity)
                                     ?.categories.find(cat => cat.name === categoryType)
                                     ?.servicePrices.map((service, index) => (
                                         <tr
                                             key={index}
-                                            className={` ${index % 2 === 0 ? "bg-black/2 " : "bg-black/5"} chnge_cat_tble w-full flex justify-between h-12 items-center`}
+                                            className={` ${index % 2 === 0 ? "bg-black/2 " : "bg-black/5"} chnge_cat_tble w-full flex justify-between h-10 lg:h-12 items-center`}
                                         >
                                             <td className="w-[32%] center">
                                                 <AnimatedText uniqueKey={service.serviceName} className="store_txt_c">{service.serviceName}</AnimatedText>

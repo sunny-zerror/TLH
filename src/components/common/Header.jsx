@@ -1,7 +1,9 @@
-import { RiArrowRightUpLine } from '@remixicon/react'
+import { RiArrowRightUpLine, RiCloseLine, RiMenu3Line } from '@remixicon/react'
 import gsap from 'gsap';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react'
+import { CustomEase } from 'gsap/dist/CustomEase';
+gsap.registerPlugin(CustomEase);
 
 const links = [{
   title: "About Us",
@@ -24,6 +26,8 @@ const links = [{
 }]
 
 const Header = () => {
+  CustomEase.create("custom", "0.785, 0.135, 0.15, 0.86")
+
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
   const lineRefs = useRef([]);
@@ -66,19 +70,54 @@ const Header = () => {
     });
   };
 
+  const openMenu = () => {
+    gsap.to(".open_menu", {
+      right: 0,
+      // clipPath: "polygon(0% 0, 0% 0, 0% 100%, 0% 100%)",
+      duration: 1,
+      ease: "custom",
+      onComplete: () => {
+        gsap.set(".nav", { pointerEvents: "none" });
+      }
+    });
+    gsap.fromTo(".anii", {
+      y: 50,
+    }, {
+      y: 0,
+      delay: 0.8,
+      stagger: 0.05
+    })
+  }
+  const closeMenu = () => {
+    gsap.to(".anii", {
+      y: -50,
+      stagger: 0.05
+    })
+    gsap.to(".open_menu", {
+      right: "-100%",
+      delay: 0.4,
+      // clipPath: "polygon(0% 0, 0% 0, 0% 100%, 0% 100%)",
+      duration: .8,
+      ease: "custom",
+      onComplete: () => {
+        gsap.set(".nav", { pointerEvents: "auto" });
+      }
+    });
+  }
   return (
     <div>
       <div
-        className={`w-full fixed h-16 z-[99] flex items-center justify-between px-10 
+        className={` nav w-full fixed h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
           transition-colors duration-500 ease-in-out 
           ${isScrolled ? "black text-white" : "bg-transparent text-white"}`}
       >
-        <div className="w-[20%]">
-          <a href="/">
-            <img className='w-[12vw]' src="/logos/Logo_White.svg" alt="" />
+        <div className=" w-[40%] md:w-[20%]">
+          <a href="/" className='w-full'>
+            <img className='w-[100%] lg:w-[12vw]' src="/logos/Logo_White.svg" alt="" />
           </a>
         </div>
-        <div className="flex items-center gap-8">
+        <RiMenu3Line className='lg:hidden' onClick={openMenu} />
+        <div className=" hidden  lg:flex items-center gap-8">
           {links.map((link, i) => (
             <a
               key={link.title}
@@ -100,13 +139,40 @@ const Header = () => {
             </a>
           ))}
         </div>
-        <div className="flex items-center  justify-end  w-[20%]">
+        <div className="hidden  lg:flex items-center  justify-end  w-[20%]">
           <button className=' group flex relative center uppercase px-4 py-2 rounded-full'>
             <RiArrowRightUpLine className='scale-0 opacity-0 group-hover:translate-x-[15px] group-hover:opacity-100 group-hover:scale-100 origin-bottom-left transition-all duration-300' size={24} />
             <p className=' group-hover:translate-x-[15px] transition-all duration-300 text-base fixy1_5'>Book Now</p>
             <div className="w-[0%] group-hover:w-[65%] origin-left left-9 absolute bottom-2 h-[2px] bg-white transition-all duration-300"></div>
             <RiArrowRightUpLine className=' group-hover:scale-0 origin-top-right group-hover:translate-x-[15px] group-hover:opacity-0 transition-all duration-300' size={24} />
           </button>
+        </div>
+      </div>
+      <div
+        // style={{clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}}
+        className=" open_menu right-[-100%] w-full h-screen bg-[#FFFAF0] p-5 fixed z-[99999]">
+        <div className="w-full flex justify-end">
+          <RiCloseLine size={30} onClick={closeMenu} />
+        </div>
+        <div className="w-full h-full center flex-col gap-5">
+          {links.map((link, i) => (
+            <a
+              key={link.title}
+              href={link.url}
+              className="relative text-black  overflow-hidden flex flex-col items-center"
+            >
+              <p className=" anii text-3xl uppercase">{link.title}</p>
+
+              <div
+                ref={(el) => (lineRefs.current[i] = el)}
+                className="absolute bottom-0 h-[2px] w-full bg-white rounded-full -left-[101%]"
+              ></div>
+
+              {router.pathname === link.url && (
+                <div className="absolute w-full h-[1.5px] left-0 rounded-full bg-white bottom-0"></div>
+              )}
+            </a>
+          ))}
         </div>
       </div>
     </div>

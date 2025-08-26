@@ -84,7 +84,7 @@ const FeedbackSection = () => {
             //         duration: 0.5,
             //         stagger: 0.05,
             //     }, "parallel");
-                
+
             tl.fromTo(
                 ".feed_star",
                 { scale: 0, rotate: 40 },
@@ -115,22 +115,32 @@ const FeedbackSection = () => {
 
     return (
         <div className='feed_parent'>
-            <div className="w-full  p-24">
-                <div className="w-full center text-center">
+            <div className="w-full py-16 lg:py-24  p-5 lg:p-24">
+                <div className="w-full center lg:text-center">
                     <div className="">
-                        <p className='text-6xl animate_txt_a  '>What Our Customers Say</p>
-                        <p className='text-xl animate_txt_a'>Garment care for important people, by people who care.</p>
+                        <p className=' text-3xl lg:text-6xl animate_txt_a  '>What Our Customers Say</p>
+                        <p className='  leading-none lg:text-xl animate_txt_a'>Garment care for important people, by people who care.</p>
                     </div>
                 </div>
-                <div className="w-full mt-20 ">
+                <div className="w-full mt-10 lg:mt-20 ">
                     <Swiper
                         modules={[Navigation, A11y, Autoplay, Pagination]}
                         spaceBetween={0}
-                        slidesPerView={3}
                         speed={600}
                         loop
                         className=" swiper_elem_2 w-full h-full"
                         autoplay={{ delay: 3000, disableOnInteraction: false }}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                            },
+                        }}
                     >
                         {Reviews?.map((review, index) => (
                             <SwiperSlide key={index}>

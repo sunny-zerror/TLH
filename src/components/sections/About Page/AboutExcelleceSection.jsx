@@ -104,21 +104,21 @@ const AboutExcelleceSection = () => {
 
     return (
         <div className='excellence_parent'>
-            <div className="w-full p-24 center">
+            <div className="w-full p-5 py-16 lg:p-24 center">
                 <div className="w-full  flex flex-col items-center justify-center gap-20">
-                    <div className="w-full text-center">
-                        <div className='text-6xl uppercase font-semibold'>
+                    <div className="w-full lg:text-center">
+                        <div className=' text-3xl lg:text-6xl uppercase font-semibold'>
                             <p className='ex_animate_txt_a'>Excellence</p>
                             <p className='ex_animate_txt_b'>in Every Detail</p>
                         </div>
-                        <p className='text-xl ex_animate_txt_c'>State-of-the-art equipment and eco-friendly processes for superior results</p>
+                        <p className=' text-base leading-none mt-2 lg:mt-0  lg:text-xl ex_animate_txt_c'>State-of-the-art equipment and eco-friendly processes for superior results</p>
                     </div>
-                    <div className="w-full   flex items-center justify-center gap-10">
+                    <div className="w-full    flex flex-col md:flex-row items-center justify-center gap-10">
                         {excellenceData.map((item, index) => (
-                            <div key={index} className="h-full w-[20%] gap-5 flex flex-col text-center items-center justify-between">
-                                <p className=' ex_anim_title text-xl font-semibold'>{item.title}</p>
+                            <div key={index} className="h-full w-[70%] md:w-[25%] lg:w-[20%] gap-5 flex flex-col text-center items-center justify-between">
+                                <p className=' ex_anim_title text-base lg:text-xl font-semibold'>{item.title}</p>
                                 <div className=" ex_anim_line origin-left  w-full h-[1px] black"></div>
-                                <p className='ex_anim_para'>{item.para}</p>
+                                <p className=' text-sm lg:text-base ex_anim_para'>{item.para}</p>
                                 <div className="w-full center">
                                     <img className=' ex_anim_img size-14' src={item.img} alt="" />
                                 </div>

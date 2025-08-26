@@ -255,7 +255,7 @@ const HeroSwiper = () => {
             ref={(el) => (slidesRef.current[index] = el)}
             className={`change_slide_${index} scale-[1.105] absolute top-0 left-0 w-full h-full`}
           >
-            <div className="absolute w-[10%] gap-2   flex   flex-col right-[10%] bottom-[13.6%] z-[9]">
+            <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2   flex   flex-col right-[10%] bottom-[13.6%] z-[9]">
               <p className="text-sm leading-none capitalize text-white">{image.title}</p>
               <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">
                 <div

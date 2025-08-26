@@ -26,6 +26,16 @@ p {
   background-color: #0e1111;
   border-radius: 10px;
 }
+.custom_scrollbar::-webkit-scrollbar{
+  background-color: rgba(128, 128, 128, 0.247);
+  width: 4px;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background-color: #0e111179;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .scroller_none::-webkit-scrollbar{
   display: none;
 }
@@ -54,4 +64,3 @@ button{
   align-items: center;
   justify-content: center;
 }
-

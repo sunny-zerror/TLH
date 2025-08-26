@@ -68,15 +68,15 @@ const FranchiseNumbers = () => {
 
     return (
         <div className='numb_parent'>
-            <div className="w-full  grid grid-cols-3 p-24 gap-y-16">
+            <div className="w-full  grid grid-cols-2 md:grid-cols-3 py-16  p-5 lg:p-24 gap-y-16">
                 {
                     Data.map((item, index) => (
-                        <div className="w-[75%] " key={index}>
-                            <p className='numb_animate_txt_a text-sm uppercase'>{item.title}</p>
-                            <div className="numb_line w-full h-[1.5px] black rounded-full mt-2 mb-8"></div>
+                        <div className=" w-[90%] md:w-[75%] " key={index}>
+                            <p className='numb_animate_txt_a text-xs lg:text-sm uppercase'>{item.title}</p>
+                            <div className="numb_line w-full h-[1.5px] black rounded-full mt-2 mb-5 md:mb-8"></div>
                             <div className="flex items-end gap-2">
-                                <p className='numb_animate_txt_a text-7xl'>{item.value}</p>
-                                <p className=' numb_animate_txt_a text-4xl translate-y-[-6.5px]'>{item.extra}</p>
+                                <p className='numb_animate_txt_a text-5xl lg:text-7xl'>{item.value}</p>
+                                <p className=' numb_animate_txt_a text-xl lg:text-4xl translate-y-[-4px] lg:translate-y-[-6.5px]'>{item.extra}</p>
                             </div>
                         </div>
                     ))

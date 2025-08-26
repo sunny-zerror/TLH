@@ -129,26 +129,26 @@ const Responsibility = () => {
 
     return (
         <div className='resp_parent'>
-            <div className="w-full p-24">
+            <div className="w-full p-5 py-16 lg:p-24">
                 <div className="w-full center">
-                    <p className=" resp_anim_txt text-6xl">Sharing the Responsibilities</p>
+                    <p className=" resp_anim_txt text-3xl lg:text-6xl">Sharing the Responsibilities</p>
                 </div>
-                <div className="w-full grid grid-cols-2 gap-10 p-20">
+                <div className="w-full mt-5 lg:mt-0 grid grid-cols-1 md:grid-cols-2 gap-10  lg:p-20">
                     {cardData.map((card, index) => (
                         <div
                             key={index}
-                            className=" resp_card p-10 flex flex-col gap-10 bg-black/5 rounded-xl"
+                            className=" resp_card p-5 lg:p-10 flex flex-col gap-5 lg:gap-10 bg-black/5 rounded-xl"
                         >
                             <div className="w-full center">
-                                <p className=" resp_card_txt  text-3xl">{card.heading}</p>
+                                <p className=" resp_card_txt  text-xl lg:text-3xl">{card.heading}</p>
                             </div>
-                            <div className="resp_card_line w-full h-[2px] bg-black rounded-full"></div>
+                            <div className="resp_card_line w-full h-[1px] lg:h-[2px] bg-black rounded-full"></div>
                             <div className="flex flex-col gap-3">
                                 {card?.services.map((service, idx) => (
                                     <div key={idx}>
-                                        <p className=" resp_card_txt font-semibold">• &nbsp; {service.title}</p>
+                                        <p className=" resp_card_txt text-xs lg:text-base font-semibold">• &nbsp; {service.title}</p>
                                         {service.description && (
-                                            <p className=" resp_card_txt pl-5">{service.description}</p>
+                                            <p className=" resp_card_txt text-xs lg:text-base pl-5">{service.description}</p>
                                         )}
                                     </div>
                                 ))}

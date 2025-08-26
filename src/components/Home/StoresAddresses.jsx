@@ -49,20 +49,20 @@ const StoresAddresses = () => {
 
 
     return (
-        <div className='add_anim_parent'>
-            <div className="w-full  p-24">
-                <div className="flex justify-between">
+        <div className='add_anim_parent mt-16 '>
+            <div className="w-full py-16 lg:pt-0  p-5 lg:p-24">
+                <div className="flex flex-col md:flex-row justify-between">
                     <div className="">
-                        <p className='text-6xl add_anim_txt_a '>Serving You Across India</p>
-                        <p className='text-xl add_anim_txt_a'>Find The Laundry House in 9 major cities and growing.</p>
+                        <p className=' text-3xl leading-none  lg:text-6xl add_anim_txt_a '>Serving You Across India</p>
+                        <p className= ' mt-2 lg:mt-0 lg:text-xl add_anim_txt_a leading-none'>Find The Laundry House in 9 major cities and growing.</p>
                     </div>
-                    <div className=" add_anim_txt_a  flex items-end justify-end">
+                    <div className=" text-xs lg:text-base add_anim_txt_a  flex items-end justify-end">
                         <p>(20 Stores)</p>
                     </div>
                 </div>
                 <div className="w-full mt-10">
                     <div className="w-full h-12 relative  flex items-center">
-                        <div className="w-[25%] shrink-0">
+                        <div className=" w-[35%] lg:w-[25%] shrink-0">
                             <p className=' add_anim_txt_a text-sm opacity-60 uppercase'>CITY</p>
                         </div>
                         <div className="">
@@ -73,8 +73,8 @@ const StoresAddresses = () => {
 
                     {
                         Addresses.map((item, index) => (
-                            <div key={index} className="w-full h-14 relative  flex items-center">
-                                <div className="w-[25%] shrink-0">
+                            <div key={index} className="w-full py-3 lg:py-0 lg:h-14 relative  flex items-center">
+                                <div className=" w-[35%] lg:w-[25%] shrink-0">
                                     <p className=' add_anim_txt_a text-sm font-semibold  uppercase'>{item.city}</p>
                                 </div>
                                 <div className="">

@@ -84,20 +84,25 @@ const AboutServices = () => {
 
     return (
         <div className='ab_ab_parent'>
-            <div className="w-full px-24">
+            <div className="w-full px-5 lg:px-24">
                 {
                     ServiceData.map((service, index) => (
-                        <div key={index} className="ab_border_anim w-full h-[50vh] py-10 gap-10 flex border-t  border-dashed  border-black/30">
-                            <div className="w-[25%] h-full ">
+                        <div key={index} className="ab_border_anim w-full  py-10 gap-10 flex flex-col md:flex-row border-t  border-dashed  border-black/30">
+                            <div className=" w-full md:w-[60%]  lg:w-[25%] h-full ">
                                 <p className=' ab_anim_txt text-2xl font-semibold'>{service.title}</p>
+                                <div className='mt-5 hidden md:block lg:hidden'>{
+                                    service.description.map((desc, i) => (
+                                        <p key={i} className=' text-sm  ab_anim_txt_a'>{desc}</p>
+                                    ))
+                                }</div>
                             </div>
-                            <div className=" ab_clip_img w-[35%] h-full ">
+                            <div className=" ab_clip_img w-full md:w-[35%] h-full ">
                                 <img className='w-full h-full object-cover' src={service.image} alt="" />
                             </div>
-                            <div className="w-[40%] h-full flex items-center justify-between flex-col ">
+                            <div className=" flex md:hidden w-full md:w-[40%] h-full lg:flex items-center justify-between flex-col ">
                                 {
                                     service.description.map((desc, i) => (
-                                        <p key={i} className='ab_anim_txt_a'>{desc}</p>
+                                        <p key={i} className= ' text-sm lg:text-base ab_anim_txt_a'>{desc}</p>
                                     ))
                                 }
                             </div>

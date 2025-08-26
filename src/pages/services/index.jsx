@@ -130,30 +130,35 @@ const index = () => {
         if (window.lenis) window.lenis.stop();
         gsap.to(slideRef.current, {
             right: 0,
-            duration: 0.5,
+            duration: 1,
+            ease:"custom"
         });
         gsap.to(overlayRef.current, {
             opacity: 1,
-            duration: 0.5,
+            duration: 1,
+            ease:"custom"
         });
     };
     const closeService = () => {
         if (window.lenis) window.lenis.start();
 
         gsap.to(slideRef.current, {
-            right: "-30vw",
-            duration: 0.5,
+            right: "-100%",
+            duration: 1,
+            ease:"custom"
         });
         gsap.to(overlayRef.current, {
             opacity: 0,
-            duration: 0.5,
+            duration: 1,
+            ease:"custom"
+
         });
     };
 
     useEffect(() => {
 
-              CustomEase.create("custom","0.785, 0.135, 0.15, 0.86")
-        
+        CustomEase.create("custom", "0.785, 0.135, 0.15, 0.86")
+
         // gsap.fromTo(".serv_txt_a", { y: 20, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3, duration: 0.5, stagger: 0.05 });
 
         gsap.fromTo(
@@ -181,8 +186,8 @@ const index = () => {
 
             <div ref={overlayRef} className="overlay pointer-events-none opacity-0 fixed h-screen w-full bg-black/70 z-[99]"></div>
 
-            <div ref={slideRef} className=" open_slide w-[30vw] flex flex-col justify-between h-screen bg-[#FFFAF0] p-10 fixed top-0 right-[-30vw] z-[999]">
-                <div className="flex flex-col gap-5">
+            <div ref={slideRef} className=" open_slide w-full md:w-[50vw]  lg:w-[30vw] flex flex-col justify-between h-screen bg-[#FFFAF0] p-5 lg:p-10 fixed top-0 right-[-100%] z-[999]">
+                <div className="flex flex-col gap-3 lg:gap-5">
                     <div className="w-full flex items-center justify-between">
                         <p className='text-3xl '>{activeService?.title}</p>
                         <RiCloseLine onClick={closeService} size={30} className='cursor-pointer' />
@@ -206,28 +211,28 @@ const index = () => {
                     <div className="w-full h-[1.5px] black opacity-60"></div>
                 </div>
                 <div className="w-full ">
-                    <button className='w-full text-white py-4 px-8 uppercase black rounded-full flex items-center justify-between'>
+                    <button className=' text-xs lg:text-base service_btn  w-full text-white py-2 lg:py-4 px-4 lg:px-8 uppercase black rounded-full flex items-center justify-between'>
                         <p className=' fixy1_5 '>Book Now</p>
                         <RiArrowRightUpLine size={24} />
                     </button>
                 </div>
             </div>
 
-            <div className="w-full center flex-col pt-32">
-                <p className=' serv_txt_a  text-6xl'>Our Services</p>
-                <p className='serv_txt_a text-xl'>Explore the range of services we offer to care for your garments.</p>
+            <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
+                <p className=' serv_txt_a  text-3xl lg:text-6xl'>Our Services</p>
+                <p className='serv_txt_a lg:text-xl'>Explore the range of services we offer to care for your garments.</p>
             </div>
-            <div className="tags w-full mt-16 px-24 h-10 border-b scroller_none border-black/20  flex items-center justify-between">
+            <div className="tags w-full mt-5 lg:mt-16 px-5 lg:px-24 h-10 border-b scroller_none overflow-x-scroll gap-5 border-black/20  flex items-center justify-between">
                 {uniqueTags.map(tag => (
                     <div onClick={() => changeTag(tag)} key={tag} className={`relative shrink-0 whitespace-nowrap h-full flex items-center cursor-pointer transition duration-300 ${activeTag === tag ? " " : "text-black/40"}`}>
-                        <p className='serv_txt_a'>{tag}</p>
+                        <p className='serv_txt_a text-sm lg:text-base'>{tag}</p>
                         <div className={` serv_line opacity-100 absolute -bottom-[1.5px] z-[9]  bg-black rounded-full h-[2px] transition-all origin-center duration-300 ${activeTag === tag ? "w-full" : "w-0"}`}></div>
                     </div>
                 ))}
             </div>
-            <div className=" mb-20 p-10 w-full ">
-                <div className="w-full pb-10 overflow-x-auto custom_scroller flex  gap-10 ">
-                    <AnimatePresence mode="popLayout">
+            <div className=" mb-20 p-5 lg:p-10 w-full overflow-hidden ">
+                <div className="w-full pb-10 overflow-x-auto custom_scroller flex  gap-5 lg:gap-10 ">
+                    <AnimatePresence mode="wait">
                         {filteredServices.map((service, index) => (
                             <motion.div
                                 key={service.title} // stable key
@@ -236,7 +241,7 @@ const index = () => {
                                 animate="visible"
                                 exit="exit"
                                 transition={{ delay: index * 0.15 }} // stagger effect
-                                className="w-[25%]  shrink-0 flex flex-col justify-between gap-5"
+                                className=" w-full md:w-[40%] lg:w-[25%]  shrink-0 flex flex-col justify-between gap-5"
                             >
                                 <motion.div className="serv_clip aspect-square w-full  overflow-hidden">
                                     <img
@@ -245,16 +250,17 @@ const index = () => {
                                         alt={service.title}
                                     />
                                 </motion.div>
-                                <div className="w-full h-[30%] flex flex-col justify-between">
-                                    <p className="text-3xl serv_txt_b">{service.title}</p>
-                                    <p className="serv_txt_b">{service.desc}</p>
+                                <div className="w-full gap-4  flex flex-col justify-between">
+                                    <p className=" text-2xl lg:text-3xl serv_txt_b">{service.title}</p>
+                                    <p className=" text-sm leading-none lg:text-base serv_txt_b">{service.desc}</p>
                                     <div>
                                         <button
                                             onClick={() => openService(service)}
-                                            className="serv_txt_b flex gap-2 uppercase px-4 py-2 bg-black/5 rounded-full"
-                                        >
-                                            <p className="text-base fixy1_5">Book Now</p>
-                                            <RiArrowRightUpLine size={24} />
+                                            className=' add_anim_txt_btn relative overflow-hidden group rounded-full border-2 border-[#0e1111] px-6 center font-bold py-1'>
+                                            <p className='fixy1 font_light opacity-0'>Book Now</p>
+                                            <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Book Now </p>
+                                            <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
+                                            <p className='fixy1 font-light translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute'> Book Now</p>
                                         </button>
                                     </div>
                                 </div>

@@ -38,7 +38,7 @@ const index = () => {
             <FranchiseHero />
             <FranchiseNumbers />
             <div className="w-full center">
-                <div className="  main_lin w-[70%] rounded-full h-[2px] black"></div>
+                <div className="  main_lin w-[90%] lg:w-[70%] rounded-full h-[2px] black"></div>
             </div>
             <Responsibility />
             <FranchiseForm />
