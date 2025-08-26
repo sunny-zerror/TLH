@@ -53,7 +53,7 @@ const StoresAddresses = () => {
             <div className="w-full py-16    p-5 lg:p-24">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="">
-                        <p className=' text-3xl leading-none  lg:text-6xl add_anim_txt_a '>Serving You Across India</p>
+                        <p className=' text-3xl leading-none  lg:text-6xl add_anim_txt_a  font-semibold '>Serving You Across India</p>
                         <p className=' mt-2  lg:text-xl add_anim_txt_a leading-none'>Find The Laundry House in 9 major cities and growing.</p>
                     </div>
                 </div>

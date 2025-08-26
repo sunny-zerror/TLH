@@ -129,7 +129,7 @@ const Responsibility = () => {
         <div className='resp_parent'>
             <div className="w-full p-5 py-16 lg:p-24">
                 <div className="w-full center">
-                    <p className=" resp_anim_txt text-3xl lg:text-6xl">Sharing the Responsibilities</p>
+                    <p className=" resp_anim_txt text-3xl lg:text-6xl font-semibold">Sharing the Responsibilities</p>
                 </div>
                 <div className="w-full mt-5 lg:mt-0 grid grid-cols-1 md:grid-cols-2 gap-10  lg:p-20">
                     {cardData.map((card, index) => (

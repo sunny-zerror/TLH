@@ -55,7 +55,7 @@ const Index = () => {
             {/* Header Section */}
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
                 <div className="block overflow-hidden">
-                    <p className=' store_txt_head text-3xl lg:text-6xl '>Our Stores</p>
+                    <p className=' store_txt_head text-3xl lg:text-6xl font-semibold '>Our Stores</p>
                 </div>
                 <div className="block overflow-hidden">
                     <p className=' store_txt_head lg:text-xl '>Find a store near you to experience our services firsthand.</p>

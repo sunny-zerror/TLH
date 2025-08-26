@@ -104,8 +104,8 @@ const AboutExcelleceSection = () => {
 
     return (
         <div className='excellence_parent'>
-            <div className="w-full p-5 py-16 lg:p-24 center">
-                <div className="w-full  flex flex-col items-center justify-center gap-20">
+            <div className="w-full p-5 pt-10 pb-24   lg:p-24 center">
+                <div className="w-full  flex flex-col items-center justify-center gap-10 lg:gap-20">
                     <div className="w-full lg:text-center">
                         <div className=' text-3xl lg:text-6xl uppercase font-semibold'>
                             <p className='ex_animate_txt_a'>Excellence</p>
@@ -113,13 +113,13 @@ const AboutExcelleceSection = () => {
                         </div>
                         <p className=' text-base leading-none mt-2   lg:text-xl ex_animate_txt_c'>State-of-the-art equipment and eco-friendly processes for superior results</p>
                     </div>
-                    <div className="w-full    flex flex-col md:flex-row items-center justify-center gap-10">
+                    <div className="w-full    flex flex-col md:flex-row lg:items-center lg:justify-center gap-10">
                         {excellenceData.map((item, index) => (
-                            <div key={index} className="h-full w-[70%] md:w-[25%] lg:w-[20%] gap-5 flex flex-col text-center items-center justify-between">
+                            <div key={index} className="h-full w-[70%] md:w-[25%] lg:w-[25%]  gap-3 lg:gap-5 flex flex-col lg:text-center lg:items-center justify-between">
                                 <p className=' ex_anim_title text-base lg:text-xl font-semibold'>{item.title}</p>
                                 <div className=" ex_anim_line origin-left  w-full h-[1px] black"></div>
                                 <p className=' text-sm lg:text-base ex_anim_para'>{item.para}</p>
-                                <div className="w-full center">
+                                <div className="w-full flex items-center lg:justify-center">
                                     <img className=' ex_anim_img size-14' src={item.img} alt="" />
                                 </div>
                             </div>

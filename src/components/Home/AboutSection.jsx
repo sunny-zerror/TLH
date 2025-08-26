@@ -54,7 +54,7 @@ const AboutSection = () => {
       <div className="w-full lg:h-[30vw]  flex flex-col lg:flex-row items-center  justify-between px-5 lg:px-24 ">
         <div className="  w-full lg:w-[40%] ">
           <p className=' hero_animate_txt_a block overflow-hidden font-medium mb-5 opacity-80'>About Us</p>
-          <p className=' hero_animate_txt_b text-3xl lg:text-6xl  '>India's Fastest Growing Garment Care Service</p>
+          <p className=' hero_animate_txt_b text-3xl lg:text-6xl font-semibold  '>India's Fastest Growing Garment Care Service</p>
         </div>
         <div className=" w-full mt-5 lg:mt-0  lg:w-1/2 ">
           <p className='hero_animate_txt_c'>Founded in 2016, TLH is India's fastest-growing, reliable garment care service.

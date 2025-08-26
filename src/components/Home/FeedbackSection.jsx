@@ -120,7 +120,7 @@ const FeedbackSection = () => {
             <div className="w-full py-16 lg:py-24  p-5 lg:p-24">
                 <div className="w-full center lg:text-center">
                     <div className="">
-                        <p className=' text-3xl lg:text-6xl animate_txt_a  '>What Our Customers Say</p>
+                        <p className=' text-3xl lg:text-6xl animate_txt_a font-semibold  '>What Our Customers Say</p>
                         <p className='  leading-none lg:text-xl animate_txt_a'>Garment care for important people, by people who care.</p>
                     </div>
                 </div>

@@ -217,7 +217,7 @@ const index = () => {
 
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
                 <div className="block overflow-hidden">
-                    <p className=' serv_txt_a  text-3xl lg:text-6xl'>Our Services</p>
+                    <p className=' serv_txt_a  text-3xl lg:text-6xl font-semibold'>Our Services</p>
                 </div>
                 <div className="block overflow-hidden">
                     <p className='serv_txt_a lg:text-xl'>Explore the range of services we offer to care for your garments.</p>
@@ -244,7 +244,7 @@ const index = () => {
                                 animate="visible"
                                 exit="exit"
                                 transition={{ delay: index * 0.15 }} // stagger effect
-                                className=" w-full md:w-[40%] lg:w-[25%]  shrink-0 flex flex-col justify-between gap-5"
+                                className=" w-[70%] md:w-[40%] lg:w-[25%]  shrink-0 flex flex-col justify-between "
                             >
                                 <motion.div className="serv_clip aspect-square w-full  overflow-hidden">
                                     <img
@@ -253,13 +253,13 @@ const index = () => {
                                         alt={service.title}
                                     />
                                 </motion.div>
-                                <div className="w-full gap-4  flex flex-col justify-between">
-                                    <p className=" text-2xl lg:text-3xl serv_txt_b">{service.title}</p>
-                                    <p className=" text-sm leading-none lg:text-base serv_txt_b">{service.desc}</p>
+                                <div className="w-full mt-2 md:mt-3    flex flex-col justify-between">
+                                    <p className=" text-xl lg:text-2xl serv_txt_b">{service.title}</p>
+                                    <p className=" text-xs md:text-sm leading-none lg:text-base serv_txt_b">{service.desc}</p>
                                     <div>
                                         <button
                                             onClick={() => openService(service)}
-                                            className=' add_anim_txt_btn relative overflow-hidden group rounded-full text-white lg:text-black font-thin bg-black lg:bg-transparent border-2 border-[#0e1111] px-6 center lg:font-bold py-1'>
+                                            className=' add_anim_txt_btn text-xs lg:text-sm mt-4  relative overflow-hidden group rounded-full text-white lg:text-black font-thin bg-black lg:bg-transparent border-2 border-[#0e1111] px-4 center lg:font-bold py-1'>
                                             <p className='fixy1 font_light opacity-0'>Book Now</p>
                                             <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute'>Book Now </p>
                                             <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>

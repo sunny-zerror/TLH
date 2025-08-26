@@ -63,7 +63,7 @@ const FranchiseHero = () => {
           <p className="fr_hr_anim_head text-sm lg:text-xl">Become a Franchise</p>
         </div>
         <div className="block overflow-hidden">
-          <p className="fr_hr_anim_head text-3xl lg:text-6xl">
+          <p className="fr_hr_anim_head text-3xl lg:text-6xl font-semibold">
             Join the Leader in Garment Care
           </p>
         </div>
@@ -82,15 +82,15 @@ const FranchiseHero = () => {
         </p>
 
         {/* Button */}
-        <button className="fr_hr_anim_btn text-xs lg:text-base service_btn relative overflow-hidden group bg-white rounded-full border-transparent border-2 hover:border-white text-black px-4 center font-bold py-1 lg:py-1.5">
-          <p className="flex items-center gap-4 font_light opacity-0">
+        <button className="fr_hr_anim_btn text-xs w-[40%] md:w-[20%]  lg:text-base service_btn relative overflow-hidden group border-white hover:text-black rounded-full text-white border-2 hover:border-white  px-4 center font-bold py-1 lg:py-1.5">
+          <p className="flex items-center justify-between w-full gap-4 font_light opacity-0">
             Join Now <RiArrowRightUpLine size={20} />
           </p>
-          <p className="group-hover flex items-center gap-4 hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute">
+          <p className="group-hover flex items-center w-full px-5 justify-between gap-4 hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-thin absolute">
             Join Now <RiArrowRightUpLine size={20} />
           </p>
-          <div className="w-full group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
-          <p className="font-light flex items-center gap-4 translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute">
+          <div className="w-full group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-white left-0 top-[100%] absolute rounded-full"></div>
+          <p className=" flex items-center w-full justify-between px-5 gap-4 translate-y-[10px] z-[99] text-black  group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute">
             Join Now <RiArrowRightUpLine size={20} />
           </p>
         </button>

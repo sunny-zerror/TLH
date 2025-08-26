@@ -48,7 +48,7 @@ const WelcomeSection = () => {
         <div className='welc_parent'>
             <div className="w-full   flex flex-col lg:flex-row items-start lg:items-center  justify-between px-5 lg:px-24 pb-16 lg:pb-24">
                 <div className=" w-full lg:w-[40%] ">
-                    <p className=' text-3xl lg:text-6xl leading-none welc_animate_txt '>Welcome to The Laundry House</p>
+                    <p className=' text-3xl lg:text-6xl leading-none welc_animate_txt  font-semibold'>Welcome to The Laundry House</p>
                     <p className='lg:text-xl leading-none mt-2 md:mt-0  welc_animate_txt'>India's Fastest Growing Garment Care Service</p>
                 </div>
                 <div className=" w-full mt-10 lg:mt-0 lg:w-1/2 ">

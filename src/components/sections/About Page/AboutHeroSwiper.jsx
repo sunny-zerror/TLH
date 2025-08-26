@@ -41,6 +41,8 @@ const HeroSwiper = () => {
 
   useEffect(() => {
 
+   
+
     gsap.to(
       parallexContainerRef.current,
       {
@@ -181,14 +183,40 @@ const HeroSwiper = () => {
   }, [swiperData]);
 
 
+  useEffect(() => {
+    // Reset & animate active line on slide change
+    const animateLine = (index) => {
+      const lines = document.querySelectorAll(".anim_line_2");
+      lines.forEach((line) => gsap.set(line, { width: "0%" }));
+      gsap.to(lines[index], {
+        width: "100%",
+        duration: 3.5, // match autoplay delay
+        ease: "linear",
+      });
+    };
+
+    // Wait for Swiper to mount
+    setTimeout(() => {
+      const swiper = document.querySelector(".swiper_elem")?.swiper;
+      if (!swiper) return;
+
+      // Animate first line
+      animateLine(swiper.realIndex);
+
+      swiper.on("slideChange", () => {
+        animateLine(swiper.realIndex);
+      });
+    }, 200);
+  }, []);
+
+
   return (
     <>
       <div
         ref={swiperParentRef}
-
         className="relative w-full h-screen overflow-hidden">
 
-        <div className="flex h-10   items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
+        <div className="lg:flex h-10 hidden    items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
           <button
             onClick={() =>
               goToSlide((currentSlide - 1 + swiperData.length) % swiperData.length)
@@ -209,7 +237,7 @@ const HeroSwiper = () => {
           </button>
         </div>
 
-        <div className="chng_sl w-full h-full relative">
+        <div className="chng_sl hidden lg:block w-full h-full relative">
 
           {swiperData?.map((image, index) => (
             <div
@@ -236,9 +264,56 @@ const HeroSwiper = () => {
 
         </div>
 
+        <div className="lg:hidden h-10 flex items-center z-[999] text-white absolute bottom-[13.6%] right-[2%]">
+          <button className="custom-prev h-[80%] group relative overflow-hidden">
+            <div className="w-full -right-10 group-hover:right-0 z-[-1] h-full bg-white absolute top-0 transition-all duration-300"></div>
+            <RiArrowLeftSFill className="group-hover:text-black z-[9] group-hover:scale-[1.1] transition-all duration-300" />
+          </button>
+          <div className="h-[80%] w-[1px] bg-white"></div>
+          <button className="custom-next group h-[80%] relative overflow-hidden hover:scale-[1.1] transition-transform duration-300">
+            <div className="w-full -left-10 group-hover:left-0 z-[-1] h-full bg-white absolute top-0 transition-all duration-300"></div>
+            <RiArrowRightSFill className="group-hover:text-black z-[9] group-hover:scale-[1.1] transition-all duration-300" />
+          </button>
+        </div>
+
+        <Swiper
+          modules={[Navigation, A11y, Autoplay, Pagination]}
+          spaceBetween={0}
+          slidesPerView={1}
+          speed={600}
+          loop
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = ".custom-prev";
+            swiper.params.navigation.nextEl = ".custom-next";
+          }}
+          navigation={{ clickable: true }}
+          className="swiper_elem w-full h-full"
+        >
+          {swiperData?.map((image, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full h-full center overflow-hidden relative">
+                <img
+                  className="w-full h-full object-cover brightness-[.8]"
+                  src={image.img}
+                  alt={image.title}
+                />
+                {/* Progress Line */}
+                <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2 flex flex-col right-[20%] md:right-[10%] bottom-[13.6%] z-[9]">
+                  <p className="text-sm leading-none capitalize text-white">
+                    {image.title}
+                  </p>
+                  <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">
+                    <div className="anim_line_2 w-[0%] h-[1.5px] rounded-full opacity-80 bg-white"></div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
         <div ref={parallexContainerRef} className=" z-[9] w-full absolute bottom-[-15vh] h-[15vh] bg-[#FFFAF0]"></div>
       </div>
-
 
     </>
 

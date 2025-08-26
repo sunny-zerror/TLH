@@ -67,10 +67,10 @@ const FranchiseSection = () => {
         <div className='fran_parent'>
             <div className=" relative w-full h-screen text-white overflow-hidden ">
                 <img className=' fr_bg_img  absolute blur-none w-full h-full z-[-1] object-cover brightness-[.4]' src="/images/Hero swiper/pic_3.webp" alt="" />
-                <div className="absolute top-[60%] md:top-[75%] left-5 lg:top-[50%] lg:left-24 translate-y-[-50%] ">
-                    <p className=' fr_anim_txt_a font-medium mb-2 opacity-80'>Become a Franchise</p>
-                    <p className=' text-4xl leading-none lg:text-6xl fr_anim_txt_a'>Join the Leader <br /> in Garment Care</p>
-                    <p className=' lg:hidden text-xl leading-6  mt-5 md:text-xl  lg:text-5xl font_light fr_anim_txt_b'>The Laundry House offers a proven business model, comprehensive support, and the opportunity to be a part of India's garment care revolution. With over 60,000 satisfied customers and a rapidly expanding network, we provide our franchise partners with established SOPs, cutting-edge technology, and powerful marketing strategies. Partner with us and bring a new level of trust and transparency to the cleaning industry in your city.</p>
+                <div className=" px-5 lg:px-0 absolute top-[70%] md:top-[75%] left-0 lg:top-[50%] lg:left-24 translate-y-[-50%] ">
+                    <p className=' fr_anim_txt_a text-sm font-medium mb-2 opacity-80'>Become a Franchise</p>
+                    <p className=' text-3xl leading-none lg:text-6xl fr_anim_txt_a font-semibold'>Join the Leader <br /> in Garment Care</p>
+                    <p className=' lg:hidden text-sm   mt-5 md:text-xl  lg:text-5xl font_light fr_anim_txt_b'>The Laundry House offers a proven business model, comprehensive support, and the opportunity to be a part of India's garment care revolution. With over 60,000 satisfied customers and a rapidly expanding network, we provide our franchise partners with established SOPs, cutting-edge technology, and powerful marketing strategies. Partner with us and bring a new level of trust and transparency to the cleaning industry in your city.</p>
                 </div>
                 <div className=" hidden lg:block fr_txt_box w-[90%] max-[1024px]:left-5 lg:w-[40%] absolute top-[70%] md:top-[80%] lg:top-[40%]  lg:right-24">
                     <p className='  text-base leading-none md:text-xl  lg:text-5xl font_light fr_anim_txt_b'>The Laundry House offers a proven business model, comprehensive support, and the opportunity to be a part of India's garment care revolution. With over 60,000 satisfied customers and a rapidly expanding network, we provide our franchise partners with established SOPs, cutting-edge technology, and powerful marketing strategies. Partner with us and bring a new level of trust and transparency to the cleaning industry in your city.</p>

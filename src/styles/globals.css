@@ -82,3 +82,10 @@ button{
   background: #000 !important; /* active bullet */
   opacity: 1;
 }
+
+.swiper-button-next {
+opacity: 0 !important;
+}
+.swiper-button-prev {
+opacity: 0 !important;
+}

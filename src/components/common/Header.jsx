@@ -122,12 +122,12 @@ const Header = () => {
         transition-colors duration-500 ease-in-out 
         ${isScrolled ? "bg-black text-white" : "bg-transparent text-white"}`}
     >
-        <div className=" w-[40%] md:w-[20%]">
+        <div className=" w-[45%] md:w-[20%]">
           <Link href="/" className='w-full'>
             <img className='w-[100%] lg:w-[12vw]' src="/logos/Logo_White.svg" alt="" />
           </Link>
         </div>
-        <RiMenu3Line className='lg:hidden' onClick={openMenu} />
+        <RiMenu3Line size={28} className='lg:hidden' onClick={openMenu} />
         <div className=" hidden  lg:flex items-center gap-8">
           {links.map((link, i) => (
             <Link
@@ -161,8 +161,8 @@ const Header = () => {
       </div>
       <div
         // style={{clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)"}}
-        className=" open_menu right-[-100%] w-full h-screen bg-[#FFFAF0] p-5 fixed z-[99999]">
-        <div className="w-full flex justify-end">
+        className=" open_menu right-[-100%] w-full h-[100dvh] bg-[#FFFAF0] p-5 fixed z-[99999]">
+        <div className=" absolute  right-5 w-full flex justify-end">
           <RiCloseLine size={30} onClick={closeMenu} />
         </div>
         <div className="w-full h-full center flex-col gap-5">

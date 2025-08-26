@@ -51,7 +51,7 @@ const MobileServiceSection = () => {
     return (
         <div className=' lg:hidden  w-full my-16 '>
             <div className="w-full px-5">
-                <p className='service_animate_txt_a text-3xl font-medium'>Our Services</p>
+                <p className='service_animate_txt_a text-3xl font-semibold'>Our Services</p>
             </div>
             <Swiper
                 modules={[Navigation, A11y, Autoplay, Pagination]}
