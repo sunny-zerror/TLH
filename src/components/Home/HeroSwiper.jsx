@@ -362,7 +362,7 @@ const HeroSwiper = () => {
 
 
       <div className=" fixed_paren  fixed z-[99] top-0 left-0 h-screen pointer-events-none w-full center">
-        <p className="text-xl anim_ttxt opacity-0">THE LAUNDARY HOUSE</p>
+        <p className="text-xl anim_ttxt opacity-0">THE LAUNDRY HOUSE</p>
       </div>
     </>
 
