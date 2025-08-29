@@ -127,33 +127,31 @@ const Responsibility = () => {
 
     return (
         <div className='resp_parent'>
-            <div className="w-full p-5 py-16 lg:p-24">
+            <div className="w-full p-5 py-16 lg:p-20">
                 <div className="w-full center">
-                    <p className=" resp_anim_txt text-2xl lg:text-6xl font-semibold">Sharing the Responsibilities</p>
+                    <h1 className=" resp_anim_txt text-2xl lg:text-6xl  ">Sharing the Responsibilities</h1>
                 </div>
-                <div className="w-full mt-5 lg:mt-0 grid grid-cols-1 md:grid-cols-2 gap-10  lg:p-20">
+                <div className="w-full mt-5 lg:mt-0 grid grid-cols-1 gap-y-10 lg:gap-y-0 md:grid-cols-2 gap-x-10 lg:gap-x-24  lg:p-20">
                     {cardData.map((card, index) => (
                         <div
                             key={index}
                             className=" resp_card p-5 lg:p-10 flex flex-col gap-5 lg:gap-10 bg-black/5 rounded-xl"
                         >
                             <div className="w-full center">
-                                <p className=" resp_card_txt  text-xl lg:text-3xl">{card.heading}</p>
+                                <h2 className=" resp_card_txt  text-xl lg:text-3xl">{card.heading}</h2>
                             </div>
-                            <div className="resp_card_line w-full h-[1px] lg:h-[2px] bg-black rounded-full"></div>
-                            <div className="flex flex-col gap-3">
+                            <div className="resp_card_line w-full  border-dashed border border-black/50 rounded-full"></div>
+                            <div className="flex px-6 flex-col gap-3">
                                 {card?.services.map((service, idx) => (
                                     <div key={idx}>
-                                        <div className="flex  gap-2 ">
-                                            <div className="size-1 mt-[8px] bg-black rounded-full shrink-0"></div>
-                                            <div className="">
-
-                                            <p className=" resp_card_txt text-sm lg:text-base font-semibold">{service.title}</p>
-                                            {service.description && (
-                                                <p className=" resp_card_txt text-sm lg:text-base">{service.description}</p>
-                                            )}
-                                            </div>
-                                        </div>
+                                        <ul className="list-disc pl-4">
+                                            <li>
+                                                <h1 className="resp_card_txt text-sm lg:text-base">{service.title}</h1>
+                                                {service.description && (
+                                                    <p className="resp_card_txt text-sm lg:text-base">{service.description}</p>
+                                                )}
+                                            </li>
+                                        </ul>
                                     </div>
                                 ))}
                             </div>

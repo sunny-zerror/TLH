@@ -51,7 +51,7 @@ const MobileServiceSection = () => {
     return (
         <div className=' lg:hidden  w-full my-16 '>
             <div className="w-full px-5">
-                <p className='service_animate_txt_a text-2xl font-semibold'>Our Services</p>
+                <h1 className='service_animate_txt_a text-2xl  '>Our Services</h1>
             </div>
             <Swiper
                 modules={[Navigation, A11y, Autoplay, Pagination]}
@@ -85,7 +85,7 @@ const MobileServiceSection = () => {
 
                                             <div className="w-full flex flex-col gap-3 justify-between h-full ">
                                                 <div className="">
-                                                    <p className='text-2xl lg:text-6xl  service_animate_txt_b'>{item.title}</p>
+                                                    <h1 className='text-2xl lg:text-6xl  service_animate_txt_b'>{item.title}</h1>
                                                     <div className=" border_anim  w-full origin-left md:mt-2 border  border-dashed rounded-full border-black/30"></div>
                                                 </div>
                                                 <p
@@ -98,8 +98,8 @@ const MobileServiceSection = () => {
                                                 <div className="stores">
                                                     <div className="flex flex-col lg:flex-row  lg:items-center gap-2">
                                                         <div className="flex items-center gap-2">
-                                                            <RiMapPinFill size={18} className='service_icon translate-y-[-2px]' />
-                                                            <p className=' service_animate_txt_d text-xs lg:text-sm uppercase font-semibold'>Locate Stores:</p>
+                                                            <RiMapPinFill size={12} className='service_icon translate-y-[-2px]' />
+                                                            <h2 className=' service_animate_txt_d text-xs lg:text-sm uppercase  '>Locate Stores:</h2>
                                                         </div>
                                                         <p className=' service_animate_txt_e text-xs lg:text-sm opacity-70'>Click the location below to explore</p>
                                                     </div>
@@ -107,14 +107,14 @@ const MobileServiceSection = () => {
                                                         {visibleCities.map((store, i) => (
                                                             <button
                                                                 key={i}
-                                                                className="text-xs lg:text-base service_btn relative overflow-hidden group rounded-full border-2 border-[#0e1111] px-4 center font-bold py-1 lg:py-1.5"
+                                                                className="text-xs lg:text-base service_btn relative overflow-hidden group rounded-full border-1 border-[#0e1111] px-4 center   py-1 lg:py-1.5"
                                                             >
-                                                                <p className=" font_light opacity-0">{store}</p>
-                                                                <p className=" group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font_light absolute">
+                                                                <p className="   opacity-0">{store}</p>
+                                                                <p className=" group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300   absolute">
                                                                     {store}
                                                                 </p>
                                                                 <div className="w-full group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
-                                                                <p className=" font-light translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute">
+                                                                <p className="   translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300   absolute">
                                                                     {store}
                                                                 </p>
                                                             </button>
@@ -123,9 +123,9 @@ const MobileServiceSection = () => {
                                                         {item?.cities.length > 3 && (
                                                             <button
                                                                 onClick={() => toggleShowAll(index)}
-                                                                className="text-xs lg:text-base service_btn relative overflow-hidden group rounded-full border-2 border-[#0e1111] px-4 center font-bold py-1 lg:py-1.5"
+                                                                className="text-xs lg:text-base service_btn relative overflow-hidden group rounded-full border-1 border-[#0e1111] px-4 center   py-1 lg:py-1.5"
                                                             >
-                                                                <p className="  font_light  z-[99]">
+                                                                <p className="     z-[99]">
                                                                     {showAll ? "show less" : ` + ${item?.cities.length - 3} more`}
                                                                 </p>
                                                             </button>
@@ -134,7 +134,7 @@ const MobileServiceSection = () => {
                                                 </div>
 
                                                 <div className="w-full mt-4 ">
-                                                    <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:font-semibold border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
+                                                    <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:  border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
                                                         <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
                                                         <p className=' fixy1_5 '>Book Now</p>
                                                         <RiArrowRightUpLine size={24} className='z-[99]' />

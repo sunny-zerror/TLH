@@ -190,7 +190,7 @@ const index = () => {
             <div ref={slideRef} className=" open_slide w-full md:w-[50vw]  lg:w-[30vw] flex flex-col justify-between h-screen bg-[#FFFAF0] p-5 lg:p-10 fixed top-0 right-[-100%] z-[999]">
                 <div className="flex flex-col gap-3 lg:gap-5">
                     <div className="w-full flex items-center justify-between">
-                        <p className='text-3xl '>{activeService?.title}</p>
+                        <h1 className='text-3xl '>{activeService?.title}</h1>
                         <RiCloseLine onClick={closeService} size={30} className='cursor-pointer' />
                     </div>
                     <div className="w-full h-[1.5px] black opacity-60"></div>
@@ -212,7 +212,7 @@ const index = () => {
                     <div className="w-full h-[1.5px] black opacity-60"></div>
                 </div>
                 <div className="w-full ">
-                    <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:font-semibold border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
+                    <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:  border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
                         <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
                         <p className=' fixy1_5 '>Book Now</p>
                         <RiArrowRightUpLine size={24} className='z-[99]' />
@@ -222,7 +222,7 @@ const index = () => {
 
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
                 <div className="block overflow-hidden">
-                    <p className=' serv_txt_a  text-2xl lg:text-6xl font-semibold'>Our Services</p>
+                    <h1 className=' serv_txt_a  text-2xl lg:text-6xl  '>Our Services</h1>
                 </div>
                 <div className="block overflow-hidden">
                     <p className=' text-sm mt-1 serv_txt_a lg:text-xl'>Explore the range of services we offer to care for your garments.</p>
@@ -247,7 +247,7 @@ const index = () => {
                                 animate="visible"
                                 exit="exit"
                                 transition={{ delay: index * 0.15 }} // stagger effect
-                                className=" w-[70%] md:w-[40%] lg:w-[25%]  shrink-0 flex flex-col justify-between "
+                                className=" w-[70%] md:w-[40%] lg:w-[25%]  shrink-0 flex flex-col  "
                             >
                                 <motion.div className="serv_clip aspect-square w-full  overflow-hidden">
                                     <img
@@ -256,17 +256,17 @@ const index = () => {
                                         alt={service.title}
                                     />
                                 </motion.div>
-                                <div className="w-full mt-2 md:mt-3    flex flex-col justify-between">
-                                    <p className=" text-xl lg:text-2xl serv_txt_b">{service.title}</p>
+                                <div className="w-full mt-2 md:mt-3 flex flex-col justify-between">
+                                    <h1 className=" text-xl lg:text-2xl serv_txt_b">{service.title}</h1>
                                     <p className=" text-xs md:text-sm leading-none lg:text-base serv_txt_b">{service.desc}</p>
                                     <div>
                                         <button
                                             onClick={() => openService(service)}
-                                            className='serv_txt_b add_anim_txt_btn text-xs lg:text-sm mt-4  relative overflow-hidden group rounded-full text-white font-thin hover:text-black bg-black  border-2 border-[#0e1111] px-4 center lg:font-bold py-1'>
-                                            <p className='fixy1 font-thin opacity-0'>Book Now</p>
-                                            <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-thin absolute'>Book Now </p>
+                                            className='serv_txt_b add_anim_txt_btn text-xs lg:text-sm mt-4  relative overflow-hidden group rounded-full text-white   hover:text-black bg-black  border-1 border-[#0e1111] px-4 center lg:  py-1'>
+                                            <p className='fixy1   opacity-0'>Book Now</p>
+                                            <p className='fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300   absolute'>Book Now </p>
                                             <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
-                                            <p className='fixy1  translate-y-[10px] z-[99] text-black group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font_light absolute'> Book Now</p>
+                                            <p className='fixy1  translate-y-[10px] z-[99] text-black group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute'> Book Now</p>
                                         </button>
                                     </div>
                                 </div>

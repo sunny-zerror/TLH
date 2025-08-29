@@ -55,7 +55,7 @@ const Index = () => {
             {/* Header Section */}
             <div className="w-full flex lg:items-center justify-center flex-col p-5 pt-20 lg:pt-32">
                 <div className="block overflow-hidden">
-                    <p className=' store_txt_head text-2xl lg:text-6xl font-semibold '>Our Stores</p>
+                    <h1 className=' store_txt_head text-2xl lg:text-6xl   '>Our Stores</h1>
                 </div>
                 <div className="block overflow-hidden">
                     <p className='  text-sm store_txt_head lg:text-xl '>Find a store near you to experience our services firsthand.</p>
@@ -78,27 +78,27 @@ const Index = () => {
 
             <div className="w-full flex flex-col lg:flex-row justify-between p-5 lg:p-10 mb-20">
                 {/* Left Side (Shops List) */}
-                <div  className=" w-full lg:w-[40%] h-[60vh] lg:h-[35vw] overflow-y-scroll custom_scrollbar">
+                <div className=" w-full lg:w-[40%] h-[60vh] lg:h-[35vw] overflow-y-scroll custom_scrollbar">
                     {allStoresData.find(store => store.cityName === activeCity)?.shopNames?.map((shop, index) => (
                         <div
                             key={index}
                             className={`w-full ${index === 0 ? "py-0 pb-4" : "py-4 pb-4"} chnge_cat_tble_b flex flex-col gap-1 md:gap-2 border-b border-black/20`}
                         >
-                            <AnimatedText uniqueKey={shop.name} className="store_txt_a text-xl md:text-2xl lg:font-semibold">{shop.name}</AnimatedText>
+                            <AnimatedText uniqueKey={shop.name} className="store_txt_a text-xl md:text-2xl font-bold ">{shop.name}</AnimatedText>
                             <AnimatedText uniqueKey={shop.address} className="store_txt_a text-xs md:text-sm opacity-70">{shop.address}</AnimatedText>
                             <div className="flex text-xs md:text-sm items-center justify-between md:justify-start md:gap-14">
                                 <div className="store_txt_a flex items-center gap-1">
-                                    <RiTimeFill size={16} />
+                                    <RiTimeFill size={14} />
                                     <AnimatedText uniqueKey={shop.openTime} className="fixy1">{shop.openTime}</AnimatedText>
                                     <p className="fixy1">-</p>
                                     <AnimatedText uniqueKey={shop.closeTime} className="fixy1">{shop.closeTime}</AnimatedText>
                                 </div>
                                 <div className="store_txt_a flex items-center gap-1">
-                                    <RiPhoneFill size={16} />
+                                    <RiPhoneFill size={14} />
                                     <AnimatedText uniqueKey={shop.contact} className="fixy1">{shop.contact}</AnimatedText>
                                 </div>
                                 <div className="store_txt_a flex items-center gap-1">
-                                    <RiMapPinFill size={16} />
+                                    <RiMapPinFill size={14} />
                                     <a
                                         href={shop.location}
                                         target="_blank"
@@ -116,7 +116,7 @@ const Index = () => {
                 {/* Right Side (Categories + Table) */}
                 <div className=" mt-10 lg:mt-0 w-full lg:w-1/2 h-full flex flex-col gap-8">
                     {/* Category Tabs */}
-                    <div className="chnge_cat_tble w-full h-10 px-5 md:h-12 flex items-center md:px-20 justify-between rounded-full border border-black/20 bg-black/5">
+                    <div className="chnge_cat_tble w-full h-10 px-5 md:h-12 flex items-center md:px-20 justify-between rounded-full border border-black/10 bg-black/5">
                         {allStoresData.find(store => store.cityName === activeCity)?.categories?.map((category, index) => (
                             <div
                                 key={index}
@@ -126,7 +126,7 @@ const Index = () => {
                                 <div className="block overflow-hidden">
                                     <AnimatedText
                                         uniqueKey={category.name}
-                                        className={`fixy1_5 text-[3vw] md:text-base store_txt_d transition duration-300 ${categoryType === category.name ? "opacity-100" : "opacity-50"}`}
+                                        className={`fixy1_5 text-[3vw] md:text-base store_txt_d transition duration-300 ${categoryType === category.name ? "opacity-100" : "opacity-50 text-black/50"}`}
                                     >
                                         {category.name}
                                     </AnimatedText>
@@ -138,14 +138,14 @@ const Index = () => {
 
                     {/* Price Table */}
                     <div className="chnge_cat_tble w-full relative overflow-hidden rounded-xl border border-black/20">
-                        <div className="table_ver_line w-[1.5px] h-full opacity-50 black absolute left-[33%]"></div>
-                        <div className="table_ver_line w-[1.5px] h-full opacity-50 black absolute right-[33%]"></div>
+                        <div className=" border-[1px] border-dashed  h-full opacity-20 black absolute left-[33%]"></div>
+                        <div className=" border-[1px] border-dashed  h-full opacity-20 black absolute right-[33%]"></div>
                         <table className=" text-xs md:text-base text-center w-full h-full">
                             <thead className="w-full">
                                 <tr className="chnge_cat_tble table_border w-full flex h-12 bg-black/5 border-[#0e11117e] border-b-2 justify-between">
-                                    <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Garments/ Accessories</p></th>
-                                    <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Premium Fabric Care Service</p></th>
-                                    <th className="w-[33%] center h-10"><p className="font-thin store_txt_b translate-y-[4px]">Steam Iron Service</p></th>
+                                    <th className="w-[33%] center h-10"><p className="  store_txt_b font-medium translate-y-[4px]">Garments/ Accessories</p></th>
+                                    <th className="w-[33%] center h-10"><p className="  store_txt_b font-medium translate-y-[4px]">Premium Fabric Care Service</p></th>
+                                    <th className="w-[33%] center h-10"><p className="  store_txt_b font-medium translate-y-[4px]">Steam Iron Service</p></th>
                                 </tr>
                             </thead>
                             <tbody className="w-full">
@@ -174,9 +174,9 @@ const Index = () => {
 
                     {/* Notes */}
                     <div>
-                        <p className="font-semibold store_txt_c opacity-70 text-sm">* Please Note</p>
-                        <p className="text-sm store_txt_c opacity-70 font_light">• Designer and bridal apparel will be charged based on quality and specific requirements.</p>
-                        <p className="text-sm store_txt_c opacity-70 font_light">• Prices are exclusive of GST and are starting rates only.</p>
+                        <h1 className="  store_txt_c opacity-70 text-sm">* Please Note</h1>
+                        <p className="text-sm store_txt_c opacity-70  ">• Designer and bridal apparel will be charged based on quality and specific requirements.</p>
+                        <p className="text-sm store_txt_c opacity-70  ">• Prices are exclusive of GST and are starting rates only.</p>
                     </div>
                 </div>
             </div>

@@ -133,19 +133,19 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.url}
-              className="relative  group overflow-hidden flex flex-col items-center"
+              className="relative  group  flex flex-col items-center"
               onMouseEnter={() => handleMouseEnter(link, i)}
               onMouseLeave={() => handleMouseLeave(link, i)}
             >
-              <p className="text-base">{link.title}</p>
-
-              <div
-                // ref={(el) => (lineRefs.current[i] = el)}
-                className="absolute bottom-0 h-[2px] group-hover:left-0 transition-all duration-300 w-full bg-white rounded-full -left-[101%]"
-              ></div>
-
+              {
+                router.pathname === link.url ? (
+              <p className="text-base opacity-100 ">{link.title}</p>
+                ):(
+                  <p className="text-base font-light opacity-50 hover:opacity-100 hover:font-normal transition-all duration-300">{link.title}</p>
+                )
+              }
               {router.pathname === link.url && (
-                <div className="absolute w-full h-[1.5px] left-0 rounded-full bg-white bottom-0"></div>
+                <div className="absolute size-[6px] left-[50%] translate-x-[-50%] rounded-full bg-white -bottom-2"></div>
               )}
             </Link>
           ))}
@@ -153,7 +153,7 @@ const Header = () => {
         <div className="hidden  lg:flex items-center  justify-end  w-[20%]">
           <button className=' group flex relative center uppercase px-4 py-2 rounded-full'>
             <RiArrowRightUpLine className='scale-0 opacity-0 group-hover:translate-x-[15px] group-hover:opacity-100 group-hover:scale-100 origin-bottom-left transition-all duration-300' size={24} />
-            <p className=' group-hover:translate-x-[15px] transition-all duration-300 text-base fixy1_5'>Book Now</p>
+            <h2 className=' group-hover:translate-x-[15px] transition-all duration-300 text-base fixy1_5'>Book Now</h2>
             <div className="w-[0%] group-hover:w-[65%] origin-left left-9 absolute bottom-2 h-[2px] bg-white transition-all duration-300"></div>
             <RiArrowRightUpLine className=' group-hover:scale-0 origin-top-right group-hover:translate-x-[15px] group-hover:opacity-0 transition-all duration-300' size={24} />
           </button>

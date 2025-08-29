@@ -104,15 +104,15 @@ const AboutExcelleceSection = () => {
 
     return (
         <div className='excellence_parent'>
-            <div className="w-full p-5 pt-10 pb-24   lg:p-24 center">
+            <div className="w-full p-5 pt-10 pb-24 lg:pt-16   lg:p-24 center">
                 <div className="w-full  flex flex-col items-center justify-center gap-10 lg:gap-20">
                     <div className="w-full lg:text-center">
-                        <div className=' hidden lg:block text-2xl leading-none lg:text-6xl uppercase font-semibold'>
-                            <p className='ex_animate_txt_a'>Excellence</p>
-                            <p className='ex_animate_txt_b'>in Every Detail</p>
+                        <div className=' hidden lg:block text-2xl leading-none lg:text-6xl uppercase  '>
+                            <h1 className='ex_animate_txt_a'>Excellence</h1>
+                            <h1 className='ex_animate_txt_b'>in Every Detail</h1>
                         </div>
-                        <div className=' lg:hidden text-2xl leading-none lg:text-6xl uppercase font-semibold'>
-                            <p className='ex_animate_txt_a'>Excellence in Every Detail</p>
+                        <div className=' lg:hidden text-2xl leading-none lg:text-6xl uppercase  '>
+                            <h1 className='ex_animate_txt_a'>Excellence in Every Detail</h1>
                         </div>
                         <p className=' text-sm  lg:text-xl  mt-1  ex_animate_txt_c'>State-of-the-art equipment and eco-friendly processes for superior results</p>
                     </div>
@@ -120,7 +120,7 @@ const AboutExcelleceSection = () => {
                         {excellenceData.map((item, index) => (
                             <div key={index} className=" lg:w-[25%] flex lg:flex-col gap-5 items-start lg:items-center justify-between">
                                 <div className=" lg:w-full w-[65%] space-y-1">
-                                    <p className=' ex_anim_title text-sm lg:text-xl font-semibold'>{item.title}</p>
+                                    <h1 className=' ex_anim_title text-sm lg:text-xl  '>{item.title}</h1>
                                     <div className=" ex_anim_line origin-left  w-full h-[1px] black"></div>
                                     <p className=' text-sm lg:text-base ex_anim_para'>{item.para}</p>
                                 </div>

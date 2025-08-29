@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';
+import { RiArrowRightUpLine } from '@remixicon/react';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const FranchiseSection = () => {
@@ -63,17 +64,59 @@ const FranchiseSection = () => {
         return () => ctx.revert();
     }, []);
 
+    const [expanded, setExpanded] = useState(false);
+
     return (
         <div className='fran_parent'>
             <div className=" relative w-full h-[70vh] lg:h-screen text-white overflow-hidden ">
                 <img className=' fr_bg_img  absolute blur-none w-full h-full z-[-1] object-cover brightness-[.4]' src="/images/Hero swiper/pic_3.webp" alt="" />
-                <div className=" px-5 lg:px-0 absolute top-[65%] md:top-[70%] left-0 lg:top-[50%] lg:left-24 translate-y-[-50%] ">
-                    <p className=' fr_anim_txt_a text-sm font-medium mb-2 opacity-80'>Become a Franchise</p>
-                    <p className=' text-2xl leading-none lg:text-6xl fr_anim_txt_a font-semibold'>Join the Leader <br /> in Garment Care</p>
-                    <p className=' lg:hidden text-sm   mt-5 md:text-xl  lg:text-5xl font_light '>The Laundry House offers a proven business model, comprehensive support, and the opportunity to be a part of India's garment care revolution. With over 60,000 satisfied customers and a rapidly expanding network, we provide our franchise partners with established SOPs, cutting-edge technology, and powerful marketing strategies. Partner with us and bring a new level of trust and transparency to the cleaning industry in your city.</p>
+                <div className=" px-5 flex flex-col   lg:px-0 absolute bottom-10 lg:bottom-[50%] lg:translate-y-[50%] lg:left-24 ">
+                    <h2 className=' fr_anim_txt_a text-sm lg:text-base mb-2 opacity-80'>Become a Franchise</h2>
+                    <h1 className=' text-2xl leading-none lg:text-6xl fr_anim_txt_a '>Join the Leader <br /> in Garment Care</h1>
+                    <h5
+                        className={`lg:hidden text-sm mt-5 md:text-xl lg:text-5xl transition-all duration-300 ${expanded ? "line-clamp-none" : "line-clamp-2"}`}>
+                        The Laundry House offers a proven business model, comprehensive support,
+                        and the opportunity to be a part of India's garment care revolution.
+                        With over 60,000 satisfied customers and a rapidly expanding network,
+                        we provide our franchise partners with established SOPs, cutting-edge technology,
+                        and powerful marketing strategies. Partner with us and bring a new level of trust
+                        and transparency to the cleaning industry in your city.
+                    </h5>
+                    <p
+                        className="text-xs underline cursor-pointer "
+                        onClick={() => setExpanded(!expanded)}
+                    >
+                        {expanded ? "Read Less" : "Read More"}
+                    </p>
+                    <div className="lg:hidden">
+                        <button className="  fr_hr_anim_btn mt-5 whitespace-nowrap text-xs   lg:text-base service_btn relative overflow-hidden group border-white hover:text-black rounded-full text-white border-1 hover:border-white  center   py-1 lg:py-1.5">
+                            <p className="px-4 flex items-center justify-between w-full gap-4 font-normal opacity-0">
+                                Join Now
+                            </p>
+                            <p className="group-hover px-4 flex items-center w-full  justify-between gap-4 hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute">
+                                Join Now
+                            </p>
+                            <div className="w-full group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-white left-0 top-[100%] absolute rounded-full"></div>
+                            <p className=" px-4 flex items-center w-full justify-between  gap-4 translate-y-[10px] z-[99] text-black  group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute">
+                                Join Now
+                            </p>
+                        </button>
+                    </div>
                 </div>
                 <div className=" hidden lg:block fr_txt_box w-[90%] max-[1024px]:left-5 lg:w-[40%] absolute top-[70%] md:top-[80%] lg:top-[40%]  lg:right-24">
-                    <p className='  text-base leading-none md:text-xl  lg:text-5xl font_light fr_anim_txt_b'>The Laundry House offers a proven business model, comprehensive support, and the opportunity to be a part of India's garment care revolution. With over 60,000 satisfied customers and a rapidly expanding network, we provide our franchise partners with established SOPs, cutting-edge technology, and powerful marketing strategies. Partner with us and bring a new level of trust and transparency to the cleaning industry in your city.</p>
+                    <h5 className='  text-base leading-none md:text-xl  lg:text-5xl  fr_anim_txt_b'>The Laundry House offers a proven business model, comprehensive support, and the opportunity to be a part of India's garment care revolution. With over 60,000 satisfied customers and a rapidly expanding network, we provide our franchise partners with established SOPs, cutting-edge technology, and powerful marketing strategies. Partner with us and bring a new level of trust and transparency to the cleaning industry in your city.</h5>
+                    <button className="fr_hr_anim_btn mt-5 whitespace-nowrap text-xs   lg:text-base service_btn relative overflow-hidden group border-white hover:text-black rounded-full text-white border-1 hover:border-white  center   py-2 lg:py-1.5">
+                        <p className="px-5 flex items-center justify-between w-full gap-4 font-normal opacity-0">
+                            Become a Franchise
+                        </p>
+                        <p className="group-hover px-5 flex items-center w-full  justify-between gap-4 hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute">
+                            Become a Franchise
+                        </p>
+                        <div className="w-full group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-white left-0 top-[100%] absolute rounded-full"></div>
+                        <p className=" px-5 flex items-center w-full justify-between  gap-4 translate-y-[10px] z-[99] text-black  group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute">
+                            Become a Franchise
+                        </p>
+                    </button>
                 </div>
             </div>
         </div>

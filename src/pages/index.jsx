@@ -22,7 +22,7 @@ const index = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".diff_line",
-          start: "top 80%",
+          start: "top bottom",
           // markers: true,
           toggleActions: "play none none reverse",
         }

@@ -15,6 +15,9 @@ const index = () => {
         <div>
             <FranchiseHero />
             <FranchiseNumbers />
+            <div className="w-full px-5 lg:px-24 mt-10 md:mt-14 lg:mt-20 center">
+                <div className="w-full border border-black/50 border-dashed"></div>
+            </div>
             <Responsibility />
             <FranchiseForm />
         </div>

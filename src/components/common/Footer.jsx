@@ -1,94 +1,136 @@
-import { RiFacebookFill, RiInstagramFill, RiThreadsFill, RiTwitterFill, RiYoutubeFill } from '@remixicon/react'
-import React from 'react'
+import {
+  RiArrowDownSLine,
+  RiFacebookFill,
+  RiInstagramFill,
+  RiThreadsFill,
+  RiTwitterFill,
+  RiYoutubeFill
+} from '@remixicon/react'
+import React, { useEffect, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';
-import { useEffect } from 'react';
+import Link from 'next/link';
+
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Footer = () => {
 
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
+  const [openIndex, setOpenIndex] = useState(null);
 
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: ".fot_parent",
-  //         start: "top 60%",
-  //         // markers: true,
-  //         toggleActions: "play none none reverse",
-  //       }
-  //     })
-
-  //     tl.fromTo(".fot_anim_txt",
-  //       { y: 20, opacity: 0 },
-  //       {
-  //         y: 0,
-  //         opacity: 1,
-  //         delay: 0.2,
-  //         duration: 0.5,
-  //         stagger: 0.02,
-  //       }, "parallel");
+  const handleToggle = (idx) => {
+    setOpenIndex(openIndex === idx ? null : idx); // close if same, else open
+  };
 
 
+  const linkGroups = [
+    {
+      title: "Services",
+      links: [
+        { label: "Garment Care", href: "/services" },
+        { label: "Sneakers & Bags", href: "/services" },
+        { label: "Home & Auto Fabrics", href: "/services" },
+        { label: "Wedding Couture", href: "/services" },
+      ],
+    },
+    {
+      title: "About Us",
+      links: [
+        { label: "Franchise", href: "/franchise" },
+        { label: "Store Locator", href: "/stores" },
+        { label: "Care Guides", href: "/stores" },
+      ],
+    },
+    {
+      title: "Others",
+      links: [
+        { label: "FAQs", href: "/others/faqs" },
+        { label: "Privacy Policy", href: "/others/privacy-policy" },
+        { label: "Terms of Service", href: "/others/terms" },
+        { label: "Cookie Policy", href: "/others/cookies" },
+      ],
+    },
+  ];
 
+  const socialLinks = [
+    { icon: RiThreadsFill, href: "https://www.threads.net" },
+    { icon: RiTwitterFill, href: "https://twitter.com" },
+    { icon: RiFacebookFill, href: "https://facebook.com" },
+    { icon: RiYoutubeFill, href: "https://youtube.com" },
+    { icon: RiInstagramFill, href: "https://instagram.com" },
+  ];
 
-  //   });
-
-  //   return () => ctx.revert();
-  // }, []);
   return (
     <div className='fot_parent'>
-      <div className="w-full  black  text-white px-5 lg:px-24 pt-16 lg:pt-24">
-        <div className="w-full border-b flex flex-col md:flex-row pb-20 items-center justify-between border-white/40">
-          <div className=" w-[50%] md:w-[30%] lg:w-[50%] h-full flex items-center justify-center md:justify-start">
-            <img className='fot_anim_txt' src="/logos/Logo_White.svg" alt="" />
+      <div className="w-full black text-white px-5 lg:px-24 pt-10 lg:pt-24">
+        {/* Top Section */}
+        <div className="w-full border-b flex flex-col md:flex-row pb-10 md:pb-20 items-center justify-between border-white/40">
+          {/* Logo */}
+          <div className="w-[80%] md:w-[30%] lg:w-[50%] flex items-center justify-center md:justify-start">
+            <img className='fot_anim_txt' src="/logos/Logo_White.svg" alt="Logo" />
           </div>
-          <div className=" mt-12 md:mt-0 w-full md:w-[60%]  lg:w-[40%] h-full flex justify-between ">
-            <div className="h-full">
-              <p className=' fot_anim_txt text-xs  lg:text-base uppercase mb-4'>services</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Garment Care</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Sneakers & Bags</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Home & Auto Fabrics</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Wedding Couture</p>
-            </div>
-            <div className="h-full">
-              <p className=' fot_anim_txt text-xs lg:text-base uppercase mb-4'>About Us</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Franchise</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Store Locator</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Care Guides</p>
-            </div>
-            <div className="h-full">
-              <p className=' fot_anim_txt text-xs lg:text-base uppercase mb-4'>Others</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>FAQs</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Privacy Policy</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Terms of Service</p>
-              <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light mb-1'>Cookie Policy</p>
-            </div>
+
+          {/* Link Groups */}
+          <div className="mt-12 md:mt-0 w-full md:w-[60%] lg:w-[40%] flex flex-col md:flex-row gap-y-2 justify-between">
+            {linkGroups.map((group, idx) => (
+              <div key={idx} className="w-full md:w-auto">
+                {/* Header with arrow */}
+                <div
+                  className="flex justify-between w-full items-center md:items-start cursor-pointer"
+                  onClick={() => handleToggle(idx)}
+                >
+                  <h2 className="fot_anim_txt text-sm lg:text-base uppercase mb-4">
+                    {group.title}
+                  </h2>
+                  <RiArrowDownSLine
+                    className={`md:hidden transition-transform duration-300 ${openIndex === idx ? "rotate-180" : ""
+                      }`}
+                  />
+                </div>
+
+                {/* Links */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 md:block ${openIndex === idx ? "max-h-40" : "max-h-0"
+                    } md:max-h-none`}
+                >
+                  {group.links.map((link, i) => (
+                    <Link key={i} href={link.href}>
+                      {/* mobile */}
+                      <p className="lg:hidden fot_anim_txt text-sm lg:text-base opacity-50 mb-1 block hover:opacity-100 transition">
+                        {link.label}
+                      </p>
+                      {/* desktop */}
+                      <h6 className="hidden lg:block fot_anim_txt text-sm lg:text-base opacity-50 mb-1 hover:opacity-100 transition">
+                        {link.label}
+                      </h6>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
+        {/* Bottom Section */}
         <div className="w-full h-20 flex flex-col md:flex-row items-center justify-evenly md:justify-between">
-          <div className="">
-            <p className=' fot_anim_txt text-xs lg:text-base opacity-50 font_light'>All Rights Reserved © 2024</p>
-          </div>
+
+          <p className=" lg:hidden fot_anim_txt text-xs lg:text-base opacity-50">All Rights Reserved © 2024</p>
+          <h6 className=" hidden lg:block fot_anim_txt text-xs lg:text-base opacity-50">All Rights Reserved © 2024</h6>
+
           <div className="flex items-center gap-2">
-            <div className="">
-              <p className=' hidden md:block fot_anim_txt text-xs lg:text-base opacity-50 font_light'>Our story continues:</p>
-            </div>
-            <div className="flex gap-4">
-              <RiThreadsFill className='fot_anim_txt text-xs lg:text-base' />
-              <RiTwitterFill className='fot_anim_txt text-xs lg:text-base' />
-              <RiFacebookFill className='fot_anim_txt text-xs lg:text-base' />
-              <RiYoutubeFill className='fot_anim_txt text-xs lg:text-base' />
-              <RiInstagramFill className='fot_anim_txt text-xs lg:text-base' />
+            <h6 className="hidden md:block fot_anim_txt text-xs lg:text-base opacity-50">Our story continues:</h6>
+            <div className="flex gap-2">
+              {socialLinks.map(({ icon: Icon, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noopener noreferrer">
+                  <Icon size={18} className="fot_anim_txt text-base lg:text-lg hover:opacity-80 transition" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
-
       </div>
     </div>
   )
 }
 
-export default Footer
+export default Footer;

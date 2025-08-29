@@ -26,7 +26,7 @@ const ServiceData = [{
 const AboutServices = () => {
 
     useEffect(() => {
-        if(window.innerWidth < 1024) return
+        if (window.innerWidth < 1024) return
         const ctx = gsap.context(() => {
             const split1 = new SplitText(".ab_anim_txt_a", { type: "words" });
 
@@ -47,12 +47,12 @@ const AboutServices = () => {
             //         duration: 0.5,
             //         stagger: 0.005,
             //     }, "parallel");
-                
-                // tl.from(".ab_border_anim",{
-                //     borderColor:"transparent",
-                //     delay:0.5,
-                //     duration:1,
-                // },"parallel")
+
+            // tl.from(".ab_border_anim",{
+            //     borderColor:"transparent",
+            //     delay:0.5,
+            //     duration:1,
+            // },"parallel")
 
 
             // tl.fromTo(".ab_anim_txt",
@@ -64,7 +64,7 @@ const AboutServices = () => {
             //         stagger: 0.005,
             //     }, "parallel");
 
-                   tl.fromTo(
+            tl.fromTo(
                 ".ab_clip_img",
                 {
                     clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
@@ -72,7 +72,7 @@ const AboutServices = () => {
                 },
                 {
                     delay: 0.2,
-                    stagger:.5,
+                    stagger: .5,
                     ease: "power2.inOut",
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                     filter: "blur(0px)",
@@ -90,7 +90,7 @@ const AboutServices = () => {
                     ServiceData.map((service, index) => (
                         <div key={index} className="ab_border_anim w-full  py-10 gap-10 flex flex-col md:flex-row border-t  border-dashed  border-black/30">
                             <div className=" w-full md:w-[60%]  lg:w-[25%] h-full ">
-                                <p className=' ab_anim_txt text-2xl leading-none font-semibold'>{service.title}</p>
+                                <h1 className=' ab_anim_txt text-2xl leading-none  '>{service.title}</h1>
                                 <div className='mt-5 hidden md:block lg:hidden'>{
                                     service.description.map((desc, i) => (
                                         <p key={i} className=' text-sm  ab_anim_txt_a'>{desc}</p>
@@ -103,7 +103,7 @@ const AboutServices = () => {
                             <div className=" flex md:hidden w-full md:w-[40%] h-full lg:flex items-center justify-between flex-col ">
                                 {
                                     service.description.map((desc, i) => (
-                                        <p key={i} className= ' text-sm lg:text-base ab_anim_txt_a'>{desc}</p>
+                                        <p key={i} className=' text-sm lg:text-base ab_anim_txt_a'>{desc}</p>
                                     ))
                                 }
                             </div>

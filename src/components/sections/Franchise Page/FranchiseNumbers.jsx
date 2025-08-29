@@ -87,13 +87,14 @@ const FranchiseNumbers = () => {
 
     return (
         <div className="numb_parent" ref={sectionRef}>
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 pt-16 p-5 lg:pt-24 lg:px-24 gap-y-16">
+            <div className="w-full   pt-16 p-5 lg:pt-24 lg:px-24 ">
+                <div className="w-full  grid grid-cols-2 md:grid-cols-3 gap-x-10 lg:gap-x-32  gap-y-16">
                 {Data.map((item, index) => (
-                    <div className="w-[90%] md:w-[75%]" key={index}>
-                        <p className="numb_animate_txt_a text-[3vw] leading-none md:text-xs lg:text-sm uppercase">
+                    <div className="w-[100%]" key={index}>
+                        <h1 className="numb_animate_txt_a text-[3vw] leading-none md:text-xs lg:text-sm uppercase">
                             {item.title}
-                        </p>
-                        <div className="numb_line w-full h-[2px] black rounded-full mt-1 mb-5 md:mb-8"></div>
+                        </h1>
+                        <div className="numb_line w-full h-[1px] black rounded-full mt-2 mb-5 md:mb-8"></div>
                         <div className="flex items-end gap-2">
                             {/* Animate this number */}
                             <p
@@ -110,6 +111,7 @@ const FranchiseNumbers = () => {
                         </div>
                     </div>
                 ))}
+                </div>
             </div>
         </div>
     );
