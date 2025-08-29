@@ -89,7 +89,7 @@ const FranchiseHero = () => {
           <p className="group-hover flex items-center w-full px-5 justify-between gap-4 hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300   absolute">
             Join Now <RiArrowRightUpLine size={20} />
           </p>
-          <div className="w-full group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-white left-0 top-[100%] absolute rounded-full"></div>
+          <div className="w-full  origin-center group-hover:left-0 transition-all duration-300 h-full bg-[#fffaf0] top-0 left-[-100%] absolute "></div>
           <p className=" flex items-center w-full justify-between px-5 gap-4 translate-y-[10px] z-[99] text-black  group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute">
             Join Now <RiArrowRightUpLine size={20} />
           </p>

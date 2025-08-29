@@ -88,17 +88,25 @@ const Index = () => {
                             <AnimatedText uniqueKey={shop.address} className="store_txt_a text-xs md:text-sm opacity-70">{shop.address}</AnimatedText>
                             <div className="flex text-xs md:text-sm items-center justify-between md:justify-start md:gap-14">
                                 <div className="store_txt_a flex items-center gap-1">
-                                    <RiTimeFill size={14} />
+                                    <AnimatedText uniqueKey={`${shop.name}-time-icon`}>
+                                        <RiTimeFill size={14} />
+                                    </AnimatedText>
                                     <AnimatedText uniqueKey={shop.openTime} className="fixy1">{shop.openTime}</AnimatedText>
-                                    <p className="fixy1">-</p>
+                                    <AnimatedText uniqueKey={`${shop.name}-dash`} className="fixy1">
+                                        -
+                                    </AnimatedText>
                                     <AnimatedText uniqueKey={shop.closeTime} className="fixy1">{shop.closeTime}</AnimatedText>
                                 </div>
                                 <div className="store_txt_a flex items-center gap-1">
-                                    <RiPhoneFill size={14} />
+                                    <AnimatedText uniqueKey={`${shop.name}-phone-icon`}>
+                                        <RiPhoneFill size={14} />
+                                    </AnimatedText>
                                     <AnimatedText uniqueKey={shop.contact} className="fixy1">{shop.contact}</AnimatedText>
                                 </div>
                                 <div className="store_txt_a flex items-center gap-1">
-                                    <RiMapPinFill size={14} />
+                                    <AnimatedText uniqueKey={`${shop.name}-map-icon`}>
+                                        <RiMapPinFill size={14} />
+                                    </AnimatedText>
                                     <a
                                         href={shop.location}
                                         target="_blank"
@@ -155,7 +163,7 @@ const Index = () => {
                                     ?.servicePrices.map((service, index) => (
                                         <tr
                                             key={index}
-                                            className={` ${index % 2 === 0 ? "bg-black/2 " : "bg-black/5"} chnge_cat_tble w-full flex justify-between h-10 lg:h-12 items-center`}
+                                            className={` ${index % 2 === 0 ? "bg-black/3 " : "bg-black/5"} chnge_cat_tble w-full flex justify-between h-10 lg:h-12 items-center`}
                                         >
                                             <td className="w-[32%] center">
                                                 <AnimatedText uniqueKey={service.serviceName} className="store_txt_c text-xs lg:text-base">{service.serviceName}</AnimatedText>
@@ -174,7 +182,7 @@ const Index = () => {
 
                     {/* Notes */}
                     <div>
-                        <h1 className="  store_txt_c opacity-70 text-sm">* Please Note</h1>
+                        <h1 className="  store_txt_c opacity-70 text-sm translate-x-[-1.5px]">* Please Note</h1>
                         <p className="text-sm store_txt_c opacity-70  ">• Designer and bridal apparel will be charged based on quality and specific requirements.</p>
                         <p className="text-sm store_txt_c opacity-70  ">• Prices are exclusive of GST and are starting rates only.</p>
                     </div>

@@ -96,13 +96,11 @@ const Footer = () => {
                   {group.links.map((link, i) => (
                     <Link key={i} href={link.href}>
                       {/* mobile */}
-                      <p className="lg:hidden fot_anim_txt text-sm lg:text-base opacity-50 mb-1 block hover:opacity-100 transition">
+                      
+                      {/* desktop */}
+                      <p className=" fot_anim_txt font-light text-sm lg:text-base opacity-50 mb-1 hover:opacity-100 transition">
                         {link.label}
                       </p>
-                      {/* desktop */}
-                      <h6 className="hidden lg:block fot_anim_txt text-sm lg:text-base opacity-50 mb-1 hover:opacity-100 transition">
-                        {link.label}
-                      </h6>
                     </Link>
                   ))}
                 </div>
@@ -114,12 +112,11 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="w-full h-20 flex flex-col md:flex-row items-center justify-evenly md:justify-between">
 
-          <p className=" lg:hidden fot_anim_txt text-xs lg:text-base opacity-50">All Rights Reserved © 2024</p>
-          <h6 className=" hidden lg:block fot_anim_txt text-xs lg:text-base opacity-50">All Rights Reserved © 2024</h6>
+          <p className=" font-light fot_anim_txt text-xs lg:text-base opacity-50">All Rights Reserved © 2024</p>
 
-          <div className="flex items-center gap-2">
-            <h6 className="hidden md:block fot_anim_txt text-xs lg:text-base opacity-50">Our story continues:</h6>
-            <div className="flex gap-2">
+          <div className="flex items-center gap-1">
+            <p className="hidden font-light md:block fot_anim_txt text-xs lg:text-base opacity-50">Our story continues:</p>
+            <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href }, i) => (
                 <a key={i} href={href} target="_blank" rel="noopener noreferrer">
                   <Icon size={18} className="fot_anim_txt text-base lg:text-lg hover:opacity-80 transition" />

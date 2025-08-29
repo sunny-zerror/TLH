@@ -359,7 +359,7 @@ const HeroSwiper = () => {
           ))}
         </Swiper>
 
-        <div ref={parallexContainerRef} className=" z-[9] w-full absolute bottom-[-15vh] h-[15vh] bg-[#FFFAF0]"></div>
+        <div ref={parallexContainerRef} className=" z-[9] w-full absolute bottom-[-20vh] h-[20vh] bg-[#FFFAF0]"></div>
       </div>
 
 

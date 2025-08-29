@@ -121,7 +121,7 @@ const ServicesSection = () => {
                 scrollTrigger: {
                     trigger: ".services_parent",
                     start: "top top",
-                    end: window.innerHeight * 5,
+                    end: window.innerHeight * 4,
                     pin: true,
                     // markers: true,
                     scrub: true,

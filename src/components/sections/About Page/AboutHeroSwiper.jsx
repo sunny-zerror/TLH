@@ -215,7 +215,7 @@ const HeroSwiper = () => {
     <>
       <div
         ref={swiperParentRef}
-        className="relative w-full h-screen overflow-hidden">
+        className="relative w-full h-[100dvh] lg:h-screen overflow-hidden">
 
         <div className="lg:flex h-10 hidden    items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
           <button
@@ -265,7 +265,7 @@ const HeroSwiper = () => {
 
         </div>
 
-        <div className="lg:hidden h-10 flex items-center z-[999] text-white absolute bottom-[13.6%] right-[2%]">
+        {/* <div className="lg:hidden h-10 flex items-center z-[999] text-white absolute bottom-[13.6%] right-[2%]">
           <button className="custom-prev h-[80%] group relative overflow-hidden">
             <div className="w-full -right-10 group-hover:right-0 z-[-1] h-full bg-white absolute top-0 transition-all duration-300"></div>
             <RiArrowLeftSFill className="group-hover:text-black z-[9] group-hover:scale-[1.1] transition-all duration-300" />
@@ -275,7 +275,7 @@ const HeroSwiper = () => {
             <div className="w-full -left-10 group-hover:left-0 z-[-1] h-full bg-white absolute top-0 transition-all duration-300"></div>
             <RiArrowRightSFill className="group-hover:text-black z-[9] group-hover:scale-[1.1] transition-all duration-300" />
           </button>
-        </div>
+        </div> */}
 
         <Swiper
           modules={[Navigation, A11y, Autoplay, Pagination]}
@@ -300,8 +300,8 @@ const HeroSwiper = () => {
                   alt={image.title}
                 />
                 {/* Progress Line */}
-                <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2 flex flex-col right-[20%] md:right-[10%] bottom-[13.6%] z-[9]">
-                  <p className="text-sm leading-none capitalize text-white">
+                <div className="absolute  gap-1 flex flex-col left-5 bottom-10 z-[9]">
+                  <p className="text-base leading-none capitalize text-white">
                     {image.title}
                   </p>
                   <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">

@@ -56,6 +56,9 @@ const StoresAddresses = () => {
                         <h1 className=' text-2xl leading-none  lg:text-6xl add_anim_txt_a   '>Serving You Across India</h1>
                         <p className=' mt-1 text-sm   lg:text-xl add_anim_txt_a '>Find The Laundry House in 9 major cities and growing.</p>
                     </div>
+                    <div className=" hidden text-xs lg:text-base add_anim_txt_a  lg:flex items-end justify-end">
+                        <p>(20 Stores)</p>
+                    </div>
                 </div>
                 <div className="w-full mt-10">
                     <div className="w-full h-12 relative  flex items-center">
@@ -64,7 +67,7 @@ const StoresAddresses = () => {
                         </div>
                         <div className=" flex justify-between w-full">
                             <p className=' add_anim_txt_a text-xs md:text-sm opacity-60 uppercase'>location</p>
-                            <div className=" text-xs lg:text-base add_anim_txt_a  flex items-end justify-end">
+                            <div className=" lg:hidden text-xs lg:text-base add_anim_txt_a  flex items-end justify-end">
                                 <p>(20 Stores)</p>
                             </div>
                         </div>
@@ -85,12 +88,15 @@ const StoresAddresses = () => {
                         ))
                     }
                     <div className="w-full center mt-10">
-                        <button className=' text-xs lg:text-base add_anim_txt_btn relative  text-white lg:text-black  bg-black lg:bg-transparent  overflow-hidden group rounded-full border-1 border-[#0e1111] px-6 center  py-1.5'>
+                        {/* <button className=' text-xs lg:text-base add_anim_txt_btn relative  text-white lg:text-black  bg-black lg:bg-transparent  overflow-hidden group rounded-full border-1 border-[#0e1111] px-6 center  py-1.5'>
                             <p className='fixy1 font-normal opacity-0'>Load More</p>
                             <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute'>Load More </p>
                             <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
                             <p className='fixy1  translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute'> Load More</p>
-                        </button>
+                        </button> */}
+                        <div className="w-full h-12  bg-black/6 border border-black/50 center">
+                            <h1 className='text-sm '>Load More +</h1>
+                        </div>
                     </div>
                 </div>
             </div>
