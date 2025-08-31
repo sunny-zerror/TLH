@@ -76,7 +76,7 @@ const Index = () => {
                 ))}
             </div>
 
-            <div className="w-full flex flex-col lg:flex-row justify-between p-5 lg:p-10 mb-20">
+            <div className="w-full flex flex-col lg:flex-row justify-between p-5 lg:p-10 mb-5 lg:mb-20">
                 {/* Left Side (Shops List) */}
                 <div className=" w-full lg:w-[40%] h-[60vh] lg:h-[35vw] overflow-y-scroll custom_scrollbar">
                     {allStoresData.find(store => store.cityName === activeCity)?.shopNames?.map((shop, index) => (

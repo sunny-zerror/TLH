@@ -33,7 +33,7 @@ export default function PageTransition({ children }) {
           }
         }}
 
-        className="min-h-screen w-full"
+        className=" w-full"
       >
         {children}
       </motion.div>

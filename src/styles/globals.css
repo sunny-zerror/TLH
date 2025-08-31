@@ -48,14 +48,17 @@ h6 {
 .custom_scroller::-webkit-scrollbar {
   background-color: rgba(128, 128, 128, 0.388);
   height: 3px;
+  cursor: pointer;
 }
 .custom_scroller::-webkit-scrollbar-thumb {
   background-color: #0e1111;
   border-radius: 10px;
+  cursor: pointer;
 }
 .custom_scrollbar::-webkit-scrollbar {
   background-color: rgba(128, 128, 128, 0.247);
   width: 4px;
+  cursor: pointer;
 }
 .custom_scrollbar::-webkit-scrollbar-thumb {
   background-color: #0e111179;

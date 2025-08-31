@@ -69,7 +69,7 @@ const FranchiseForm = () => {
 
     return (
         <div className='form_parent'>
-            <div className="w-full px-5 lg:px-40 mb-20 ">
+            <div className="w-full px-5 lg:px-40 mb-14 lg:mb-20 ">
                 <div className="form_bg w-full  h-full p-5 md:p-10  lg:p-20 bg-black/5 justify-between rounded-xl flex flex-col md:flex-row">
                     <div className=" w-full md:w-1/2 h-full flex gap-5 flex-col ">
                         <h1 className=' form_anim_txt_a text-2xl leading-none  lg:text-6xl  '>Let’s work <br /> together</h1>

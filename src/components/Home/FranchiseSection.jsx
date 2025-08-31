@@ -30,13 +30,14 @@ const FranchiseSection = () => {
                     start: "top top",
                     end: "bottom top",
                     pin: true,
+                    anticipatePin: 1, 
                     scrub: true,
                     // markers: true,
                     // toggleActions: "play none none reverse",
                 }
             })
             tl2.to(".fr_txt_box", {
-                top: "-18vw",
+                top: "-20vw",
                 duration: 180,
                 delay: 1
             }, "par")

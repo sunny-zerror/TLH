@@ -260,7 +260,7 @@ const HeroSwiper = () => {
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)"
         }}
-        className="relative w-full h-screen overflow-hidden">
+        className="relative w-full h-[85vh] lg:h-screen overflow-hidden">
 
         <div className="lg:flex h-10 hidden    items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
           <button

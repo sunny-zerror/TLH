@@ -235,7 +235,7 @@ const index = () => {
                     </div>
                 ))}
             </div>
-            <div className=" mb-20 p-5 lg:p-10 w-full overflow-hidden ">
+            <div className=" mb-5 lg:mb-20 p-5 lg:p-10 w-full overflow-hidden ">
                 <div className="w-full pb-10 overflow-x-auto custom_scroller flex  gap-5 lg:gap-10 ">
                     <AnimatePresence mode="wait">
                         {filteredServices.map((service, index) => (

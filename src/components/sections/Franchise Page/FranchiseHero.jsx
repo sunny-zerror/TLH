@@ -50,7 +50,7 @@ const FranchiseHero = () => {
   }, []);
 
   return (
-    <div className="w-full relative h-screen text-white">
+    <div className="w-full relative h-[85vh] lg:h-screen text-white">
       {/* Background Image */}
       <img
         className="fr_hr_anim_img w-full h-full object-cover brightness-[.3]"
