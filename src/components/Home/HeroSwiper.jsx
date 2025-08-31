@@ -1,3 +1,4 @@
+"use client"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y, Autoplay, Pagination } from "swiper/modules";
 
@@ -75,7 +76,7 @@ const HeroSwiper = () => {
       duration: 2,
       ease: "expo.out"
     })
-    if(window.innerWidth < 1024) return
+    if (window.innerWidth < 1024) return
     gsap.fromTo(".chng_sl", {
       y: -300
     }, {
@@ -259,13 +260,11 @@ const HeroSwiper = () => {
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)"
         }}
-        className="relative w-full h-[100dvh] lg:h-screen overflow-hidden">
+        className="relative w-full h-screen overflow-hidden">
 
         <div className="lg:flex h-10 hidden    items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
           <button
-            onClick={() =>
-              goToSlide((currentSlide - 1 + swiperData.length) % swiperData.length)
-            }
+            onClick={() => goToSlide((currentSlide - 1 + swiperData.length) % swiperData.length)}
             className="  h-[80%] group relative overflow-hidden "
           >
             <div className="w-full -right-10 group-hover:right-0 z-[-1]  h-full bg-white absolute top-0 transition-all duration-300 "></div>
@@ -277,7 +276,6 @@ const HeroSwiper = () => {
             className="group h-[80%] relative overflow-hidden  hover:scale-[1.1] transition-transform duration-300"
           >
             <div className="w-full -left-10 group-hover:left-0 z-[-1]  h-full bg-white absolute top-0 transition-all duration-300 "></div>
-
             <RiArrowRightSFill className="group-hover:text-black z-[9] group-hover:scale-[1.1] transition-all duration-300" />
           </button>
         </div>

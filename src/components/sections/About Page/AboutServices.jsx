@@ -88,7 +88,7 @@ const AboutServices = () => {
             <div className="w-full px-5 lg:px-24">
                 {
                     ServiceData.map((service, index) => (
-                        <div key={index} className="ab_border_anim w-full  py-10 gap-10 flex flex-col md:flex-row border-t  border-dashed  border-black/30">
+                        <div key={index} className="ab_border_anim w-full  py-10 gap-3 md:gap-10 flex flex-col md:flex-row border-t  border-dashed  border-black/30">
                             <div className=" w-full md:w-[60%]  lg:w-[25%] h-full ">
                                 <h1 className=' ab_anim_txt text-2xl leading-none  '>{service.title}</h1>
                                 <div className='mt-5 hidden md:block lg:hidden'>{

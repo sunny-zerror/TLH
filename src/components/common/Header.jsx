@@ -141,7 +141,7 @@ const Header = () => {
                 router.pathname === link.url ? (
               <p className="text-base opacity-100 ">{link.title}</p>
                 ):(
-                  <p className="text-base font-light opacity-50 hover:opacity-100 hover:font-normal transition-all duration-300">{link.title}</p>
+                  <p className="text-base opacity-50 hover:opacity-100 hover:font-normal transition-all duration-300">{link.title}</p>
                 )
               }
               {router.pathname === link.url && (

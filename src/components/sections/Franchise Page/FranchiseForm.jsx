@@ -5,6 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';
 import { useEffect } from 'react';
+import ArrowButton from '@/components/Buttons/ArrowButton';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const FranchiseForm = () => {
@@ -69,7 +70,7 @@ const FranchiseForm = () => {
     return (
         <div className='form_parent'>
             <div className="w-full px-5 lg:px-40 mb-20 ">
-                <div className="form_bg w-full h-full p-5 md:p-10  lg:p-20 bg-black/5 justify-between rounded-xl flex flex-col md:flex-row">
+                <div className="form_bg w-full  h-full p-5 md:p-10  lg:p-20 bg-black/5 justify-between rounded-xl flex flex-col md:flex-row">
                     <div className=" w-full md:w-1/2 h-full flex gap-5 flex-col ">
                         <h1 className=' form_anim_txt_a text-2xl leading-none  lg:text-6xl  '>Let’s work <br /> together</h1>
                         <p className=' form_anim_txt_b text-sm lg:text-xl end-full lg:w-[70%] '>Fill the form and we will contact you shortly or reach out to us at</p>
@@ -93,12 +94,9 @@ const FranchiseForm = () => {
                                 <textarea className='input_box outline-none w-full  text-sm lg:text-xl mb-2 h-24 resize-none scroller_none leading-none overflow-y-scroll' type="text" placeholder='Your Message' name="" id="" />
                                 <div className="input_line w-full h-[1px] lg:h-[1.5px] opacity-70 black rounded-full"></div>
                             </div>
-                            <button className=' form_btn text-xs lg:text-base mt-10 relative overflow-hidden bg-black  text-white  group rounded-full border-1 border-[#0e1111] px-6 center   py-1.5'>
-                                <p className='fixy1 font-normal opacity-0'>Submit</p>
-                                <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute'>Submit</p>
-                                <div className="w-full  group-hover:scale-110 origin-center group-hover:left-0 transition-all duration-300 h-full bg-[#fffaf0] top-0 left-[-100%] absolute "></div>
-                                <p className='fixy1  translate-y-[10px] z-[99] text-black group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute'> Submit</p>
-                            </button>
+                            <div className=" w-[100%] md:w-[50%] lg:w-[35%] mt-10">
+                                <ArrowButton variant="dark" label="Submit" />
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 import { motion, AnimatePresence } from "framer-motion";
 import CustomEase from 'gsap/dist/CustomEase';
 import { useRouter } from 'next/router';
+import ArrowButton from '@/components/Buttons/ArrowButton';
 
 const cardVariants = {
     hidden: {
@@ -156,7 +157,7 @@ const index = () => {
             ease: "custom"
         });
         gsap.to(overlayRef.current, {
-            pointerEvents:"auto",
+            pointerEvents: "auto",
             opacity: 1,
             duration: 1,
             ease: "custom"
@@ -171,7 +172,7 @@ const index = () => {
             ease: "custom"
         });
         gsap.to(overlayRef.current, {
-            pointerEvents:"none",
+            pointerEvents: "none",
             opacity: 0,
             duration: 1,
             ease: "custom"
@@ -189,7 +190,7 @@ const index = () => {
 
             <div onClick={closeService} ref={overlayRef} className="overlay pointer-events-none opacity-0 fixed h-screen w-full bg-black/70 z-[99]"></div>
 
-            <div ref={slideRef} className=" open_slide w-full md:w-[50vw]  lg:w-[30vw] flex flex-col justify-between h-screen bg-[#FFFAF0] p-5 lg:p-10 fixed top-0 right-[-100%] z-[999]">
+            <div ref={slideRef} className=" open_slide w-full md:w-[50vw]  lg:w-[30vw] flex flex-col justify-between h-[100dvh] bg-[#FFFAF0] p-5 lg:p-10 fixed top-0 right-[-100%] z-[999]">
                 <div className="flex flex-col gap-3 lg:gap-5">
                     <div className="w-full flex items-center justify-between">
                         <h1 className='text-3xl '>{activeService?.title}</h1>
@@ -214,11 +215,7 @@ const index = () => {
                     <div className="w-full h-[1.5px] black opacity-60"></div>
                 </div>
                 <div className="w-full ">
-                    <button className='  group relative text-xs lg:text-base service_btn  w-full hover:bg-transparent bg-black hover:border-black border-transparent overflow-hidden hover:text-black transition-all duration-300 hover:  border-2 text-white py-2 lg:py-4 px-4 lg:px-8 uppercase  rounded-full flex items-center justify-between'>
-                        <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full bg-[#FFFAF0] left-0 top-[100%] absolute rounded-full"></div>
-                        <p className=' fixy1_5 '>Book Now</p>
-                        <RiArrowRightUpLine size={24} className='z-[99]' />
-                    </button>
+                       <ArrowButton variant="dark" label="Book Now" />
                 </div>
             </div>
 
@@ -261,10 +258,10 @@ const index = () => {
                                 <div className="w-full mt-2 gap-1 md:mt-3 flex flex-col justify-between">
                                     <h1 className=" text-xl lg:text-2xl serv_txt_b">{service.title}</h1>
                                     <p className=" text-xs md:text-sm leading-none lg:text-base serv_txt_b">{service.desc}</p>
-                                    <div>
+                                    <div className='w-full'>
                                         <button
                                             onClick={() => openService(service)}
-                                            className='serv_txt_b add_anim_txt_btn text-xs lg:text-sm mt-4  relative overflow-hidden group rounded-full text-white   hover:text-black bg-black  border-1 border-[#0e1111] px-4 center py-1.5 lg:py-2'>
+                                            className='serv_txt_b w-full add_anim_txt_btn text-sm lg:text-base font-normal mt-4  relative overflow-hidden group rounded-full text-white   hover:text-black bg-black  border-1 border-[#0e1111] px-4 center py-1.5 lg:py-2.5'>
                                             <p className='   opacity-0'>Book Now</p>
                                             <p className=' group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300   absolute'>Book Now </p>
                                             <div className="w-full  group-hover:scale-110 origin-center group-hover:left-0 transition-all duration-300 h-full bg-[#FFFAF0] top-0 left-[-100%] absolute "></div>

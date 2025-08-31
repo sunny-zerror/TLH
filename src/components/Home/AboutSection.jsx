@@ -65,7 +65,7 @@ const AboutSection = () => {
           <button className=' text-sm lg:text-base learn_btn relative overflow-hidden group  text-white lg:text-black   bg-black lg:bg-transparent  rounded-full border-1 border-[#0e1111] px-0 py-1 lg:px-6 center lg:  lg:py-2'>
             <p className='fixy1 font-normal opacity-0'>About Our Process</p>
             <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute'>Learn More </p>
-            <div className="w-full  group-hover:scale-110 origin-center group-hover:top-0 transition-all duration-300 h-full black left-0 top-[100%] absolute rounded-full"></div>
+            <div className="w-full origin-center group-hover:left-0 transition-all duration-300 h-full black top-0 left-[-100%] absolute "></div>
             <p className='fixy1 font-normal translate-y-[10px] z-[99] text-white group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300  absolute'> About Our Process</p>
           </button>
         </div>

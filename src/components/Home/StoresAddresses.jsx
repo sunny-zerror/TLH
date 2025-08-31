@@ -87,7 +87,7 @@ const StoresAddresses = () => {
                             </div>
                         ))
                     }
-                    <div className="w-full center mt-10">
+                    <div className="w-full center mt-10 cursor-pointer">
                         {/* <button className=' text-xs lg:text-base add_anim_txt_btn relative  text-white lg:text-black  bg-black lg:bg-transparent  overflow-hidden group rounded-full border-1 border-[#0e1111] px-6 center  py-1.5'>
                             <p className='fixy1 font-normal opacity-0'>Load More</p>
                             <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute'>Load More </p>

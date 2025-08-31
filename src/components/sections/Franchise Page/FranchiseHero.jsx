@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
+import ArrowButton from "@/components/Buttons/ArrowButton";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -58,7 +59,7 @@ const FranchiseHero = () => {
       />
 
       {/* Content */}
-      <div className="absolute w-[90%] lg:w-[70%] flex flex-col gap-5 items-center top-[50%] left-[50%] text-center translate-y-[-50%] translate-x-[-50%]">
+      <div className="absolute px-5 w-[100%] lg:w-[70%] flex flex-col gap-5 lg:items-center top-[70%] lg:top-[53%] left-[50%] lg:text-center translate-y-[-50%] translate-x-[-50%]">
         <div className="block overflow-hidden">
           <h2 className=" fr_hr_anim_head text-sm lg:text-base">Become a Franchise</h2>
         </div>
@@ -67,8 +68,8 @@ const FranchiseHero = () => {
             Join the Leader in Garment Care
           </h1>
         </div>
-
-        <p className="fr_hr_anim_txt fr_hr_anim_txt_a text-sm lg:text-base lg:w-[70%]">
+        
+        <p className="fr_hr_anim_txt fr_hr_anim_txt_a text-sm lg:text-base w-full lg:w-[70%]">
           The Laundry House offers a proven business model, comprehensive support,
           and the opportunity to be a part of India's garment care revolution.
           With over 60,000 satisfied customers and a rapidly expanding network,
@@ -76,24 +77,15 @@ const FranchiseHero = () => {
           technology, and powerful marketing strategies.
         </p>
 
-        <p className="fr_hr_anim_txt fr_hr_anim_txt_b text-sm lg:text-base lg:w-[70%]">
+        <p className="fr_hr_anim_txt fr_hr_anim_txt_b text-sm lg:text-base w-full lg:w-[70%]">
           Partner with us and bring a new level of trust and transparency to the
           cleaning industry in your city.
         </p>
 
         {/* Button */}
-        <button className="fr_hr_anim_btn whitespace-nowrap text-xs w-[40%] md:w-[18%]  lg:text-base service_btn bg-[#fffaf0] lg:bg-transparent relative overflow-hidden group border-white text-black hover:text-black rounded-full lg:text-white border-1 hover:border-white  px-4 center   py-1 lg:py-1.5">
-          <p className="flex items-center justify-between w-full gap-4 font-normal opacity-0">
-            Join Now <RiArrowRightUpLine size={20} />
-          </p>
-          <p className="group-hover flex items-center w-full px-5 justify-between gap-4 hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300   absolute">
-            Join Now <RiArrowRightUpLine size={20} />
-          </p>
-          <div className="w-full  origin-center group-hover:left-0 transition-all duration-300 h-full bg-[#fffaf0] top-0 left-[-100%] absolute "></div>
-          <p className=" flex items-center w-full justify-between px-5 gap-4 translate-y-[10px] z-[99] text-black  group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300 font-normal absolute">
-            Join Now <RiArrowRightUpLine size={20} />
-          </p>
-        </button>
+        <div className=" w-[50vw] scale-100  lg:w-[20vw]">
+          <ArrowButton variant="light" label="Join Now" />
+        </div>
       </div>
     </div>
   );
