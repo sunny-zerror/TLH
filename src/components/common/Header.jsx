@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react'
 import { CustomEase } from 'gsap/dist/CustomEase';
 import Link from 'next/link';
-gsap.registerPlugin(CustomEase);
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(CustomEase, ScrollTrigger);
 
 const links = [{
   title: "About Us",
@@ -115,15 +116,58 @@ const Header = () => {
       }
     });
   }
+
+useEffect(() => {
+  const threshold = window.innerHeight; // 100vh
+  let isActive = false;
+
+  const headerTl = gsap.timeline({ paused: true });
+
+  headerTl
+    .to(".nav", {
+      top: "-5rem",
+      backgroundColor: "black",
+      color: "white",
+      duration: 0.01,
+    })
+    .to(".nav", {
+      position: "fixed",
+      top: 0,
+      duration: 0.3,
+      ease: "expo.out",
+    });
+
+  const onScroll = () => {
+    if (window.scrollY >= threshold && !isActive) {
+      headerTl.play();
+      isActive = true;
+    }
+
+    if (window.scrollY < threshold && isActive) {
+      headerTl.reverse();
+      isActive = false;
+    }
+  };
+
+  window.addEventListener("scroll", onScroll);
+
+  return () => {
+    window.removeEventListener("scroll", onScroll);
+  };
+}, []);
+
+
+
+
   return (
-    <div>
+    <>
       <div
-      className={`nav w-full fixed h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
+        className={`nav w-full absolute h-16 z-[99] flex items-center justify-between px-5 lg:px-10 
         transition-colors duration-500 ease-in-out 
         ${isScrolled ? "bg-black text-white" : "bg-transparent text-white"}`}
-    >
+      >
         <div className=" w-[55%] md:w-[20%]">
-          <Link href="/" className='w-full'>
+          <Link href="/" scroll={false} className='w-full'>
             <img className='w-[100%] lg:w-[15vw]' src="/logos/Logo_White.svg" alt="" />
           </Link>
         </div>
@@ -133,14 +177,15 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.url}
+              scroll={false}
               className="relative  group  flex flex-col items-center"
               onMouseEnter={() => handleMouseEnter(link, i)}
               onMouseLeave={() => handleMouseLeave(link, i)}
             >
               {
                 router.pathname === link.url ? (
-              <p className="text-base opacity-100 ">{link.title}</p>
-                ):(
+                  <p className="text-base opacity-100 ">{link.title}</p>
+                ) : (
                   <p className="text-base opacity-50 hover:opacity-100 hover:font-normal transition-all duration-300">{link.title}</p>
                 )
               }
@@ -150,12 +195,18 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <div className="hidden  lg:flex items-center  justify-end  w-[20%]">
-          <button className=' group flex relative center uppercase px-4 py-2 rounded-full'>
-            <RiArrowRightUpLine className='scale-0 opacity-0 group-hover:translate-x-[15px] group-hover:opacity-100 group-hover:scale-100 origin-bottom-left transition-all duration-300' size={24} />
-            <h2 className=' group-hover:translate-x-[15px] transition-all duration-300 text-base fixy1_5'>Book Now</h2>
-            <div className="w-[0%] group-hover:w-[65%] origin-left left-9 absolute bottom-2 h-[2px] bg-white transition-all duration-300"></div>
-            <RiArrowRightUpLine className=' group-hover:scale-0 origin-top-right group-hover:translate-x-[15px] group-hover:opacity-0 transition-all duration-300' size={24} />
+        <div className="hidden  lg:flex items-center  gap-3 justify-end  w-[20%]">
+          <button className=' text-sm lg:text-base learn_btn relative overflow-hidden group     bg-black lg:bg-transparent  rounded-full border-1 border-[#ffffff] px-0 py-2 lg:px-6 center lg:py-2'>
+            <p className='fixy1 font-normal opacity-0'>Book Now</p>
+            <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute'>Book Now</p>
+            <div className="w-full origin-center group-hover:left-0 transition-all duration-300 h-full bg-white top-0 left-[-100%] absolute "></div>
+            <p className='fixy1 font-normal translate-y-[10px] z-[99] text-black group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300  absolute'> Book Now</p>
+          </button>
+          <button className=' text-sm lg:text-base learn_btn relative overflow-hidden group     bg-black lg:bg-transparent  rounded-full border-1 border-[#ffffff] px-0 py-2 lg:px-6 center lg:py-2'>
+            <p className='fixy1 font-normal opacity-0'>whatsappp</p>
+            <div className='lg:fixy1 flex  items-center gap-2 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute'> <img className='w-5' src="/icon/whatsapp.png" alt="" /> <p> Whatsapp</p></div>
+            <div className="w-full origin-center group-hover:left-0 transition-all duration-300 h-full bg-white top-0 left-[-100%] absolute "></div>
+            <div className='fixy1  flex  items-center gap-2 font-normal translate-y-[10px] z-[99] text-black group-hover:translate-y-[0px] group-hover:opacity-100 opacity-0 transition-all duration-300  absolute'>  <img className='w-5' src="/icon/whatsapp.png" alt="" /> <p> Whatsapp</p></div>
           </button>
         </div>
       </div>
@@ -178,7 +229,7 @@ const Header = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

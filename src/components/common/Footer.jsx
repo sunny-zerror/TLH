@@ -94,7 +94,7 @@ const Footer = () => {
                     } md:max-h-none`}
                 >
                   {group.links.map((link, i) => (
-                    <Link key={i} href={link.href}>
+                    <Link scroll={false} key={i} href={link.href}>
                       {/* mobile */}
                       
                       {/* desktop */}

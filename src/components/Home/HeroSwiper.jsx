@@ -13,6 +13,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';
 import { CustomEase } from 'gsap/dist/CustomEase';
 import { RiArrowLeftSFill, RiArrowLeftSLine, RiArrowRightSFill, RiArrowRightSLine } from "@remixicon/react";
+import ArrowButton from "../Buttons/ArrowButton";
 gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 
 const swiperData = [
@@ -260,9 +261,22 @@ const HeroSwiper = () => {
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)"
         }}
-        className="relative w-full h-[87vh] lg:h-screen overflow-hidden">
+        className=" hero_sec relative w-full h-[87vh] lg:h-screen overflow-hidden">
 
-        <div className="lg:flex h-10 hidden    items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
+        {/* <div class="absolute w-full h-full z-10 inset-0 pointer-events-none
+            bg-[linear-gradient(to_bottom,rgba(0,0,0,0.6),transparent_35%)]">
+        </div> */}
+
+        <div className="absolute lg:w-[65%] space-y-5 bottom-5 lg:bottom-20 pl-5 lg:pl-24 z-20 text-white">
+          <h1 className=" text-2xl leading-none lg:text-6xl ">Premium garment care. Doorstep pickup & delivery.</h1>
+          <p className="text-sm leading-tight lg:text-xl lg:w-[60%]">Dry cleaning, restoration, wedding wear, sneakers & bags — handled with expert care.</p>
+          <div className="  w-[55%]  lg:w-[22%]">
+            <ArrowButton variant="light" label="Book a Pickup" />
+          </div>
+        </div>
+
+
+        {/* <div className="lg:flex h-10 hidden    items-center z-[9] text-white absolute bottom-[10%] right-[2%]">
           <button
             onClick={() => goToSlide((currentSlide - 1 + swiperData.length) % swiperData.length)}
             className="  h-[80%] group relative overflow-hidden "
@@ -278,7 +292,7 @@ const HeroSwiper = () => {
             <div className="w-full -left-10 group-hover:left-0 z-[-1]  h-full bg-white absolute top-0 transition-all duration-300 "></div>
             <RiArrowRightSFill className="group-hover:text-black z-[9] group-hover:scale-[1.1] transition-all duration-300" />
           </button>
-        </div>
+        </div> */}
 
         <div className="chng_sl hidden lg:block w-full h-full relative">
 
@@ -288,7 +302,7 @@ const HeroSwiper = () => {
               ref={(el) => (slidesRef.current[index] = el)}
               className={`change_slide_${index}  scale-[1.105] absolute top-0 left-0 w-full h-full`}
             >
-              <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2 flex flex-col right-[20%] md:right-[10%] bottom-[13.6%] z-[9]">
+              {/* <div className="absolute w-[35%] md:w-[20%] lg:w-[10%] gap-2 flex flex-col right-[20%] md:right-[10%] bottom-[13.6%] z-[9]">
                 <p className="text-sm leading-none capitalize text-white">{image.title}</p>
                 <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">
                   <div
@@ -296,9 +310,9 @@ const HeroSwiper = () => {
                     className="anim_line w-[0%] h-[1.5px] rounded-full opacity-80 bg-white"
                   ></div>
                 </div>
-              </div>
+              </div> */}
               <img
-                className="w-full h-full object-cover brightness-[.8]"
+                className="w-full h-full object-cover brightness-75"
                 src={image.img}
                 alt={image.title}
               />
@@ -340,26 +354,26 @@ const HeroSwiper = () => {
               <SwiperSlide key={index}>
                 <div className="w-full h-full center overflow-hidden relative">
                   <img
-                    className="w-full h-full object-cover brightness-[.8]"
+                    className="w-full h-full object-cover brightness-75 "
                     src={image.img}
                     alt={image.title}
                   />
                   {/* Progress Line */}
-                  <div className="absolute  gap-1 flex flex-col left-5 bottom-10 z-[9]">
+                  {/* <div className="absolute  gap-1 flex flex-col left-5 bottom-10 z-[9]">
                     <p className="text-base leading-none capitalize text-white">
                       {image.title}
                     </p>
                     <div className="w-full h-[1.5px] relative bg-white/20 rounded-full overflow-hidden">
                       <div className="anim_line_2 w-[0%] h-[1.5px] rounded-full opacity-80 bg-white"></div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        <div ref={parallexContainerRef} className=" z-[9] w-full absolute bottom-[-20vh] h-[20vh] bg-[#FFFAF0]"></div>
+        <div ref={parallexContainerRef} className=" z-[50] w-full absolute bottom-[-20vh] h-[20vh] bg-[#FFFAF0]"></div>
       </div>
 
 

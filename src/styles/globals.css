@@ -21,6 +21,11 @@
 
 @import "tailwindcss";
 
+@media (min-width: 1024px) {
+  :root {
+    font-size: 1vw;
+  }
+}
 body {
   overflow-x: hidden;
   width: 100%;
