@@ -1,118 +1,102 @@
-import React, { useEffect } from 'react'
-
+import ServiceBtn from "@/components/Buttons/ServiceBtn";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import SplitText from 'gsap/dist/SplitText';
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import React from "react";
 
-const ServiceData = [{
+gsap.registerPlugin(ScrollTrigger);
+
+const services = [
+  {
+    img: "/images/about page/img_1.webp",
     title: "Safe for Your Body",
-    image: "/images/about page/img_1.webp",
-    description: [
-        "At The Laundry House, we prioritise the health and safety of our customers by exclusively using high-quality, skin-friendly detergents from Europe, adhering to stringent regulatory standards.",
-        "Use of unregulated detergents containing endocrine disruptors, has been linked to skin irritations and serious health conditions like cancer, PCOS, fertility issues and hormonal imbalances.",
-        "By choosing our services, customers reduce these risks, ensuring their garments are cleaned with superior, safe detergents. This careful approach to garment care supports overall wellness and aligns with our commitment to promoting a healthier lifestyle through every wash."
-    ]
-}, {
-    title: "Where Technology, Skill & Service Merge",
-    image: "/images/about page/img_2.webp",
-    description: [
-        "Our state-of-the-art technology, eco-friendly processes, and highly trained professionals ensure that each piece of clothing is treated with the utmost care and attention. ",
-        " From delicate silks to sturdy denims, we know how to handle them all. Stubborn stains, intricate embroideries, delicate fabrics - nothing is too challenging for us. And our master cleaners are trained to ensure that no speck of dirt misses their eye.",
-        "Our pioneering Live' Laundry studios offer complete transparency, allowing you to witness firsthand the careful and thorough treatment your garments receive throughout our meticulously monitored processes."
-    ]
-}]
+    points: [
+      "Premium European skin-safe detergents",
+      "Free from harmful chemicals & disruptors",
+      "Gentle care for sensitive skin",
+    ],
+  },
+  {
+    img: "/images/about page/img_2.webp",
+    title: "Technology & Skill",
+    points: [
+      "Advanced fabric-specific machines",
+      "Eco-friendly cleaning processes",
+      "Handled by trained master cleaners",
+    ],
+  },
+  {
+    img: "/images/services/4_Wedding Couturer.webp",
+    title: "Wedding Couture",
+    points: [
+      "Specialized care for bridal & couture wear",
+      "Safe handling of delicate fabrics & embellishments",
+      "Preserves structure, color, and luxury finish",
+    ],
+  },
+];
 
 const AboutServices = () => {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      defaults: { ease: "linear" },
+      scrollTrigger: {
+        trigger: ".sticky_cards_paren",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
 
-    useEffect(() => {
-        if (window.innerWidth < 1024) return
-        const ctx = gsap.context(() => {
-            const split1 = new SplitText(".ab_anim_txt_a", { type: "words" });
+    tl.to(".stick_crd_0", { y: -40, scale: 0.95 });
+    tl.to(".stick_crd_0", { y: -90, scale: 0.85 });
+    tl.to(".stick_crd_1", { y: -40, scale: 0.95 }, "<");
+    tl.to(".stick_crd_1", { y: -90, scale: 0.85 });
+    tl.to(".stick_crd_2", { y: -40, scale: 0.95 }, "<");
+  });
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".ab_ab_parent",
-                    start: "top 60%",
-                    // markers: true,
-                    toggleActions: "play none none reverse",
-                }
-            })
-
-            // tl.fromTo(split1.words,
-            //     { y: 20, opacity: 0 },
-            //     {
-            //         y: 0,
-            //         opacity: 1,
-            //         duration: 0.5,
-            //         stagger: 0.005,
-            //     }, "parallel");
-
-            // tl.from(".ab_border_anim",{
-            //     borderColor:"transparent",
-            //     delay:0.5,
-            //     duration:1,
-            // },"parallel")
-
-
-            // tl.fromTo(".ab_anim_txt",
-            //     { y: 10, opacity: 0 },
-            //     {
-            //         y: 0,
-            //         opacity: 1,
-            //         duration: 0.5,
-            //         stagger: 0.005,
-            //     }, "parallel");
-
-            tl.fromTo(
-                ".ab_clip_img",
-                {
-                    clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-                    filter: "blur(5px)"
-                },
-                {
-                    delay: 0.2,
-                    stagger: .5,
-                    ease: "power2.inOut",
-                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                    filter: "blur(0px)",
-                    duration: 1,
-                }, "parallel");
-        });
-
-        return () => ctx.revert();
-    }, []);
-
-    return (
-        <div className='ab_ab_parent'>
-            <div className="w-full px-5 lg:px-24">
-                {
-                    ServiceData.map((service, index) => (
-                        <div key={index} className="ab_border_anim w-full  py-10 gap-3 md:gap-10 flex flex-col md:flex-row border-t  border-dashed  border-black/30">
-                            <div className=" w-full md:w-[60%]  lg:w-[25%] h-full ">
-                                <h1 className=' ab_anim_txt text-2xl leading-none  '>{service.title}</h1>
-                                <div className='mt-5 hidden md:block lg:hidden'>{
-                                    service.description.map((desc, i) => (
-                                        <p key={i} className=' text-sm  ab_anim_txt_a'>{desc}</p>
-                                    ))
-                                }</div>
-                            </div>
-                            <div className=" ab_clip_img w-full md:w-[35%] h-full ">
-                                <img className='w-full h-full object-cover' src={service.image} alt="" />
-                            </div>
-                            <div className=" flex md:hidden w-full md:w-[40%] h-full lg:flex items-center justify-between flex-col ">
-                                {
-                                    service.description.map((desc, i) => (
-                                        <p key={i} className=' text-sm lg:text-base ab_anim_txt_a'>{desc}</p>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                    ))
-                }
+  return (
+    <div className="hidden lg:block">
+          <div className="w-full center mt-10">
+                <h1 className=' hero_animate_txt_b capitalize leading-none text-2xl lg:text-6xl mb-10   '>Our Process</h1>
             </div>
-        </div>
-    )
-}
+      <div className="sticky_cards_paren w-full relative h-min flex flex-col gap-20 items-center">
+        {services.map((card, index) => (
+          <div
+            key={index}
+            className={`stick_crd_${index} w-[88%] bg-[#F2EDE4] flex justify-between h-[65vh] rounded-2xl sticky top-[20vh] p-10`}
+          >
+            {/* Left Content */}
+            <div className="w-[50%] h-full flex flex-col justify-center">
+              <h2 className="text-6xl">{card.title}</h2>
 
-export default AboutServices
+              <div className="border_anim w-full origin-left border mt-4 mb-16 border-dashed rounded-full border-black/30"></div>
+
+              {/* Points */}
+              <ul className="mt-4 space-y-4 text-lg list-disc pl-6">
+                {card.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+
+              <div className="w-[30%] mt-10">
+                <ServiceBtn />
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="w-[35%] h-full overflow-hidden rounded-xl">
+              <img
+                className="w-full h-full object-cover"
+                src={card.img}
+                alt={card.title}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AboutServices;
