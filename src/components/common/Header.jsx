@@ -6,6 +6,7 @@ import { CustomEase } from 'gsap/dist/CustomEase';
 import Link from 'next/link';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { usePathname } from 'next/navigation';
+import { useBookDrawer } from '@/store/useBookDrawer';
 gsap.registerPlugin(CustomEase, ScrollTrigger);
 
 const links = [{
@@ -35,6 +36,7 @@ const Header = () => {
   const pathname = usePathname()
   const router = useRouter();
   const lineRefs = useRef([]);
+   const openDrawer = useBookDrawer((state) => state.openDrawer);
 
   useEffect(() => {
     // Pages where nav should always be black
@@ -195,7 +197,7 @@ const Header = () => {
           ))}
         </div>
         <div className="hidden  lg:flex items-center  gap-3 justify-end  w-[20%]">
-          <button className=' text-sm lg:text-base learn_btn relative overflow-hidden group     bg-black lg:bg-transparent  rounded-full border-1 border-[#ffffff] px-0 py-2 lg:px-6 center lg:py-2'>
+          <button  onClick={openDrawer} className=' text-sm lg:text-base learn_btn relative overflow-hidden group     bg-black lg:bg-transparent  rounded-full border-1 border-[#ffffff] px-0 py-2 lg:px-6 center lg:py-2'>
             <p className='fixy1 font-normal opacity-0'>Book Now</p>
             <p className='lg:fixy1 group-hover:translate-y-[-10px] group-hover:opacity-0 transition-all duration-300 font-normal absolute text-white'>Book Now</p>
             <div className="w-full origin-center group-hover:left-0 transition-all duration-300 h-full bg-white top-0 left-[-100%] absolute "></div>
