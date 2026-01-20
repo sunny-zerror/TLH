@@ -57,9 +57,9 @@ const AboutServices = () => {
 
   return (
     <div className="hidden lg:block">
-          <div className="w-full center mt-10">
-                <h1 className=' hero_animate_txt_b capitalize leading-none text-2xl lg:text-6xl mb-10   '>Our Process</h1>
-            </div>
+      <div className="w-full center mt-10">
+        <h1 className=' hero_animate_txt_b capitalize leading-none text-2xl lg:text-6xl mb-10   '>Our Process</h1>
+      </div>
       <div className="sticky_cards_paren w-full relative h-min flex flex-col gap-20 items-center">
         {services.map((card, index) => (
           <div
@@ -85,7 +85,7 @@ const AboutServices = () => {
             </div>
 
             {/* Right Image */}
-            <div className="w-[35%] h-full overflow-hidden rounded-xl">
+            <div className="w-[35%] h-full overflow-hidden rounded-lg">
               <img
                 className="w-full h-full object-cover"
                 src={card.img}

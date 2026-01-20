@@ -8,14 +8,17 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const aboutData = [
   {
+    img: "https://cdn-icons-png.flaticon.com/128/2082/2082986.png",
     title: "Doorstep Convenience",
     para: "We offer hassle-free pickup and delivery from your home, ensuring your garments are handled with care from start to finish."
   },
   {
+    img: "	https://cdn-icons-png.flaticon.com/512/3043/3043787.png",
     title: "Fabric-Safe Cleaning",
     para: "Advanced stain removal and cleaning techniques are customized for each fabric to maintain color, texture, and durability."
   },
   {
+    img: "	https://cdn-icons-png.flaticon.com/512/3085/3085557.png",
     title: "Luxury Restoration Care",
     para: "Specialized restoration for wedding wear, shoes, and bags, bringing back their original finish, structure, and elegance."
   },
@@ -68,20 +71,25 @@ const AboutSection = () => {
 
   return (
     <div className='about_parent'>
-      <div className="w-full  flex flex-col lg:items-center lg:text-center max-sm:pt-10  p-5 lg:p-28">
+      <div className="w-full  flex flex-col lg:items-center lg:text-center max-sm:pt-10  p-5 lg:p-24">
         <h2 className=' hero_animate_txt_a text-sm lg:text-xl block overflow-hidden mb-2 lg:mb-5 opacity-70'>About Us</h2>
         <h1 className=' hero_animate_txt_b capitalize leading-none text-2xl lg:text-6xl   '>Welcome to The Laundry House</h1>
         <p className=' mt-2 lg:mt-4 text-sm  lg:text-xl lg:w-1/2 leading-tight '>India's Fastest Growing Garment Care Service</p>
-         <div className="w-full lg:w-[65%] mt-8">
+        <div className="w-full lg:w-[65%] mt-8">
         </div>
         <div className="w-full lg:mt-8 gap-y-8  grid lg:grid-cols-3 gap-x-20 ">
           {aboutData.map((item, index) => (
             <div key={index} className="w-full">
               <div className="flex lg:flex-col gap-5 items-start lg:items-center justify-between">
-                <div className=" w-full lg:space-y-2">
-                  <h1 className=' ex_anim_title  capitalize text-sm lg:text-xl '>{item.title}</h1>
-                  <div className=" mb-2 block ex_anim_line origin-left  w-full h-[1px] black"></div>
-                  <p className=' text-sm lg:text-base leading-tight ex_anim_para'>{item.para}</p>
+                <div className=" w-full flex gap-x-10 lg:gap-x-0 lg:flex-col items-center">
+                  <div className=" w-[20%]  lg:size-14 mb-5">
+                    <img className='' src={item.img} alt="" />
+                  </div>
+                  <div className=" w-[80%] lg:w-full lg:space-y-2">
+                    <h1 className=' ex_anim_title  capitalize text-sm lg:text-xl '>{item.title}</h1>
+                    <div className=" mb-2 block ex_anim_line origin-left  w-full h-[1px] black"></div>
+                    <p className=' text-sm lg:text-base leading-tight ex_anim_para'>{item.para}</p>
+                  </div>
                 </div>
               </div>
             </div>

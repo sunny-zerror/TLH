@@ -757,10 +757,10 @@ export const allStoresData = [
         shopNames: [
             {
                 name: "The Clean Company",
-                address: "1 Bangalore Main Street, Bangalore - 587720",
+                address: "37–38, Riviera Arcade, 100 Feet Road, Nr. Prahladnagar Garden, Prahladhnagar",
                 openTime: "9:30 am",
                 closeTime: "8:00 pm",
-                contact: "108-281-2405",
+                contact: "6359059990",
                 location: "Bangalore Shop 1, Bangalore",
             },
         ],

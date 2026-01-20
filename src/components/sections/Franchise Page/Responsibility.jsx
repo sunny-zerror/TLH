@@ -135,16 +135,16 @@ const Responsibility = () => {
                     {cardData.map((card, index) => (
                         <div
                             key={index}
-                            className=" resp_card p-5 lg:p-10 flex flex-col gap-5 lg:gap-10 bg-black/5 rounded-xl"
+                            className=" resp_card p-5 lg:p-10 flex flex-col gap-5 lg:gap-10 bg-black/5 rounded-lg"
                         >
                             <div className="w-full center">
                                 <h2 className=" resp_card_txt  text-xl lg:text-3xl">{card.heading}</h2>
                             </div>
                             {/* <div className="resp_card_line w-full  border-dashed border border-black/50 rounded-full"></div> */}
                             <div
-                    className="w-full opacity-50 "
-                    style={{ borderWidth: "1px", borderImage: "repeating-linear-gradient(to right, black 0, black 10px, transparent 10px, transparent 20px) 1" }}
-                ></div>
+                                className="w-full opacity-50 "
+                                style={{ borderWidth: "1px", borderImage: "repeating-linear-gradient(to right, black 0, black 10px, transparent 10px, transparent 20px) 1" }}
+                            ></div>
                             <div className="flex px-6 flex-col gap-3">
                                 {card?.services.map((service, idx) => (
                                     <div key={idx}>

@@ -50,7 +50,7 @@ const FranchiseHero = () => {
   }, []);
 
   return (
-    <div className="w-full relative h-[87vh] lg:h-screen text-white">
+    <div className="w-full relative h-[100svh] text-white">
       {/* Background Image */}
       <img
         className="fr_hr_anim_img w-full h-full object-cover brightness-[.3]"
@@ -59,27 +59,94 @@ const FranchiseHero = () => {
       />
 
       {/* Content */}
-      <div className="absolute px-5 w-[100%] lg:w-[70%] flex flex-col gap-5 lg:items-center bottom-[15%] left-[50%] lg:text-center  translate-x-[-50%]">
+      <div className="absolute px-5 w-[100%] lg:w-[70%] flex flex-col gap-3 lg:gap-5 lg:items-center bottom-[15%] left-[50%] lg:text-center  translate-x-[-50%]">
         <div className="block overflow-hidden">
-          <h2 className=" fr_hr_anim_head text-sm lg:text-base">Become a Franchise</h2>
+          <h2 className="  text-sm lg:text-base"> Partner with TLH</h2>
         </div>
-        <div className="block overflow-hidden">
-          <h1 className="fr_hr_anim_head text-2xl leading-none lg:text-6xl  ">
-            Partner with TLH: India’s Leading Premium Garment Care Franchise.
-
+        <div className="lg:text-center lg:flex lg:items-center lg:justify-center w-full flex-col">
+          <h1 className=" text-2xl leading-none lg:text-6xl  ">
+            India’s Leading Premium <br /> Garment Care Franchise.
           </h1>
+          <p className="fr_hr_anim_txt  text-sm leading-tight  mt-2 lg:mt-4  lg:text-xl add_anim_txt_a  w-full lg:w-[60%]">
+            A high-margin, process-driven model with ~6 month operational break-even and no outside dependencies.
+          </p>
         </div>
-        
-        <p className="fr_hr_anim_txt fr_hr_anim_txt_a text-sm lg:text-base w-full lg:w-[70%]">
-          A high-margin, process-driven model with ~6 month operational break-even and no outside dependencies.
-        </p>
 
+        <div className=" flex overflow-x-scroll scroller_none lg:grid lg:grid-cols-4 lg:justify-center gap-x-3 lg:gap-x-5 text-start pt-5 lg:py-10">
+          <div className="w-full bg-white px-6 lg:px-10 whitespace-nowrap py-5 lg:py-8 rounded-lg text-black lg:justify-center flex items-stretch gap-x-3">
+            <div className=" size-10 lg:size-14 shrink-0 bg-[#F2EDE4] rounded-lg center">
+              <img
+                className="w-[55%]"
+                src="https://cdn-icons-png.flaticon.com/512/2956/2956777.png"
+                alt="Customers"
+              />
+            </div>
+
+            <div className="flex flex-col justify-between">
+              <p className=" text-lg lg:text-2xl leading-none font-semibold">60k+</p>
+              <p className=" text-sm lg:text-base leading-none">Customers Served</p>
+            </div>
+          </div>
+
+          <div className="w-full bg-white px-6 lg:px-10 whitespace-nowrap py-5 lg:py-8 rounded-lg text-black lg:justify-center flex items-stretch gap-x-3">
+            <div className=" size-10 lg:size-14 shrink-0 bg-[#F2EDE4] rounded-lg center">
+              <img
+                className="w-1/2"
+                src="https://cdn-icons-png.flaticon.com/512/6797/6797554.png"
+                alt="ROI"
+              />
+            </div>
+
+            <div className="flex flex-col justify-between">
+              <p className=" text-lg lg:text-2xl leading-none font-semibold">14%</p>
+              <p className=" text-sm lg:text-base leading-none">Target ROI</p>
+            </div>
+          </div>
+
+
+
+          <div className="w-full bg-white px-6 lg:px-10 whitespace-nowrap py-5 lg:py-8 rounded-lg text-black lg:justify-center flex items-stretch gap-x-3">
+            <div className=" size-10 lg:size-14 shrink-0 bg-[#F2EDE4] rounded-lg center">
+              <img
+                className="w-[55%]"
+                src="	https://cdn-icons-png.flaticon.com/512/14198/14198917.png"
+                alt="No Inventory"
+              />
+            </div>
+
+            <div className="flex flex-col justify-between">
+              <p className=" text-lg lg:text-2xl leading-none font-semibold">Zero</p>
+              <p className=" text-sm lg:text-base leading-none">Inventory Risk</p>
+            </div>
+          </div>
+
+          <div className="w-full bg-white px-6 lg:px-10 whitespace-nowrap py-5 lg:py-8 rounded-lg text-black lg:justify-center flex items-stretch gap-x-3">
+            <div className=" size-10 lg:size-14 shrink-0 bg-[#F2EDE4] rounded-lg center">
+              <img
+                className="w-[55%]"
+                src="	https://cdn-icons-png.flaticon.com/512/1019/1019709.png"
+                alt="Cash Flow"
+              />
+            </div>
+
+            <div className="flex flex-col justify-between">
+              <p className=" text-lg lg:text-2xl leading-none font-semibold">Day 1</p>
+              <p className=" text-sm lg:text-base leading-none">Cash Flow</p>
+            </div>
+          </div>
+
+
+
+        </div>
 
         {/* Button */}
-        <div className=" w-full scale-100  lg:w-[20vw]">
+        <a  href="#franchise-form"  className=" hidden lg:block w-full  lg:w-[20vw]">
           <ArrowButton variant="light" label="Apply for Partnership" />
-        </div>
+        </a>
       </div>
+      <a href="#franchise-form" className=" z-[99] fixed left-1/2 -translate-x-1/2 bottom-[2svh] lg:hidden w-[60vw]">
+        <ArrowButton  variant="light" label="Apply for Partnership" />
+      </a>
     </div>
   );
 };

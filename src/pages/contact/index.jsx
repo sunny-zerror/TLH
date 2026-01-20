@@ -71,6 +71,7 @@ export default function ContactPage() {
                                     Message <sup> *</sup>
                                 </p>
                                 <textarea
+                                    placeholder="Enter Message"
                                     rows={4}
                                     className="w-full bg-transparent border-b border-neutral-600 pb-[0.6rem] outline-none placeholder-neutral-500 resize-none"
                                 />

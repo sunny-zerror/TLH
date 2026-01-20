@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRef, useState, useEffect } from "react";
 
-
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitText from 'gsap/dist/SplitText';

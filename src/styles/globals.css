@@ -23,6 +23,7 @@
 
 *{
   user-select: none;
+  scroll-behavior: smooth;
 }
 @media (min-width: 1024px) {
   :root {
@@ -35,7 +36,7 @@ body {
   color: #0e1111;
   background-color: #fffaf0;
 }
-p {
+p,span,button,label {
   font-family: font_regular;
 }
 .font-bold,

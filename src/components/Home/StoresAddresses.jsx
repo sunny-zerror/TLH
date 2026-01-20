@@ -190,7 +190,7 @@ const StoresAddresses = () => {
 
     return (
         <div className='add_anim_parent w-full bg-[#F2EDE4]  '>
-            <div className="w-full p-10">
+            <div className="w-full p-5 py-10 lg:p-20">
                 <div className="flex flex-col text-center md:flex-row justify-between">
                     <div className="w-full text-center">
                         <h1 className=' text-2xl leading-none  lg:text-6xl add_anim_txt_a   '>Serving You Across India</h1>

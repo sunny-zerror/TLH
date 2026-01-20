@@ -1,45 +1,86 @@
-import React from "react";
+import { RiArrowDownCircleFill, RiEye2Fill, RiEye2Line, RiShieldCheckFill } from "@remixicon/react";
 
 const LiveLaundry = () => {
   return (
-    <div className=" max-sm:mb-14  px-5 lg:px-24  lg:py-12">
-      <section className="relative w-full rounded-lg h-[80vh] lg:h-[90vh] overflow-hidden">
-        {/* Video */}
-        {/* <video
-        src="/videos/live-laundry.mp4" // replace with your video path
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      /> */}
+    <section className="py-10 p-5 md:p-24 bg-background overflow-hidden">
+      <div className="w-full flex lg:items-stretch">
+        <div className="grid lg:grid-cols-2 space-y-6 lg:space-y-0 lg:gap-24">
+          {/* Content */}
+          <div className="order-2 lg:order-1 h-full flex flex-col justify-between">
+            <div className="w-full mt-6 lg:mt-0  ">
+              <h1 className=' text-2xl leading-none  lg:text-6xl add_anim_txt_a  lg:whitespace-nowrap  '>The Live Laundry Studio</h1>
+              <p className=' mt-2 lg:mt-4 text-sm leading-tight   lg:text-xl add_anim_txt_a '>              Transparency is our greatest marketing tool. The Live Laundry Studio reduces disputes and drives{' '}
+                <span className="text-secondary font-semibold">3x higher trust</span> than traditional unorganized outlets.
+              </p>
+            </div>
 
-        <img
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/images/Hero swiper/pic_3.webp"
-          alt=""
-        />
+            {/* Features */}
+            <div className=" space-y-8 lg:space-y-12">
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+              {/* Complete Visibility */}
+              <div className="flex items-start gap-4">
+                <div className="size-12 shrink-0 bg-[#F2EDE4] rounded-lg center">
+                  <img
+                    className="w-[60%]"
+                    src="https://cdn-icons-png.flaticon.com/512/9458/9458496.png"
+                    alt="Visibility"
+                  />
+                </div>
+                <div>
+                  <h2 className=" text-lg lg:text-2xl leading-none mb-2">Complete Visibility</h2>
+                  <p className="text-sm leading-tight lg:text-base">
+                    Customers watch their garments being processed in real-time
+                  </p>
+                </div>
+              </div>
 
-        {/* Content */}
-        <div className="relative z-10 h-full flex items-end p-6 md:p-12 lg:p-24">
-          <div className="lg:max-w-3xl flex flex-col gap-6">
-            <h2 className="text-white text-2xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-              The Live Laundry Studio
-            </h2>
+              {/* Zero Disputes */}
+              <div className="flex items-start gap-4">
+                <div className="size-12 shrink-0 bg-[#F2EDE4] rounded-lg center">
+                  <img
+                    className="w-1/2"
+                    src="https://cdn-icons-png.flaticon.com/512/2438/2438078.png"
+                    alt="Zero Disputes"
+                  />
+                </div>
+                <div>
+                  <h2 className=" text-lg lg:text-2xl leading-none mb-2">Zero Dispute Resolution</h2>
+                  <p className="text-sm leading-tight lg:text-base">
+                    Radical transparency eliminates service complaints and mistrust
+                  </p>
+                </div>
+              </div>
 
-            <p className="text-white text-sm md:text-base leading-tight">
-              Transparency is our greatest marketing tool. The Live Laundry
-              Studio creates a clean, professional, tech-led environment
-              customers can see in real time—reducing disputes and driving 3×
-              higher trust than traditional unorganized outlets.
-            </p>
+              {/* Higher Conversion */}
+              <div className="flex items-start gap-4">
+                <div className="size-12 shrink-0 bg-[#F2EDE4] rounded-lg center">
+                  <img
+                    className="w-1/2"
+                    src="https://cdn-icons-png.flaticon.com/512/6797/6797554.png"
+                    alt="Higher Conversion"
+                  />
+                </div>
+                <div>
+                  <h2 className=" text-lg lg:text-2xl leading-none mb-2">Higher Conversion Rates</h2>
+                  <p className="text-sm leading-tight lg:text-base">
+                    Walk-in customers convert at nearly 3× the industry average
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Visual */}
+          <div className="order-1 lg:order-2 relative">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elevated">
+              <video loop muted playsInline autoPlay className="cover" src="/images/home/Reel.mp4"></video>
+            </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

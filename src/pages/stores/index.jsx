@@ -145,7 +145,7 @@ const Index = () => {
                     </div>
 
                     {/* Price Table */}
-                    <div className="chnge_cat_tble w-full relative overflow-hidden rounded-xl border border-black/20">
+                    <div className="chnge_cat_tble w-full relative overflow-hidden rounded-lg border border-black/20">
                         <div className=" border-[1px] border-dashed  h-full opacity-20 black absolute left-[33%]"></div>
                         <div className=" border-[1px] border-dashed  h-full opacity-20 black absolute right-[33%]"></div>
                         <table className=" text-xs md:text-base text-center w-full h-full">

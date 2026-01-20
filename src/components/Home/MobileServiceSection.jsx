@@ -80,7 +80,7 @@ const MobileServiceSection = () => {
                         return (
                             <SwiperSlide key={index}>
                                 <div key={index} className={` slide_bg_${index} top-0 mb-10 mt-5 lg:mt-0 z-[${index}] blur-[0px]  w-full h-full px-5 lg:px-10 bg-[#FFFAF0]  left-0 overflow-hidden`}>
-                                    <div className={` slide_inn_${index}  slide_bg  w-full h-full p-5 lg:p-14 flex flex-col-reverse md:flex-row items-center justify-between bg-[#9494941f] rounded-xl`}>
+                                    <div className={` slide_inn_${index}  slide_bg  w-full h-full p-5 lg:p-14 flex flex-col-reverse md:flex-row items-center justify-between bg-[#9494941f] rounded-lg`}>
                                         <div className=" w-full mt-5 md:mt-0 md:w-[45%] h-full flex flex-col justify-between">
 
                                             <div className="w-full flex flex-col gap-3 justify-between h-full ">
@@ -143,9 +143,9 @@ const MobileServiceSection = () => {
 
                                             </div>
                                         </div>
-                                        <div className=" w-full md:w-[40%]  h-full">
+                                        <div className=" w-full md:w-[40%] aspect-square">
                                             <div
-                                                className=" service_clip_img  w-full h-full overflow-hidden rounded-xl">
+                                                className=" service_clip_img  w-full h-full overflow-hidden rounded-lg">
                                                 <img className='w-full h-full object-cover' src={item.img} alt="" />
                                             </div>
                                         </div>
