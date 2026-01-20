@@ -48,16 +48,16 @@ const data = [
 const InvestorLogic = () => {
   return (
     <section className="w-full px-5 md:px-12 lg:px-24 py-10 lg:py-24">
-      <div className="w-full center">
+      {/* <div className="w-full center">
         <h1 className=" resp_anim_txt text-2xl lg:text-6xl  ">
           The Investor Logic
         </h1>
-      </div>
-      <div className="grid grid-cols-1 mt-5 lg:mt-18 md:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-8">
+      </div> */}
+      <div className=" w-full flex gap-x-5 overflow-x-scroll scroller_none lg:grid lg:grid-cols-3 gap-y-10 lg:gap-8">
         {data.map((item, index) => (
-          <div key={index} className="flex flex-col gap-4">
+          <div key={index} className=" w-[75vw] shrink-0 lg:w-full flex flex-col gap-4">
             {/* Image Card */}
-            <div className="w-full h-48 md:h-56 lg:h-64 shadow-lg rounded-xl overflow-hidden">
+            <div className="w-full aspect-4/3 rounded-lg overflow-hidden">
               <img
                 src={item.img}
                 alt={item.title}
@@ -66,15 +66,15 @@ const InvestorLogic = () => {
             </div>
 
             {/* Text Outside Card */}
-            <div className="flex flex-col gap-2 px-1">
-              <h3 className="text-xl md:text-4xl font-semibold text-black">
+            <div className="flex flex-col gap-5 px-1">
+              <h2 className="text-xl md:text-4xl  text-black">
                 {item.title}
-              </h3>
+              </h2>
 
               {item.desc.map((line, i) => (
                 <p
                   key={i}
-                  className="text-black text-sm md:text-base leading-relaxed"
+                  className="text-black text-sm md:text-base leading-tight"
                 >
                   <span className="font-semibold">{line.bold}</span> {line.text}
                 </p>

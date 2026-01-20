@@ -1,0 +1,93 @@
+const steps = [
+    {
+        title: "Data Verification",
+        time: "Within 24 Hours",
+        description:
+            "Our franchise team reviews your investment capacity and evaluates location viability based on TLH benchmarks.",
+        icon: "ri-shield-check-line",
+    },
+    {
+        title: "Discovery Call",
+        time: "Day 2–3",
+        description:
+            "A 20-minute introductory call to align on the TLH vision and our Live Laundry philosophy.",
+        icon: "ri-phone-line",
+    },
+    {
+        title: "Economics Deep-Dive",
+        time: "Day 5–7",
+        description:
+            "A detailed walkthrough of the unit economics and how we achieve a ~6-month operational breakeven.",
+        icon: "ri-line-chart-line",
+    },
+    {
+        title: "Studio Visit",
+        time: "Day 10–14",
+        description:
+            "An invitation to an active TLH Live Studio to experience our tech-led operations firsthand.",
+        icon: "ri-building-line",
+    },
+];
+
+const FranchiseSuccessPath = () => {
+    return (
+        <section className="w-full  text-black mb-20">
+            <div className="max-w-5xl pt-24 lg:pt-32 mx-auto px-5">
+                {/* Header */}
+                <div className="lg:text-center mb-6 lg:mb-16">
+                    <p className="text-sm mb-4">
+                        Application Status
+                    </p>
+
+                    <h1 className=' text-2xl leading-none  lg:text-6xl   lg:whitespace-nowrap  '>Your Application Is Under Review</h1>
+
+
+                    <p className=" mt-2 lg:mt-4 text-sm leading-tight   lg:text-xl  ">
+                        We take our partnerships seriously. Here’s exactly what will happen
+                        over the next <span className=" font-medium">14 days</span>.
+                    </p>
+                </div>
+
+                {/* Timeline */}
+                <div className="relative">
+
+                    <div className="space-y-5">
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className="flex gap-6 items-start md:items-center"
+                            >
+
+
+                                {/* Content */}
+                                <div className=" border border-black/40 rounded-lg p-6 w-full">
+                                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                                        <div className="flex w-full gap-x-5 ">
+                                            <p> {index + 1}</p>
+                                            <div className="w-full ">
+                                                <div className="w-full flex justify-between">
+                                                    <h2 className=" text-lg lg:text-2xl leading-none mb-2">
+                                                        {step.title}
+                                                    </h2>
+                                                    <span className="text-sm w-[10%] flex justify-end leading-tight lg:text-base">
+                                                        {step.time}
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm leading-tight lg:text-base">
+                                                    {step.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    );
+};
+
+export default FranchiseSuccessPath;

@@ -2,17 +2,17 @@ import { RiArrowRightUpLine } from '@remixicon/react'
 import Link from 'next/link';
 import React from 'react'
 
-const ArrowButton = ({ variant = "light", label = "Book Now", href="" }) => {
+const ArrowButton = ({ variant = "light", label = "Book Now", type = "button" }) => {
   const isLight = variant === "light";
 
   const borderColor = isLight ? "border-white" : "border-black";
   const baseTextColor = isLight ? "text-black" : "text-white";
   const hoverTextColor = isLight ? "group-hover:text-white" : "group-hover:text-black";
-  const circleBg = isLight ? "bg-[#fffaf0]" : "bg-black";
+  const circleBg = isLight ? "bg-[#fff]" : "bg-black";
 
   return (
-    <Link href={href}>
       <button
+        type={type}
         className={`w-full text-base group relative border overflow-hidden 
       ${borderColor} h-10 lg:h-12 rounded-full`}
       >
@@ -40,7 +40,6 @@ const ArrowButton = ({ variant = "light", label = "Book Now", href="" }) => {
           />
         </div>
       </button>
-    </Link>
   );
 };
 

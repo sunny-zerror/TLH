@@ -150,13 +150,13 @@ const index = () => {
                     }
                 </div>
 
-                <div className="absolute z-[2] w-[40%] h-[75vh]  overflow-hidden rounded-xl top-1/2 right-24 -translate-y-1/2 ">
+                <div className="absolute z-[2] w-[40%] h-[75vh]  overflow-hidden rounded-lg top-1/2 right-24 -translate-y-1/2 ">
                     {
                         services.slice().reverse().map((item, index) => (
                             <div
                                 style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-                                key={index} className={` serv_img_${index} absolute rounded-xl overflow-hidden w-full h-full top-0 left-0  `}>
-                                <img src={item.img} alt={item.title} className='w-full rounded-xl h-full object-cover' />
+                                key={index} className={` serv_img_${index} absolute rounded-lg overflow-hidden w-full h-full top-0 left-0  `}>
+                                <img src={item.img} alt={item.title} className='w-full rounded-lg h-full object-cover' />
                             </div>
                         ))
                     }

@@ -41,7 +41,7 @@ const services = [
 
 const ServicesSection = () => {
 
-       const openDrawer = useBookDrawer((state) => state.openDrawer);
+    const openDrawer = useBookDrawer((state) => state.openDrawer);
 
     useGSAP(() => {
         var tl = gsap.timeline({
@@ -57,6 +57,7 @@ const ServicesSection = () => {
         })
         tl.to(".stick_crd_0", {
             y: -40,
+            filter: "brightness(.85)",
             scale: .95
         })
         tl.to(".stick_crd_0", {
@@ -65,6 +66,7 @@ const ServicesSection = () => {
         })
         tl.to(".stick_crd_1", {
             y: -40,
+            filter: "brightness(.85)",
             scale: .95
         }, "<")
         tl.to(".stick_crd_1", {
@@ -73,6 +75,7 @@ const ServicesSection = () => {
         })
         tl.to(".stick_crd_2", {
             y: -40,
+            filter: "brightness(.85)",
             scale: .95
         }, "<")
 
@@ -81,13 +84,13 @@ const ServicesSection = () => {
 
     return (
         <div className='hidden lg:block'>
-            <div className="w-full center sticky top-[5rem] mt-10">
+            <div className="w-full center sticky top-[11vh] mt-10">
                 {/* <h2 className=' hero_animate_txt_a text-sm lg:text-xl block overflow-hidden uppercase'>Our Services</h2> */}
                 <h1 className=' hero_animate_txt_b  capitalize leading-none text-2xl lg:text-6xl mb-10   '>Our Services</h1>
             </div>
             <div className=" sticky_cards_paren w-full relative  h-min flex flex-col gap-20  items-center ">
                 {services.map((card, index) => (
-                    <div key={index} className={`  stick_crd_${index} w-[88%] bg-[#F2EDE4] flex justify-between  h-[65vh] rounded-2xl  sticky top-[20vh] p-10`}>
+                    <div key={index} className={` brightness-100 stick_crd_${index} w-[88%] border border-[#ffffff] bg-[#F2EDE4] flex justify-between  h-[65vh] rounded-2xl  sticky top-[23vh] p-10`}>
                         <div className="w-[50%] h-full flex flex-col justify-center">
                             <h2 className='text-6xl '>{card.title}</h2>
                             <div className=" border_anim  w-full origin-left  border mt-4 mb-20 border-dashed rounded-full border-black/30"></div>
@@ -98,7 +101,7 @@ const ServicesSection = () => {
                             </div>
                         </div>
 
-                        <div className="w-[35%] h-full  overflow-hidden rounded-xl">
+                        <div className="w-[35%]  aspect-square overflow-hidden rounded-lg">
                             <img className='cover' src={card.img} alt="" />
                         </div>
 

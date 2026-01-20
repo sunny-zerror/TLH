@@ -9,6 +9,7 @@ import SplitText from 'gsap/dist/SplitText';
 import { useEffect } from 'react';
 import InvestorLogic from '@/components/sections/Franchise Page/InvestorLogic'
 import LiveLaundry from '@/components/sections/Franchise Page/LiveLaundry'
+import PartnershipGovernance from '@/components/sections/Franchise Page/PartnershipGovernance'
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const index = () => {
@@ -19,6 +20,7 @@ const index = () => {
             {/* <FranchiseNumbers /> */}
             <InvestorLogic/>
             <LiveLaundry/>
+            <PartnershipGovernance/>
             {/* <Responsibility /> */}
             <FranchiseForm />
         </div>
