@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import InvestorLogic from '@/components/sections/Franchise Page/InvestorLogic'
 import LiveLaundry from '@/components/sections/Franchise Page/LiveLaundry'
 import PartnershipGovernance from '@/components/sections/Franchise Page/PartnershipGovernance'
+import FranchiseFaqs from '@/components/sections/Franchise Page/FranchiseFaqs'
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const index = () => {
@@ -23,6 +24,7 @@ const index = () => {
             <PartnershipGovernance/>
             {/* <Responsibility /> */}
             <FranchiseForm />
+            <FranchiseFaqs/>
         </div>
     )
 }

@@ -111,7 +111,115 @@ const Faq = () => {
           </p>
         </>
       )
-    }
+    },
+     {
+      id: 10,
+      question: "What services does The Laundry House provide?",
+      answer: (
+        <p>
+          We offer a full suite of garment care including dry cleaning, expert stain removal, wedding wear restoration, and sneaker/bag cleaning. We also specialize in premium on-site or pickup-based cleaning for curtains and sofas.
+        </p>
+      ),
+    },
+    {
+      id: 11,
+      question: "How do I schedule a pickup?",
+      answer: (
+        <p>
+          You can book a pickup instantly via our website or WhatsApp. Choose your preferred time slot, and our logistics team will handle the doorstep pickup and delivery.
+        </p>
+      ),
+    },
+    {
+      id: 12,
+      question: "Is TLH safe for expensive couture and wedding wear?",
+      answer: (
+        <p>
+          Yes. We specialize in "Garment Care for Important People." Every high-value piece undergoes inspection and stain mapping before being treated with fabric-safe processes specifically designed for delicate embroidery, silks, and luxury fabrics.
+        </p>
+      ),
+    },
+    {
+      id: 13,
+      question: "How long does the cleaning process take?",
+      answer: (
+        <p>
+          Our standard turnaround time is 3–4 days, depending on the service type. Specialized restoration (like wedding gowns or leather bags) may take longer to ensure the highest quality finish.
+        </p>
+      ),
+    },
+    {
+      id: 14,
+      question: "What is the \"Live Laundry\" experience?",
+      answer: (
+        <p>
+          If you visit our stores, you can see our process firsthand. We believe in total transparency—nothing is hidden behind closed doors. You can see the care, technology, and hygiene standards applied to your clothes.
+        </p>
+      ),
+    },
+    {
+      id: 15,
+      question: "Do you serve my city?",
+      answer: (
+        <p>
+          We currently operate in [List major cities like Delhi, Mumbai, Hyderabad, etc.]. You can check serviceability by entering your location on our 'Stores' page or during the booking process.
+        </p>
+      ),
+    },
+    {
+      id: 16,
+      question: "How do I pay for the service?",
+      answer: (
+        <p>
+          We are a 100% digital-friendly business. You can pay via UPI, Credit/Debit cards, or Wallets at the time of delivery or through our online booking link.
+        </p>
+      ),
+    },
+    {
+      id: 17,
+      question: "What is your \"Satisfaction Guarantee\" and re-wash policy?",
+      answer: (
+        <p>
+          If you are not 100% satisfied with the finish or a stain was not removed as promised, we will re-process the item <strong> free of charge. </strong> Our goal is to meet the standard of the most discerning wardrobes in the city.
+        </p>
+      ),
+    },
+    {
+      id: 18,
+      question: "What happens if a high-value garment is damaged?",
+      answer: (
+        <p>
+          We treat your clothes like assets. Before cleaning, we perform <strong> Stain Mapping & Fabric Analysis. </strong> If we feel a process is too risky for a delicate fabric, we will consult you before proceeding. In the unlikely event of damage, we have a transparent <strong> Claims Resolution Process </strong> based on the age and value of the garment, ensuring you are never left without an answer.
+        </p>
+      ),
+    },
+    {
+      id: 19,
+      question: "How do you handle \"Couture & Heirloom\" pieces (Sarees/Lehengas)?",
+      answer: (
+        <p>
+          High-value items are processed in our <strong> Specialty Zone. </strong> These are never cleaned with "bulk" laundry. They undergo pH-neutral cleaning, manual stain treatment, and steam finishing on specialized form-finishers to ensure no shrinkage or loss of embellishment.
+        </p>
+      ),
+    },
+    {
+      id: 20,
+      question: "Do you provide a \"Return & Refund\" policy for home services (Sofas/Curtains)?",
+      answer: (
+        <p>
+          For on-site services like sofa or curtain cleaning, our supervisor performs a <strong>  Post-Service Walkthrough </strong> with you. If you are not satisfied with the results, we will re-clean the specific area on the spot or schedule a follow-up visit at no cost. Refunds are handled on a case-by-case basis if the service fails to meet our technical SOPs.
+        </p>
+      ),
+    },
+    {
+      id: 21,
+      question: "Can I track the status of my \"Restoration\" items?",
+      answer: (
+        <p>
+          Yes. Unlike local dry cleaners, every item at TLH is barcoded. You can track exactly where your item is—from "In-Processing" to "Final QC"—via our customer portal or by messaging our concierge.
+        </p>
+      ),
+    },
   ];
 
 
